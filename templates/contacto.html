@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/contacto.css')}}">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/style_index.css')}}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    {% from "macros.html" import  render_messages %}
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/macros.css')}}">
+</head>
+
+<body>
+
+
+
+
+    <!--contact section start-->
+    <div class="contact-section">
+        <div class="contact-info">
+            <div><i class="fas fa-map-marker-alt"></i>Narnia, Mexico,Cdmx</div>
+            <div><i class="fas fa-envelope"></i>2020sunburst.systems@gmail.com</div>
+            <div><i class="fas fa-phone"></i>5519378809</div>
+            <div><i class="fas fa-clock"></i>Mon - Fri 8:00 AM to 5:00 PM</div>
+        </div>
+        <div class="contact-form">
+            <h2>Contactame</h2>
+            <form class="contact" action="" method="post">
+                <input type="text" name="nombre" class="text-box" placeholder="Tu Nombre" required>
+                <input type="email" name="correo" class="text-box" placeholder="Tu Correo" required>
+                <textarea  type="text" name="mensaje" rows="5" placeholder="Tu Mensaje" required></textarea>
+          <input type="submit" name="submit" class="send-btn" value="Enviar">
+        </form>
+      </div>
+    </div>
+    <!--contact section end-->
+
+  </body>
+</html>

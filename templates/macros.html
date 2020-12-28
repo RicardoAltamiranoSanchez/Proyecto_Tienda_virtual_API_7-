@@ -1,0 +1,38 @@
+{%macro render_messages(messages)%}
+    {%with messages = get_flashed_messages(category_filter=["exito"])%}
+    {%if messages%}
+    <ul>
+        {%for message in messages%}
+        <li class="exito">{{message}} </li>
+        {%endfor%}
+    </ul>
+{%endif%}
+{%endwith%}
+{%with messages = get_flashed_messages(category_filter=["bienvenido"])%}
+    {%if messages%}
+    <ul>
+        {%for message in messages%}
+        <li class="bienvenido">{{message}} </li>
+        {%endfor%}
+    </ul>
+{%endif%}
+{%endwith%}
+{%with messages = get_flashed_messages(category_filter=["error"])%}
+    {%if messages%}
+    <ul>
+        {%for message in messages%}
+        <li class="error">{{message}} </li>
+        {%endfor%}
+    </ul>
+{%endif%}
+{%endwith%}
+{%with messages = get_flashed_messages(category_filter=["mensaje"])%}
+    {%if messages%}
+    <ul>
+        {%for message in messages%}
+        <li class="mensaje">{{message}} </li>
+        {%endfor%}
+    </ul>
+{%endif%}
+{%endwith%}
+{%endmacro%}

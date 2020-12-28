@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {% from "macros.html" import  render_messages %}
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+<link rel="stylesheet" href=" {{url_for('static',filename='css/macros.css')}}">
+</head>
+<body>
+  {{render_messages(messages)}}
+Menu principal
+</body>
+</html>
