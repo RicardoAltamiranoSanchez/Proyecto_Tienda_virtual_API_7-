@@ -1,4 +1,8 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="static/css/index.css">
@@ -6,6 +10,14 @@
     <link rel="stylesheet" href=" {{url_for('static',filename='css/inicio_duff.css')}}">
     <link rel="stylesheet" href=" {{url_for('static',filename='css/inicio_index.css')}}">
 
+</head>
+<body>
+{% from "macro_particulas.html" import particulas %}
+
+{% particulas () %}
 
 
-{%endmacro%}
+
+
+</body>
+</html>

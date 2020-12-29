@@ -1,29 +1,21 @@
-{%macro navegador()%}
-{% block content %}
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-
-            <a class="navbar-brand" href="#">Sistema de compra de tienda 3B putos</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-       <span class="navbar-toggler-icon"></span>
-     </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <i class="fas fa-home"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
+{% extends "index.html" %}
+{% block content%}
+    <header>
+        <a href="" class="brand">tiendas 3b</a>
+        <div class="menu">
+            <div class="btn">
+                <i class="fas fa-times close-btn"></i>
             </div>
+
+            <a class="nav-link" href="index.html">Home <i class="fas fa-home"></i></a>
+            <a class="nav-link" href="contacto.html">contacto</a>
+            <a class="nav-link" href="registro.html">Registrarse/Ingresar</a>
+
+
+
         </div>
-    </nav>
-{% endblock %}
-{%endmacro%}
+        <div class="btn">
+            <i class="fas fa-bars menu-btn"></i>
+        </div>
+    </header>
+{%endblock%}

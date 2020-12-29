@@ -43,12 +43,11 @@ app.config['MAIL_PORT']=587
 app.config['MAIL_USE_SSL']=False
 app.config['MAIL_USE_TLS']=True
 mail = Mail(app)
-#app.register_blueprint(login)
+app.register_blueprint(login)
 
 @app.route('/')#es un decorador para pedemor a donde vamos a envira la inforamcion
-@app.route('/index')
 def Inicio():
-    return render_template('index.html')
+    return render_template('macro_navegador.html')
 @app.route('/Registro', methods=['GET', 'POST'])
 def Registro():
     total_usuario = models.Usuario.query.count()
@@ -98,7 +97,8 @@ def Menu():
     if 'username' in session:  # Si el usaurio ya hizo dentro de la session in dentro
         flash(f"Bienvenido ", "bienvenido")
         return render_template('menu.html')
-    return redirect(url_for('Inicio'))
+    mensaje=flash("Debes Iniciar Sesion primeroo","error")
+    return redirect(url_for('Inicio',mensaje))
 @app.route('/Contacto',methods=['GET','POST'])
 def Contacto():
     if request.method == 'POST':
@@ -117,7 +117,7 @@ def Contacto():
         return redirect(url_for("Inicio"))
     else:
         flash("No se puedo enviar el correo", "error")
-        return render_template("contacto.html")
+        return redirect(url_for("Inicio"))
     return ("contacto.html")
 
     return render_template('contacto.html')
