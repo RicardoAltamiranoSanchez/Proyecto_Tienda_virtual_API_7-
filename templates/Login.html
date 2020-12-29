@@ -18,8 +18,11 @@
     {% from "macros.html" import  render_messages %}
     <link rel="stylesheet" href=" {{url_for('static',filename='css/macros.css')}}">
 
+    {% from "macro_navegador.html" import  navegador %}
+
 </head>
 <body>
+   {{ navegador()}}
   {{  render_messages(messages)}}
    <h3>total de usuario {{total_usuario}}</h3>
     <main>
@@ -42,7 +45,7 @@
             </div>
             <div class="contenedor__login-register">
 
-                <form method="post" class="formulario__login"name="Iniciar_sesion">
+                <form method="post"action="/Login" class="formulario__login"name="Iniciar_sesion">
                     <h2>
                         Iniciar Sesion
                     </h2>
@@ -53,11 +56,12 @@
                     <button type="submit"> Entrar
                     </button>
                 </form>
-                <form method="post" class="formulario__register"name="registro">
+                <form method="post"action="/Registro" class="formulario__register"id="registro">
 
                     <h2>
                         Registrarse
                     </h2>
+
                      <input type="text" placeholder="Nombre"  name="nombre"required >
                     <input type="text" placeholder="Apellido" name="apellido"required >
                     <input type="email" placeholder="Correo Electronico" name="correo"required>

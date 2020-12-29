@@ -3,8 +3,8 @@ import app
 from werkzeug.security import generate_password_hash
 import datetime
 
-class Usuario(app.db.Model):#Creamo la clase modelo para la base de datos funcion model
-    id=app.db.Column(app.db.Integer, primary_key=True)#para crear las columnas en la base de datos
+class Usuario(app.db.Model):#Creamo la clase modelo para la macros de datos funcion model
+    id=app.db.Column(app.db.Integer, primary_key=True)#para crear las columnas en la macros de datos
     nombre=app.db.Column(app.db.String(255))
     apellido=app.db.Column(app.db.String(255))
     correo=app.db.Column(app.db.String(255))

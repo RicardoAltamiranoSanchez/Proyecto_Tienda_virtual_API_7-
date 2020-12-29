@@ -1,17 +1,22 @@
+import os
+
+import jinja2
 from flask import Flask, render_template, request, url_for, session, flash,jsonify
 from database import db
 from forms import Usuario_form
 import models
 from flask_mail import Mail, Message
 from itsdangerous import URLSafeTimedSerializer, SignatureExpired
-
+from Login import login
 
 from flask_migrate import Migrate
 from werkzeug.utils import redirect
 app=Flask(__name__)
-
+#jinja_env=jinja2.Environment(loader=jinja2.FileSystemLoader('template'))
+#template=jinja_env.get_template('content.html')
+#template.render('index.html')
 app.config.from_object(__name__)
-#Configuracion para la base de datos
+#Configuracion para la macros de datos
 USER_DB='postgres'
 PASS_DB='admin'
 URL_DB='localhost'
@@ -32,54 +37,43 @@ s = URLSafeTimedSerializer('Thisisasecret!')
 
 app.config['SECRET_KEY']='llave_maestra'
 app.config['MAIL_SERVER']= 'smtp.gmail.com'
-app.config['MAIL_USERNAME']='2020sunburst.systems@gmail.com'
-app.config['MAIL_PASSWORD']="septimogrado"
+app.config['MAIL_USERNAME'] = os.environ.get('EMAIL_USER', '2020sunburst.systems@gmail.com')
+app.config['MAIL_PASSWORD'] = os.environ.get('EMAIL_PASS', 'septimogrado')
 app.config['MAIL_PORT']=587
 app.config['MAIL_USE_SSL']=False
 app.config['MAIL_USE_TLS']=True
 mail = Mail(app)
+#app.register_blueprint(login)
+
 @app.route('/')#es un decorador para pedemor a donde vamos a envira la inforamcion
+@app.route('/index')
 def Inicio():
-    if 'username' in session:#Si el usaurio ya hizo dentro de la session in dentro
-        return "<h1>ya hecho login<h1>"
-    return "<h1>no hecho login <h1>"
+    return render_template('index.html')
 @app.route('/Registro', methods=['GET', 'POST'])
 def Registro():
     total_usuario = models.Usuario.query.count()
-
     if request.method=='POST':
-        email = request.form['correo']
-        token = s.dumps(email, salt='email-confirm')
-        msg = Message('Confirmacioin de Correo Electronico', sender=' altamiranoricardo546@gmail.com ',
-                      recipients=[email])
+            if models.Usuario.query.filter_by(correo=request.form['correo']).first() is None:
+                if models.Usuario.query.filter_by(contrasenia=request.form['usuario']).first() is None:
 
-        link = url_for('confirm_email', token=token, _external=True)
+                            u = models.Usuario(nombre=request.form['nombre'],
+                                      apellido=request.form['apellido'],
+                                      correo=request.form['correo'],
+                                      usuario=request.form['usuario'],
+                                      contrasenia=request.form['password'], )
+                            app.logger.info(f'entrando ala consola {request.path}')
+                            db.session.add(u)
+                            db.session.commit()
+                            flash("Registro Exitoso", "exito")
+                            app.logger.info(f'entrando ala consola {request.path}')
+                            return redirect(url_for("Registro"))
 
-        msg.body = 'Hola {}{} Este es tu enlace de confirmacion {}'.format(request.form['nombre'],request.form['apellido'],link)
+                else:
+                     flash(f"Nombre de usuario ocupado {request.form['usuario']}", "info")
 
-        mail.send(msg)
-        usuario_nuevo=models.Usuario(nombre=request.form['nombre'],
-                       apellido=request.form['apellido'],
-                       correo=request.form['correo'],
-                       usuario=request.form['usuario'],
-                        contrasenia=request.form['password'], )
-
-        app.logger.info(f'entrando ala consola {request.path}')
-
-
-        db.session.add(usuario_nuevo)
-
-        db.session.commit()
-        flash('Registro Exitoso', "exito")
-
-
-
-    app.logger.info(f'entrando ala consola {request.path}')
-
-    return render_template('base.html',total_usuario=total_usuario)
-
-
-
+            else:
+                flash(f"Ya tienes una cuenta con este correo {request.form['correo']}","info")
+    return render_template('Registro.html',total_usuario=total_usuario)
 
 
 @app.route('/confirm_email/<token>')
@@ -107,23 +101,31 @@ def Menu():
     return redirect(url_for('Inicio'))
 @app.route('/Contacto',methods=['GET','POST'])
 def Contacto():
+    if request.method == 'POST':
 
-        if request.method=="¨POST":
-           mensaje=request.form['mensaje']
-           msg=Message("puto",
-                    sender=app.config['MAIL_USERNAME'],
-                    recipients="altamiranoricardo546@gmail.com")
-           print(msg)
-           mail.send(msg)
+        nombre = request.form['nombre']
+        correo = request.form['correo']
+        mensaje = request.form['mensaje']
+        msg = Message( subject=f"Sunburts Contactame:{nombre}", body=f"Nombre:{nombre}\nCorreo: {correo}\n\n\n{mensaje}",
+            sender=app.config['MAIL_USERNAME'],
+            recipients=[app.config['MAIL_USERNAME']])
+        app.logger.info(msg)
+        mail.send(msg)
+        flash("Mensaje enviado con exito", "mensaje")
 
-        flash("Error","error")
+
+        return redirect(url_for("Inicio"))
+    else:
+        flash("No se puedo enviar el correo", "error")
         return render_template("contacto.html")
+    return ("contacto.html")
 
+    return render_template('contacto.html')
 @app.errorhandler(404)
 def Pagina_no_encontrada(e):
     return render_template('404.html'),404
 
 if __name__=='__main__':
-    app.run(debug=True,port=5000)
+    app.run(debug=True,port=5000,host=0000)
 
 

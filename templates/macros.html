@@ -35,4 +35,13 @@
     </ul>
 {%endif%}
 {%endwith%}
+{%with messages = get_flashed_messages(category_filter=["info"])%}
+    {%if messages%}
+    <ul>
+        {%for message in messages%}
+        <li class="info">{{message}} </li>
+        {%endfor%}
+    </ul>
+{%endif%}
+{%endwith%}
 {%endmacro%}
