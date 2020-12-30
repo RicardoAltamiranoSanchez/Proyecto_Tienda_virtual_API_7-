@@ -1,0 +1,54 @@
+{% macro a()%}
+
+       <main>
+            <div class="contenedor__todo">
+                <div class="caja__trasera">
+                    <div class="caja__trasera_login">
+                        <h3>
+                            ¿Ya tienes Cuenta?
+                        </h3>
+                        <p>Iniciar sesion para entrar ala pagina</p>
+                        <button id="btn__iniciar-sesion">Iniciar sesion</button>
+                    </div>
+                    <div class="caja__trasera_register">
+                        <h3>
+                            ¿Aun no tienes cuenta?
+                        </h3>
+                        <p>Registrarse para iniciar sesion</p>
+                        <button id="btn__registrarse">registrarse</button>
+                    </div>
+                </div>
+                <div class="contenedor__login-register">
+
+                    <form method="post" action="/Login" class="formulario__login" name="Iniciar_sesion">
+                        <h2>
+                            Iniciar Sesion
+                        </h2>
+
+                        <input type="email" placeholder="Correo Electronico" name="login_correo">
+                        <input type="password" placeholder="Contraseña" name="login_password">
+
+                        <button type="submit"> Entrar
+                    </button>
+                    </form>
+                    <form method="post" action="/Registro" class="formulario__register" id="registro">
+
+                        <h2>
+                            Registrarse
+                        </h2>
+
+                        <input type="text" placeholder="Nombre" name="nombre" required>
+                        <input type="text" placeholder="Apellido" name="apellido" required>
+                        <input type="email" placeholder="Correo Electronico" name="correo" required>
+                        <input type="text" placeholder="Usuario " name="usuario" required>
+                        <input type="password" placeholder="Contraseña" name="password" required>
+                        <button type="submit" name="registro">Registrarse</button>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+
+{%endmacro%}
+
+
