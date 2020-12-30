@@ -1,129 +1,17 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+{% extends "base.html" %}
+{% block title %}Contacto{% endblock %}
+{% block head %}
+    {{ super() }}
+<link rel="stylesheet" href=" {{url_for('static',filename='css/contacto_contacto_oficial.css')}}">
+<link rel="shortcut icon" href="{{url_for('static',filename='img/logo.ico')}}">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
-    <link rel="icon" href="static/img/logo.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href=" {{url_for('static',filename='css/inicio_navegador_oficial.css')}}">
-    <link rel="stylesheet" href=" {{url_for('static',filename='css/inicio_duff.css')}}">
-    <link rel="stylesheet" href=" {{url_for('static',filename='css/contacto_contacto_oficial.css')}}">
+{% endblock %}
 
-    <link rel="stylesheet" href="static/css/contactoficial.css">
-
-</head>
-
-<body>
+{% block info%}
+{%from "prueba.html" import info%}
+{{info()}}
+{%endblock%}
 
 
-    <div id="particles-js"></div>
-
-    <!-- scripts -->
-<script type="text/javascript" src=" {{url_for('static',filename='js/particulas.js')}}"></script>
-<script type="text/javascript" src=" {{url_for('static',filename='js/particulas_app.js')}}"></script>
 
 
-    <!-- stats.js -->
-    <script>
-        var count_particles, stats, update;
-        stats = new Stats;
-        stats.setMode(0);
-        stats.domElement.style.position = 'absolute';
-        stats.domElement.style.left = '0px';
-        stats.domElement.style.top = '0px';
-        document.body.appendChild(stats.domElement);
-        count_particles = document.querySelector('.js-count-particles');
-        update = function() {
-            stats.begin();
-            stats.end();
-            if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-                count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-            }
-            requestAnimationFrame(update);
-        };
-        requestAnimationFrame(update);
-    </script>
-    <header>
-        <a href="index.html" class="brand">tiendas 3b</a>
-        <div class="menu">
-            <div class="btn">
-                <i class="fas fa-times close-btn"></i>
-            </div>
-            <a class="nav-link" href="index.html">Home <i class="fas fa-home"></i></a>
-            <a class="nav-link" href="contacto.html">contacto</a>
-            <a class="nav-link" href="registro.html">Registrarse/Ingresar</a>
-
-        </div>
-        <div class="btn">
-            <i class="fas fa-bars menu-btn"></i>
-        </div>
-    </header>
-    <section class="section-main">
-
-        <div class="contact-section">
-            <div class="contact-info">
-                <div><i class="fas fa-map-marker-alt"></i>Rio Danubio 51 Cuauhtemoc 06500 Cuauhtemoc</div>
-                <div><i class="fas fa-envelope"></i>2020sunburst.systems@gmail.com</div>
-                <div><i class="fas fa-phone"></i>5529402064</div>
-                <div><i class="fas fa-clock"></i>Lunes-Viernes 11:00 AM a 9:00 PM</div>
-            </div>
-            <div class="contact-form">
-                <h2>Contact Us</h2>
-
-                    <form class="contact" action="/Contacto" method="post">
-                    <input type="text" name="nombre" class="text-box" placeholder="Tu Nombre" required>
-                    <input type="email" name="correo" class="text-box" placeholder="Tu Correo" required>
-                    <textarea name="mensaje" rows="5" placeholder="Escriba su mensaje" required></textarea>
-
-                   <input type="submit" name="submit" class="send-btn" value="Enviar">
-                </form>
-
-          </div>
-        </div>
-
-    </section>
-    <section class="section-two">
-
-            <a href="contacto.html" ><h2>contactanos</h2>
-             <img src="static/img/contacto0.jpg" width="70%">
-            </a>
-             <img src="static/img/redes.png" width="50%" >
-             <div id="redes">
-                    <a href="https://twitter.com/tiendas3b/" target="blank"><img src="static/img/twitter.png"></a>
-                    <a href="https://www.facebook.com/Tiendas3B/" target="blank"><img src="static/img/facebook.png"></a>
-                    <a href="https://www.youtube.com/user/Tiendas3BBB" target="blank"><img src="static/img/youtube.png"></a>
-                    <a href="https://mx.linkedin.com/company/tiendas3b/" target="blank"><img src="static/img/linkedin.png"></a>
-            </div>
-            <br>
-            <div id="des">
-                <a href="portafolioequipo.html" target="blank" ><h4>SOBRE<br>DESARROLLADORES</h4></a>
-            </div>
-
-    </section>
-
-    <script type="text/javascript">
-        //javascript for navigation bar effect on scroll
-        window.addEventListener("scroll", function() {
-            var header = document.querySelector("header");
-            header.classList.toggle('sticky', window.scrollY > 0);
-        });
-
-        //javascript for responsive navigation sidebar menu
-        var menu = document.querySelector('.menu');
-        var menuBtn = document.querySelector('.menu-btn');
-        var closeBtn = document.querySelector('.close-btn');
-
-        menuBtn.addEventListener("click", () => {
-            menu.classList.add('active');
-        });
-
-        closeBtn.addEventListener("click", () => {
-            menu.classList.remove('active');
-        });
-    </script>
-
-</body>
-
-</html>

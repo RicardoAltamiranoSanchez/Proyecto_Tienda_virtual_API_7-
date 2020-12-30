@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    {% block head %}
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title >{% block title %}{% endblock %}-Tienda3B </title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/inicio_navegador_oficial.css')}}">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/inicio_duff.css')}}">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/inicio_index.css')}}">
+    {%endblock %}
+
+</head>
+
+<body>
+
+
+    <header>
+        <a href="" class="brand">tiendas 3b</a>
+        <div class="menu">
+            <div class="btn">
+                <i class="fas fa-times close-btn"></i>
+            </div>
+
+            <a class="nav-link"  href="{{url_for('Casa')}}">Casa<i class="fas fa-home"></i></a>
+            <a class="nav-link"  href="{{url_for('Contacto')}}">contacto</a>
+            <a class="nav-link" href={{url_for('Registro')}}>Registrarse/Ingresar</a>
+
+
+
+        </div>
+        <div class="btn">
+            <i class="fas fa-bars menu-btn"></i>
+        </div>
+    </header>
+     {%block index%} {%endblock%}
+
+
+    <section class="section-main">
+        {%block info%}
+        {%endblock%}
+    </div>
+    <main background="https://s1.1zoom.me/b4343/36/Wine_Bottle_542636_1366x768.jpg">
+
+        <div id="body" class="slider">
+        <a class="nav-link" href="fruta.html">
+            <div id="bodyy" class="slider">
+
+{% block fruta  %}
+
+{% endblock %}
+
+            </div>
+        </a>
+        </div>
+        <div id="body0" class="slider">
+        <a class="nav-link" href="enlatados.html">
+
+{% block enlatados %}
+
+{% endblock %}
+        </a>
+        </div>
+        <div id="body1" class="slider">
+        <a class= "nav-link" href="botana.html">
+
+{% block botanas %}
+
+{% endblock %}
+        </a>
+
+
+        </div>
+        <div id="body2" class="slider">
+            <a class="nav-link" href="refrescos.html">
+
+{% block refrescos  %}
+
+{% endblock %}
+            </a>
+            </div>
+            <div id="body3" class="slider">
+                <a class="nav-link" href="licor.html">
+
+{% block licores  %}
+
+{% endblock %}
+                </a>
+                </div>
+
+    </main>
+    </section>
+    <section class="section-two">
+        <section class="section-two">
+
+<a href="contacto.html" ><h2>contactanos</h2>
+                 <img src="static/img/contacto0.jpg" width="70%">
+                </a>
+                 <img src="static/img/redes.png" width="50%" >
+
+                 <div id="redes">
+                        <a href="https://twitter.com/tiendas3b/" target="blank"><img src="static/img/twitter.png"></a>
+                        <a href="https://www.facebook.com/Tiendas3B/" target="blank"><img src="static/img/facebook.png"></a>
+                        <a href="https://www.youtube.com/user/Tiendas3BBB" target="blank"><img src="static/img/youtube.png"></a>
+                        <a href="https://mx.linkedin.com/company/tiendas3b/" target="blank"><img src="static/img/linkedin.png"></a>
+                </div>  <br>
+                <div id="des">
+                    <a href="portafolioequipo.html" target="blank" ><h4>SOBRE<br>DESARROLLADORES</h4></a>
+                </div>
+            </section>
+
+    <script type="text/javascript">
+        //javascript for navigation bar effect on scroll
+        window.addEventListener("scroll", function() {
+            var header = document.querySelector("header");
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+
+        //javascript for responsive navigation sidebar menu
+        var menu = document.querySelector('.menu');
+        var menuBtn = document.querySelector('.menu-btn');
+        var closeBtn = document.querySelector('.close-btn');
+
+        menuBtn.addEventListener("click", () => {
+            menu.classList.add('active');
+        });
+
+        closeBtn.addEventListener("click", () => {
+            menu.classList.remove('active');
+        });
+    </script>
+    </section>
+</body>
+
+</html>

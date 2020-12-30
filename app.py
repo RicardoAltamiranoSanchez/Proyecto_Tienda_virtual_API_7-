@@ -1,7 +1,7 @@
 import os
 
 import jinja2
-from flask import Flask, render_template, request, url_for, session, flash,jsonify
+from flask import Flask, render_template, request, url_for, session, flash, jsonify, send_from_directory
 from database import db
 from forms import Usuario_form
 import models
@@ -44,10 +44,9 @@ app.config['MAIL_USE_SSL']=False
 app.config['MAIL_USE_TLS']=True
 mail = Mail(app)
 app.register_blueprint(login)
-
 @app.route('/')#es un decorador para pedemor a donde vamos a envira la inforamcion
 def Inicio():
-    return render_template('macro_navegador.html')
+    return render_template('index.html')
 @app.route('/Registro', methods=['GET', 'POST'])
 def Registro():
     total_usuario = models.Usuario.query.count()
@@ -117,10 +116,13 @@ def Contacto():
         return redirect(url_for("Inicio"))
     else:
         flash("No se puedo enviar el correo", "error")
-        return redirect(url_for("Inicio"))
-    return ("contacto.html")
+        #return redirect(url_for("Inicio"))
+        #return ("contacto.html")
 
     return render_template('contacto.html')
+@app.route('/Casa')
+def Casa():
+    return render_template('Home.html')
 @app.errorhandler(404)
 def Pagina_no_encontrada(e):
     return render_template('404.html'),404

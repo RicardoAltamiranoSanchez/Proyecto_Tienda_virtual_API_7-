@@ -102,3 +102,21 @@ def Inicio():
     if 'username' in session:#Si el usaurio ya hizo dentro de la session in dentro
         return "<h1>ya hecho login<h1>"
     return "<h1>no hecho login <h1>"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@app.route("/logo.ico")
+def favicon():
+	return send_from_directory(os.path.join(app.root_path, 'static'),'img/logo.ico',mimetype='image/vnd.microsof.icon')
