@@ -1,6 +1,23 @@
 
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    {% block head %}
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title >{% block title %}{% endblock %}-Tienda3B </title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/inicio_navegador_oficial.css')}}">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/inicio_duff.css')}}">
+    {%endblock %}
+
+</head>
 
 <body>
+<p>Total de usuarios en la base de datos {{total_usuario}}</p>
 
     <header>
         <a href="" class="brand">tiendas 3b</a>
@@ -8,10 +25,9 @@
             <div class="btn">
                 <i class="fas fa-times close-btn"></i>
             </div>
-            <a class="nav-link" href="index.html">Home <i class="fas fa-home"></i></a>
-            <a class="nav-link" href="contacto.html">contacto</a>
-            <a class="nav-link" href="registro.html">Registrarse/Ingresar</a>
-
+               <a class="nav-link"  href="{{url_for('Casa')}}">Casa<i class="fas fa-home"></i></a>
+            <a class="nav-link"  href="{{url_for('Contacto')}}">contacto<i class="fas fa-envelope"></i> </a>
+            <a class="nav-link" href="{{url_for('Registro')}}">Registrarse/Ingresar<i class="fas fa-brain  "></i></a>
         </div>
         <div class="btn">
             <i class="fas fa-bars menu-btn"></i>
@@ -19,7 +35,10 @@
     </header>
     <section class="section-main">
 
-
+{%block registro%}
+{%endblock%}
+{%block login%}
+{%endblock%}
 
 
         <script src="static/js/script.js "></script>
@@ -67,7 +86,9 @@
             });
         </script>
         <script src="static/js/script.js "></script>
+        <script type="text/javascript" src=" {{url_for('static',filename='js/Login_registro.js')}}"></script>
 
+    </section>
 </body>
 
 </html>

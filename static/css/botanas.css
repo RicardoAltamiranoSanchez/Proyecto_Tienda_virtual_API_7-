@@ -1,0 +1,83 @@
+
+
+body{
+
+    font-family: sans-serif;
+    padding-top: auto;
+    transition: padding-top 0.5s ease;
+    background: url(https://i.pinimg.com/originals/1b/ea/9a/1bea9ae6180714e0a64f6e3d3790ccd9.jpg);
+     background-size: 100%;
+
+
+}
+
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+.container .card{
+    width: 250px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 2px 2px rgba(2, 40, 255, 0.808);
+
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s ;
+
+}
+
+.container .card:hover{
+    transform:translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0 ,0 ,0 ,0.2);
+}
+
+.container .card img{
+    width: 110px;
+    height: 150px;
+}
+
+.container .card h4{
+    line-height: auto;
+     color: white;
+
+     padding:0;
+     border-radius: 100px;
+     border: none;
+     text-align: center;
+     font-size: 16px;
+     background-color: teal;
+ }
+
+ .container .card a{
+     width: auto;
+     height: auto;
+     line-height: 40px;
+     color: white;
+     background: rgb(3, 3, 3);
+     padding: 0 20px;
+     border-radius: 100px;
+     border: none;
+     text-align: center;
+     font-size: 16px;
+ }
+
+ .container .card input{
+     width: auto;
+     height: auto;
+     line-height: 40px;
+     color: white;
+     background: rgb(3, 3, 3);
+     padding: 0 20px;
+     border-radius: 100px;
+     border: none;
+     text-align: center;
+     font-size: 16px;
+ }

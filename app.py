@@ -123,6 +123,35 @@ def Contacto():
 @app.route('/Casa')
 def Casa():
     return render_template('Home.html')
+@app.route('/Demo')
+def Demo():
+    return render_template('demo.html')
+
+@app.route('/Frutas')
+def Frutas():
+    return render_template('frutas.html')
+
+@app.route('/Enlatados')
+def Enlatados():
+    return render_template('demo_enlatados.html')
+
+@app.route('/Botanas')
+def Botanas():
+    return render_template('demo_botanas.html')
+
+
+@app.route('/Refrescos')
+def Refrescos():
+    return render_template('demo_refrescos.html')
+
+@app.route('/Licores')
+def Licores():
+    return render_template('demo_licores.html')
+@app.route('/Portafolio')
+def Portafolio():
+    return render_template('portafolio.html')
+
+
 @app.errorhandler(404)
 def Pagina_no_encontrada(e):
     return render_template('404.html'),404

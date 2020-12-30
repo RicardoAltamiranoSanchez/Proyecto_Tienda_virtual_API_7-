@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href=" {{url_for('static',filename='css/inicio_navegador_oficial.css')}}">
     <link rel="stylesheet" href=" {{url_for('static',filename='css/inicio_duff.css')}}">
+
     {%endblock %}
 
 </head>
@@ -26,8 +27,10 @@
             </div>
 
             <a class="nav-link"  href="{{url_for('Casa')}}">Casa<i class="fas fa-home"></i></a>
-            <a class="nav-link"  href="{{url_for('Contacto')}}">contacto</a>
-            <a class="nav-link" href={{url_for('Registro')}}>Registrarse/Ingresar</a>
+            <a class="nav-link"  href="{{url_for('Contacto')}}">contacto<i class="fas fa-envelope"></i> </a>
+            <a class="nav-link" href="{{url_for('Registro')}}">Registrarse/Ingresar<i class="fas fa-brain  "></i></a>
+            <a class="nav-link" href="/#about">About<i class="fas fa-building"></i></a>
+
 
 
 
@@ -49,8 +52,8 @@
     <main background="https://s1.1zoom.me/b4343/36/Wine_Bottle_542636_1366x768.jpg">
 
         <div id="body" class="slider">
-        <a class="nav-link" href="fruta.html">
-            <div id="bodyy" class="slider">
+        <a class="nav-link" href="{{url_for('Frutas')}}">
+            <div id="body9" class="slider" >
 
 {% block fruta  %}
 
@@ -60,7 +63,7 @@
         </a>
         </div>
         <div id="body0" class="slider">
-        <a class="nav-link" href="enlatados.html">
+        <a class="nav-link" href="{{url_for('Enlatados')}}">
 
 {% block enlatados %}
 
@@ -68,17 +71,16 @@
         </a>
         </div>
         <div id="body1" class="slider">
-        <a class= "nav-link" href="botana.html">
+        <a class= "nav-link" href="{{url_for('Botanas')}}">
 
 {% block botanas %}
-
 {% endblock %}
         </a>
 
 
         </div>
         <div id="body2" class="slider">
-            <a class="nav-link" href="refrescos.html">
+            <a class="nav-link" href="{{url_for('Refrescos')}}">
 
 {% block refrescos  %}
 
@@ -86,7 +88,7 @@
             </a>
             </div>
             <div id="body3" class="slider">
-                <a class="nav-link" href="licor.html">
+                <a class="nav-link" href="{{url_for('Licores')}}">
 
 {% block licores  %}
 
@@ -97,7 +99,7 @@
     </main>
     </section>
     <section class="section-two">
-        <section class="section-two">
+        <section class="section-two"id="about">
 
 <a href="contacto.html" ><h2>contactanos</h2>
                  <img src="static/img/contacto0.jpg" width="70%">
@@ -111,9 +113,16 @@
                         <a href="https://mx.linkedin.com/company/tiendas3b/" target="blank"><img src="static/img/linkedin.png"></a>
                 </div>  <br>
                 <div id="des">
-                    <a href="portafolioequipo.html" target="blank" ><h4>SOBRE<br>DESARROLLADORES</h4></a>
+                    <a href="{{url_for('Portafolio')}}" target="blank" ><h4>SOBRE<br>DESARROLLADORES</h4></a>
                 </div>
+            <derechos class="text-white text-center p-2 ">
+        <p class="h5 ">UPEM 2021 &copy;</p>
+        <p class="h5 ">Proyecto Ingenieria de Software&copy;</p>
+
+    </derechos>
+</footer>
             </section>
+
 
     <script type="text/javascript">
         //javascript for navigation bar effect on scroll

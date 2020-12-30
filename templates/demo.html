@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    {% block head %}
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title >{% block title %}{% endblock %}-Muestra3B </title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/inicio_navegador_oficial.css')}}">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/inicio_duff.css')}}">
+    {%endblock %}
+
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="brand">tiendas 3b</a>
+        <div class="menu">
+            <div class="btn">
+                <i class="fas fa-times close-btn"></i>
+            </div>
+          <a class="nav-link"  href="{{url_for('Casa')}}">Casa<i class="fas fa-home"></i></a>
+            <a class="nav-link"  href="{{url_for('Contacto')}}">contacto<i class="fas fa-envelope"></i> </a>
+            <a class="nav-link" href="{{url_for('Registro')}}">Registrarse/Ingresar<i class="fas fa-brain  "></i></a>
+        </div>
+        <div class="btn">
+            <i class="fas fa-bars menu-btn"></i>
+        </div>
+    </header>
+    <section class="section-main">
+        {%block demo_frutas%}
+        {%endblock%}
+        {%block demo_enlatados%}
+        {%endblock%}
+        {%block demo_refrescos%}
+        {%endblock%}
+
+    </section>
+
+
+    <script type="text/javascript">
+        //javascript for navigation bar effect on scroll
+        window.addEventListener("scroll", function() {
+            var header = document.querySelector("header");
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+
+        //javascript for responsive navigation sidebar menu
+        var menu = document.querySelector('.menu');
+        var menuBtn = document.querySelector('.menu-btn');
+        var closeBtn = document.querySelector('.close-btn');
+
+        menuBtn.addEventListener("click", () => {
+            menu.classList.add('active');
+        });
+
+        closeBtn.addEventListener("click", () => {
+            menu.classList.remove('active');
+        });
+    </script>
+
+</body>
+
+</html>

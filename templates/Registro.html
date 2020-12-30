@@ -7,11 +7,11 @@
 
     {{ super() }}
 {% endblock %}
-
+{from "macros.html" import mensajes}
+{{mensajes()}}
 {% block registro%}
-
-{% from "a.html" import a %}
-{{a()}}
+{% from "registro_macro.html" import registro %}
+{{registro()}}
 
 
 {% endblock %}
