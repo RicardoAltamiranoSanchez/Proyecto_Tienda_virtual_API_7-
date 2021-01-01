@@ -58,4 +58,4 @@ def Iniciar_Sesion():
          else:
             flash('Verifique bien sus credenciales', "error") # hacemos mensaje flask para decirle que no tien cuenta
 
-    return render_template('Login.html',)
+    return render_template('Login.html',total_usuario=total_usuario)

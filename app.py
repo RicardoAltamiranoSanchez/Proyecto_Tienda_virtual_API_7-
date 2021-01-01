@@ -54,19 +54,16 @@ def Registro():
     if request.method=='POST':
             if models.Usuario.query.filter_by(correo=request.form['correo']).first() is None:
                 if models.Usuario.query.filter_by(contrasenia=request.form['usuario']).first() is None:
+                    email = request.form['correo']
+                    token = s.dumps(email, salt='email-confirm')
+                    msg = Message('Confirmacioin de Correo Electronico', sender=' altamiranoricardo546@gmail.com ',
+                                  recipients=[email])
 
-                            u = models.Usuario(nombre=request.form['nombre'],
-                                      apellido=request.form['apellido'],
-                                      correo=request.form['correo'],
-                                      usuario=request.form['usuario'],
-                                      contrasenia=request.form['password'], )
-                            app.logger.info(f'entrando ala consola {request.path}')
-                            db.session.add(u)
-                            db.session.commit()
-                            flash("Registro Exitoso", "exito")
-                            app.logger.info(f'entrando ala consola {request.path}')
-                            return redirect(url_for("Registro"))
-
+                    link = url_for('confirm_email', token=token, _external=True)
+                    msg.body = 'Hola {}{} Este es tu enlace de confirmacion {}'.format(request.form['nombre'],
+                                                                                       request.form['apellido'], link)
+                    mail.send(msg)
+                    return '<h1> Rebice su bandeja de entrada de su correo para confirmacion</h1>'
                 else:
                      flash(f"Nombre de usuario ocupado {request.form['usuario']}", "info")
 
@@ -81,8 +78,18 @@ def confirm_email(token):
       try:
          email= s.loads(token, salt='email-confirm', max_age=3600)
       except SignatureExpired:
-           return '<h1>Tu Token expiro!</h1>'
-      return'<h1>Token confirmado!</h1>'
+           return '<h1>Tu token ya expiro!</h1>'
+      u = models.Usuario(nombre=request.form['nombre'],
+                         apellido=request.form['apellido'],
+                         correo=request.form['correo'],
+                         usuario=request.form['usuario'],
+                         contrasenia=request.form['password'], )
+      app.logger.info(f'entrando ala consola {request.path}')
+      db.session.add(u)
+      db.session.commit()
+      flash("Registro Exitoso", "exito")
+      app.logger.info(f'entrando ala consola {request.path}')
+      return '<h1> token confirmado <h1>'
 
 @app.route('/Salir',methods=['GET','POST'])
 def Salir():
