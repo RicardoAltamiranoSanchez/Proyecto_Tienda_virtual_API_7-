@@ -1,5 +1,7 @@
 import flask
 from flask import Flask, render_template, request, url_for, session, flash,jsonify
+from werkzeug.security import check_password_hash
+
 from database import db
 from forms import Usuario_form
 import models
@@ -41,22 +43,19 @@ app.config['MAIL_USE_TLS']=True
 mail = Mail(app)
 
 login=flask.Blueprint('login',__name__)
-
 @login.route('/Login', methods=['GET', 'POST'])
 def Iniciar_Sesion():
     total_usuario = models.Usuario.query.count()
     if request.method == 'POST':  # decimos si es metodo es post
-
-        if models.Usuario.query.filter_by(correo=request.form['login_correo']).first() and \
-                models.Usuario.query.filter_by(contrasenia=request.form['login_password']).first():
-            usuario = request.form['login_correo']  # obtenemos la informacion del form registrada con corchetes de array
-            session['username'] = usuario
+         user=models.Usuario.query.filter_by(correo=request.form['login_correo']).first()
+         if user and check_password_hash(user.contrasenia,request.form['login_password']):
+            session['nombre'] = user.nombre
+            session['apellido']=user.apellido
             app.logger.info(f'entrando ala consola {request.path}')
             flash('Login Correcto', "exito")
-            return redirect(url_for('Bienvenido'))  # volvemos al inicio
-
+            return redirect(url_for('Bienvenido',))  # volvemos al inicio
             app.logger.info(session['username'])
-        else:
-            flash('Verifique bien sus credenciales', "error")  # hacemos mensaje flask para decirle que no tien cuenta
+         else:
+            flash('Verifique bien sus credenciales', "error") # hacemos mensaje flask para decirle que no tien cuenta
 
-    return render_template('Login.html',total_usuario=total_usuario)
+    return render_template('Login.html',)

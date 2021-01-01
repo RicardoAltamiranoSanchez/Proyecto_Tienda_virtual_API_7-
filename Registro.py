@@ -129,3 +129,22 @@ rel = "shortcut icon"
 herf = " {{url_for('static',filename='img/logo.ico')}}" >
 < img
 src = " {{url_for('static',filename='img/logo.ico')}}" >
+
+@login.route('/Login', methods=['GET', 'POST'])
+def Iniciar_Sesion():
+    total_usuario = models.Usuario.query.count()
+    if request.method == 'POST':  # decimos si es metodo es post
+
+        if models.Usuario.query.filter_by(correo=request.form['login_correo']).first() and \
+                models.Usuario.query.filter_by(contrasenia=request.form['login_password']).first():
+            usuario = request.form['login_correo']  # obtenemos la informacion del form registrada con corchetes de array
+            session['username'] = usuario
+            app.logger.info(f'entrando ala consola {request.path}')
+            flash('Login Correcto', "exito")
+            return redirect(url_for('Bienvenido'))  # volvemos al inicio
+
+            app.logger.info(session['username'])
+        else:
+            flash('Verifique bien sus credenciales', "error")  # hacemos mensaje flask para decirle que no tien cuenta
+
+    return render_template('Login.html',total_usuario=total_usuario)

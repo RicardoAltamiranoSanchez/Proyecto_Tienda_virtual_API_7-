@@ -88,20 +88,14 @@ def confirm_email(token):
 def Salir():
     if request.method=='POST':
        comentario=request.form["comentario"]
-       session.pop('username')
+       session.pop('nombre')
        return redirect(url_for('Inicio'))
     return render_template('Salir.html')
 @app.route('/Bienvenido')
 def Bienvenido():
     pass
     return render_template('bienvenido.html')
-@app.route('/Menu')
-def Menu():
-    if 'username' in session:  # Si el usaurio ya hizo dentro de la session in dentro
-        flash(f"Bienvenido ", "bienvenido")
-        return render_template('menu.html')
-    mensaje=flash("Debes Iniciar Sesion primeroo","error")
-    return redirect(url_for('Inicio'))
+
 @app.route('/Contacto',methods=['GET','POST'])
 def Contacto():
     if request.method == 'POST':
@@ -151,12 +145,28 @@ def Licores():
 @app.route('/Portafolio')
 def Portafolio():
     return render_template('portafolio.html')
+@app.route('/session')
+
+@app.route('/Base')
+def Base():
+    if 'nombre' in session:  # Si el usaurio ya hizo dentro de la session in dentro
+        nombre2 = session['nombre']
+        apellido2 = session['apellido']
+        return render_template('base_usuario.html', nombre=nombre2, apellido=apellido2)
 @app.route('/Cliente')
 def Usuario_index():
-    return render_template('usuario_index.html')
+    if 'nombre' in session:  # Si el usaurio ya hizo dentro de la session in dentro
+        nombre = session['nombre']
+        apellido = session['apellido']
+
+        return render_template('usuario_index.html', nombre=nombre, apellido=apellido)
+    mensaje = flash("Debes Iniciar Sesion primeroo", "error")
+    return redirect(url_for('Inicio'))
 @app.route('/Cliente_Casa')
 def Usuario_home():
+
     return render_template('usuario_home.html')
+
 @app.route('/Cliente_Contacto',methods=['GET','POST'],)
 def Usuario_contacto():
     if request.method == 'POST':
