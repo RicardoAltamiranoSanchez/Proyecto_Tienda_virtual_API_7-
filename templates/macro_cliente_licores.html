@@ -1,0 +1,118 @@
+{% extends "venta_base.html" %}
+{% block title %}Licores{% endblock %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/ventas_licores.css')}}">
+
+{% endblock %}
+
+{% block ventas_frutas%}
+ <div class="container">
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4N0Q_1XG_zrKbgotT0MubgbAG6pX4ujFhI2OIGDCusG2ctP3oQuwSK8tKo7mPyin6DUBWRZ8&usqp=CAc">
+                    <h4>glenfiddich $1056</h4>
+                        <input type="number" placeholder="cantidad" min="0" max="5">
+                        <input type="submit" name="" value="Agregar a Carrito">
+                </div>
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOUKrVD_g3GE0LhgYRaLkM-mCjrt7nnzn86GP0UqFqdGNf7SMPvUl52epj6oIav2QO4OL2mQdo&usqp=CAc">
+                    <h4>buchanas blended $637.00</h4>
+                        <input type="number" placeholder="cantidad" min="0" max="5">
+                        <input type="submit" name="" value="Agregar a Carrito">
+                </div>
+
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKFCH_z9wX6QG-QxYyK8NwUhXFXjmMoTnIZ-7cNui77Sn1Z1ZPImFxy86IFwEndN9O5QvK8ks&usqp=CAc">
+                    <h4>the macallan $1300.00</h4>
+                        <input type="number" placeholder="cantidad" min="0" max="5">
+                        <input type="submit" name="" value="Agregar a Carrito">
+                </div>
+
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSowaTZieBIf94pYIyPDbwobJITekJc-GJNHdLZVmQEo-Br_IBhdtdtqLU6_W4i5WMMA50Dn4Vi&usqp=CAc">
+                    <h4>johnie walker red $381</h4>
+                        <input type="number" placeholder="cantidad" min="0" max="5">
+                        <input type="submit" name="" value="Agregar a Carrito">
+                </div>
+
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRs5CA2PC1aoeBsl5fX5PiOxCrK3A3wGFRYmUSUqALHzRXO8ZGN_swa2jTQufpyJcI9HQCFXQn&usqp=CAc">
+                    <h4>jb $240</h4>
+                        <input type="number" placeholder="cantidad" min="0" max="5">
+                        <input type="submit" name="" value="Agregar a Carrito">
+                </div>
+
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5pel-o9t9vddvJcHncDwMIkzPOhuQ9moTVRT5JE3ssBmnrfDoyIfZlyzZ3ecDx6-El9PxEdBt&usqp=CAc">
+                    <h4>jack daniels $465.50</h4>
+                        <input type="number" placeholder="cantidad" min="0" max="5">
+                        <input type="submit" name="" value="Agregar a Carrito">
+                </div>
+
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUK0ViaRglUGtRANzToA3EkgjkOPnteiPC51HOcXFZjfeUWvLdWI4l8TZxVU_mO1m6QdLmglk&usqp=CAc">
+                    <h4>dewars blend $432.50</h4>
+                        <input type="number" placeholder="cantidad" min="0" max="5">
+                        <input type="submit" name="" value="Agregar a Carrito">
+                </div>
+
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRrIv3q5rOvzXzEKB9jh3sz8-Fi6-ksriBW-CJe9Nx3zVP_VmUoDHrgfUnJheN1sXuIU_u9XF9y11Q0F4YDRgsRpD1IBWrZjQ-9on98LmXL8AEOEtz6AxPWEg&usqp=CAE">
+                    <h4>pack passport $159.00</h4>
+                        <input type="number" placeholder="cantidad" min="0" max="5">
+                        <input type="submit" name="" value="Agregar a Carrito">
+                </div>
+
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcT7e56qRyABYeGRNQqdVcTq7UvFGM6KziMhSL2oyJLLDgL9mKicX_I4tO7ocp8AKzhK7-Sr7yIHUV8ATcHTGNBGTjCeM9BCWq6VlNPd_U6omIrdMmPEQ-6HWw&usqp=CAE">
+                    <h4>black & white c/vaso $200</h4>
+                        <input type="number" placeholder="cantidad" min="0" max="5">
+                        <input type="submit" name="" value="Agregar a Carrito">
+                </div>
+
+                <div class="card">
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTUMorKZ7biaPxHJZ65qk7KL9pxIFWQKnmtjOv_q3G-6J9t4L__EqxKUtTNiVyv_gECeN3GUNpkj75P8Lk6TgQE6Yop_4G0vCYiTRbYZY7PFdf5FqW9Mqr8lA&usqp=CAE">
+                    <h4>crown royal $511.00</h4>
+                        <input type="number" placeholder="cantidad" min="0" max="5">
+                        <input type="submit" name="" value="Agregar a Carrito">
+                </div>
+
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTOX1KnLc1U-zUNSeFHtiGKS2o_DvSyVYFEMt3-hHm4XbV8feqN5eZJ5gqUd40RupfRMpkHtV8SyCr03q0efeHGR6JEIFldSKFGxo-tV77yQohr_DxtHWeo&usqp=CAE">
+                    <h4>the macallan black $1300.00</h4>
+                        <input type="number" placeholder="cantidad" min="0" max="5">
+                        <input type="submit" name="" value="Agregar a Carrito">
+                </div>
+
+                <div class="card">
+                    <img src="data:image/webp;base64,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">
+                    <h4>johnie walker blue $1700</h4>
+                        <input type="number" placeholder="cantidad" min="0" max="5">
+                        <input type="submit" name="" value="Agregar a Carrito">
+                </div>
+
+                <div class="card">
+                    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSKIJtrmla-SpX_fd2a4HY9AF6rRFL3fN6hPUlEAr_CmI8vg86xOTkjxP_CuMbp_aNjcOTz9BFKPOE9N9eSVXk6LSSayX3EvZ9E2qejmDir3MLoUHXkLPwkmQA&usqp=CAE">
+                    <h4>buchanans red seal $3550</h4>
+                        <input type="number" placeholder="cantidad" min="0" max="5">
+                        <input type="submit" name="" value="Agregar a Carrito">
+                </div>
+
+                <div class="card">
+                    <img src="https://bodegasalianza.vteximg.com.br/arquivos/ids/158193-1000-1000/3347-1.jpg?v=636167415839230000">
+                    <h4>old parr $665</h4>
+                        <input type="number" placeholder="cantidad" min="0" max="5">
+                        <input type="submit" name="" value="Agregar a Carrito">
+                </div>
+
+                <div class="card">
+                    <img src="https://bodegasalianza.vteximg.com.br/arquivos/ids/177179-1000-1000/33170-1.jpg?v=637287424144200000">
+                    <h4>pack jim beam $275</h4>
+                        <input type="number" placeholder="cantidad" min="0" max="5">
+                        <input type="submit" name="" value="Agregar a Carrito">
+                </div>
+
+
+
+            </div>
+{% endblock %}

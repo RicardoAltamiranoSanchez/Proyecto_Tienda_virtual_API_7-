@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #e52d27;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #b31217, #e52d27);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #b31217, #e52d27);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+div#body {
+    margin-top: 20px;
+    width: 90%;
+    height: 80%;
+}
+
+div#body0 {
+    margin: auto;
+    margin-top: 20px;
+    width: 80%;
+    height: 80%;
+}
+
+div#body1 {
+    margin: auto;
+    margin-top: 20px;
+    width: 80%;
+    height: 80%;
+}
+
+div#body2 {
+    margin: auto;
+    margin-top: 20px;
+    width: 80%;
+    height: 80%;
+}
+
+div#body3 {
+    margin: auto;
+    margin-top: 20px;
+    width: 80%;
+    height: 80%;
+}
+
+.section-main {
+    margin-top: 0;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: url(bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 100px;
+}
+
+.section-main h1 {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 60px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 80px;
+}
+
+header {
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    transition: 0.6s;
+    text-shadow: 2px 2px 7px #000, 2px 2px 7px #000, 2px 2px 7px #000;
+}
+
+header.sticky {
+    background: #b31217;
+    padding: 15px 100px;
+}
+
+header .brand {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+header .menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .menu a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    margin: 0 30px;
+    padding: 0 10px;
+    border-radius: 20px;
+    transition: 0.3s;
+    transition-property: color, background;
+}
+
+.section-main a {
+    text-decoration: none;
+}
+
+header .menu a:hover {
+    color: #000;
+    background: #fff;
+}
+
+header .btn {
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+    display: none;
+}
+
+.section-two {
+    min-height: 100vh;
+    background: #b31217;
+    padding: 20px 100px;
+    text-align: CENTER;
+}
+
+.section-two h4 {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 17px;
+    text-decoration: none;
+    text-shadow: 3px 3px 7px rgb(92, 27, 27), 3px 3px 7px rgb(92, 27, 27);
+}
+
+.section-two h2 {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 30px 0;
+}
+
+.section-two p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 18px;
+    margin: 30px 0;
+}
+
+.section-two a {
+    text-decoration: none;
+    text-shadow: 2px 2px 7px #000;
+}
+
+.profile_image {
+    width: auto;
+    height: auto;
+    border-radius: auto;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 1060px) {
+    header .btn {
+        display: block;
+    }
+    header .menu {
+        position: fixed;
+        background: #b31217;
+        flex-direction: column;
+        min-width: 400px;
+        height: 100vh;
+        top: 0;
+        right: -100%;
+        padding: 80px 50px;
+        transition: 0.5s;
+        transition-property: right;
+    }
+    header .menu.active {
+        right: 0;
+    }
+    header .menu .close-btn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 25px;
+    }
+    header .menu a {
+        display: block;
+        font-size: 20px;
+        margin: 20px;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 630px) {
+    .section-main h1 {
+        font-size: 50px;
+        line-height: 60px;
+    }
+}

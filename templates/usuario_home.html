@@ -1,0 +1,31 @@
+{% extends "base_usuario.html" %}
+{% block title %}Cliente_Home{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+
+{% block fruta  %}
+{%from "frutas_y_verduras.html" import frutas %}
+{{frutas()}}
+{% endblock %}
+
+{% block enlatados %}
+{%from "enlatados.html" import enlatados %}
+{{enlatados()}}
+{% endblock %}
+
+{% block botanas %}
+{%from "botanas.html" import botanas %}
+{{botanas()}}
+{% endblock %}
+
+{% block  refrescos  %}
+{%from "refrescos.html" import refrescos %}
+{{refrescos()}}
+{% endblock %}
+
+{% block licores  %}
+{%from "vinos_y_licores.html" import licores %}
+{{licores()}}
+{% endblock %} %}

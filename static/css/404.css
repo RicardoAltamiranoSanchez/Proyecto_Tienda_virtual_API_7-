@@ -26,7 +26,7 @@ html:before {
 }
 
 html:before {
-    content: 'Pagina no Encontradahhhhh';
+    content: 'Pagina No Encontrada';
     font-size: 22px;
     font-weight: 400;
     bottom: 330px;
@@ -51,7 +51,7 @@ head {
 }
 
 head:after {
-    content: 'puto';
+    content: '';
     position: absolute;
     border-style: solid;
     border-width: 25px 25px 0 25px;
@@ -63,7 +63,7 @@ head:after {
 }
 
 head:before {
-    content: 'joto';
+    content: '';
     position: absolute;
     width: 8px;
     height: 15px;
@@ -94,7 +94,7 @@ meta {
 }
 
 meta:after {
-    content: 'maricon';
+    content: '';
     position: absolute;
     border-style: solid;
     border-width: 190px 75px 0 75px;

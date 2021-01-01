@@ -49,7 +49,8 @@ def Iniciar_Sesion():
 
         if models.Usuario.query.filter_by(correo=request.form['login_correo']).first() and \
                 models.Usuario.query.filter_by(contrasenia=request.form['login_password']).first():
-
+            usuario = request.form['login_correo']  # obtenemos la informacion del form registrada con corchetes de array
+            session['username'] = usuario
             app.logger.info(f'entrando ala consola {request.path}')
             flash('Login Correcto', "exito")
             return redirect(url_for('Bienvenido'))  # volvemos al inicio

@@ -44,9 +44,10 @@ app.config['MAIL_USE_SSL']=False
 app.config['MAIL_USE_TLS']=True
 mail = Mail(app)
 app.register_blueprint(login)
-@app.route('/')#es un decorador para pedemor a donde vamos a envira la inforamcion
+@app.route('/')
 def Inicio():
     return render_template('index.html')
+
 @app.route('/Registro', methods=['GET', 'POST'])
 def Registro():
     total_usuario = models.Usuario.query.count()
@@ -83,10 +84,13 @@ def confirm_email(token):
            return '<h1>Tu Token expiro!</h1>'
       return'<h1>Token confirmado!</h1>'
 
-@app.route('/Salir')
-def logout():
-    session.pop('username')
-    return redirect(url_for('Inicio'))
+@app.route('/Salir',methods=['GET','POST'])
+def Salir():
+    if request.method=='POST':
+       comentario=request.form["comentario"]
+       session.pop('username')
+       return redirect(url_for('Inicio'))
+    return render_template('Salir.html')
 @app.route('/Bienvenido')
 def Bienvenido():
     pass
@@ -97,7 +101,7 @@ def Menu():
         flash(f"Bienvenido ", "bienvenido")
         return render_template('menu.html')
     mensaje=flash("Debes Iniciar Sesion primeroo","error")
-    return redirect(url_for('Inicio',mensaje))
+    return redirect(url_for('Inicio'))
 @app.route('/Contacto',methods=['GET','POST'])
 def Contacto():
     if request.method == 'POST':
@@ -130,7 +134,6 @@ def Demo():
 @app.route('/Frutas')
 def Frutas():
     return render_template('frutas.html')
-
 @app.route('/Enlatados')
 def Enlatados():
     return render_template('demo_enlatados.html')
@@ -138,8 +141,6 @@ def Enlatados():
 @app.route('/Botanas')
 def Botanas():
     return render_template('demo_botanas.html')
-
-
 @app.route('/Refrescos')
 def Refrescos():
     return render_template('demo_refrescos.html')
@@ -150,13 +151,59 @@ def Licores():
 @app.route('/Portafolio')
 def Portafolio():
     return render_template('portafolio.html')
+@app.route('/Cliente')
+def Usuario_index():
+    return render_template('usuario_index.html')
+@app.route('/Cliente_Casa')
+def Usuario_home():
+    return render_template('usuario_home.html')
+@app.route('/Cliente_Contacto',methods=['GET','POST'],)
+def Usuario_contacto():
+    if request.method == 'POST':
+
+        nombre = request.form['nombre']
+        correo = request.form['correo']
+        mensaje = request.form['mensaje']
+        msg = Message(subject=f"Sunburts Contactame:{nombre}", body=f"Nombre:{nombre}\nCorreo: {correo}\n\n\n{mensaje}",
+                      sender=app.config['MAIL_USERNAME'],
+                      recipients=[app.config['MAIL_USERNAME']])
+        app.logger.info(msg)
+        mail.send(msg)
+        flash("Mensaje enviado con exito", "mensaje")
+
+        return redirect(url_for('Usuario_index'))
+    else:
+        flash("No se puedo enviar el correo", "error")
+        # return redirect(url_for("Inicio"))
+        # return ("contacto.html")
+    return render_template('usuario_contacto.html')
+
+@app.route('/Venta_base')
+def Venta():
+    return render_template('venta_base.html')
+@app.route('/Venta_Enlatados')
+def Ventas_enlatados():
+    return  render_template('macro_cliente_enlatados.html')
+@app.route('/Venta_Botonas')
+def Ventas_botanas():
+    return  render_template('macro_cliente_botanas.html')
+@app.route('/Venta_Refrescos')
+def Ventas_refrescos():
+    return  render_template('macro_cliente_refrescos.html')
+@app.route('/Venta_Licores')
+def Ventas_licores():
+    return  render_template('macro_cliente_licores.html')
+@app.route('/Venta_frutas')
+def Ventas_frutas():
+    return  render_template('macro_cliente_fruta.html')
 
 
 @app.errorhandler(404)
 def Pagina_no_encontrada(e):
     return render_template('404.html'),404
 
+
 if __name__=='__main__':
-    app.run(debug=True,port=5000,host=0000)
+    app.run(debug=True,port=8000,host=0000)
 
 

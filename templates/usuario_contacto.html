@@ -1,0 +1,17 @@
+{% extends "base_usuario.html" %}
+{% block title %}Contacto{% endblock %}
+{% block head %}
+    {{ super() }}
+<link rel="stylesheet" href=" {{url_for('static',filename='css/contacto_contacto_oficial.css')}}">
+<link rel="shortcut icon" href="{{url_for('static',filename='img/logo.ico')}}">
+
+{% endblock %}
+
+{% block usuario_info%}
+{%from "macro_usuario_contacto.html" import usuario_info%}
+{{ usuario_info()}}
+{%endblock%}
+
+
+
+

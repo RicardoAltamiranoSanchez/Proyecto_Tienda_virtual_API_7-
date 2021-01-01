@@ -120,3 +120,12 @@ def Inicio():
 @app.route("/logo.ico")
 def favicon():
 	return send_from_directory(os.path.join(app.root_path, 'static'),'img/logo.ico',mimetype='image/vnd.microsof.icon')
+#para importar imagens por si me me olvida
+< link
+rel = "shortcut icon"
+herf = " {{url_for('static',filename='img/logo.ico')}}" >
+< link
+rel = "shortcut icon"
+herf = " {{url_for('static',filename='img/logo.ico')}}" >
+< img
+src = " {{url_for('static',filename='img/logo.ico')}}" >

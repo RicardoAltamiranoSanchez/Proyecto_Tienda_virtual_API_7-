@@ -1,0 +1,28 @@
+{%macro usuario_info()%}
+
+
+    <div class="contact-section">
+            <div class="contact-info">
+                <div><i class="fas fa-map-marker-alt"></i>Rio Danubio 51 Cuauhtemoc 06500 Cuauhtemoc</div>
+                <div><i class="fas fa-envelope"></i>2020sunburst.systems@gmail.com</div>
+                <div><i class="fas fa-phone"></i>5529402064</div>
+                <div><i class="fas fa-clock"></i>Lunes-Viernes 11:00 AM a 9:00 PM</div>
+            </div>
+            <div class="contact-form">
+                <h2>Contactame</h2>
+
+                    <form class="contact" action="/Cliente_Contacto" method="post" >
+                    <input type="text" name="nombre" class="text-box" placeholder="Tu Nombre" required>
+                    <input type="email" name="correo" class="text-box" placeholder="Tu Correo" required>
+                    <textarea name="mensaje" rows="5" placeholder="Escriba su mensaje" required></textarea>
+
+                   <input type="submit" name="submit" class="send-btn" value="Enviar">
+                </form>
+
+          </div>
+        </div>
+
+    </section>
+{%endmacro%}
+
+

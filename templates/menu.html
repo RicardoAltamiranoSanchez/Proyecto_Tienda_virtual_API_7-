@@ -1,15 +1,198 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/html">
+
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIENDAS 3B</title>
+    <link rel="icon" href="static/img/logo.ico">
+    <link rel="stylesheet" href="static/css/unavegadorofical.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="static/css/duff.css">
+    <link rel="stylesheet" href="static/css/sub.css">
+    <link rel="stylesheet" href="static/css/pag.css">
+        <link rel="stylesheet" href=" {{url_for('static',filename='css/inicio_duff.css')}}">
+        <link rel="stylesheet" href=" {{url_for('static',filename='css/sub.css')}}">
+        <link rel="stylesheet" href=" {{url_for('static',filename='css/pag.css')}}">
+        <link rel="stylesheet" href=" {{url_for('static',filename='css/usuario_navegador_oficial.css')}}">
+        <link rel="stylesheet" href=" {{url_for('static',filename='css/spash.css')}}">
 
-    {% from "macros.html" import  render_messages %}
 
-    <meta charset="UTF-8">
-    <title>Title</title>
-<link rel="stylesheet" href=" {{url_for('static',filename='css/macros.css')}}">
 </head>
-<body>
-  {{render_messages(messages)}}
-Menu principal
+<body class="welcome">
+    <span id="splash-overlay" class="splash"></span>
+    <span id="welcome" class="z-depth-4"></span>
+
+<header >
+
+        <a href="uindex.html" class="brand">tiendas 3b</a>
+        <div class="menu">
+            <div class="btn">
+                <i class="fas fa-times close-btn"></i>
+            </div>
+
+            <a class="nav-link" href="uindex.html">Home <i class="fas fa-home"></i></a>
+            <a class="nav-link" href="ucontacto.html">contacto </i></a>
+
+            <ul id="menu1">
+
+                <li>
+                    <a  href=""><i class="fas fa-user-circle"></i>  Mi cuenta</a>
+                <ul>
+                    <li><a  href="pago.html"> Carrito</a></li>
+                    <li><a href="">Historial</a></li>
+                    <li><a href="salir.html">Salir</a></li>
+                  </ul>
+                </li>
+            </ul>
+        </div>
+
+        </nav>
+        <div class="btn">
+            <i class="fas fa-bars menu-btn"></i>
+        </div>
+
+    <section class="section-main">
+    </div>
+    <main background="https://s1.1zoom.me/b4343/36/Wine_Bottle_542636_1366x768.jpg">
+
+        <div id="body9" class="slider">
+        <a class="nav-link" href="ufruta.html">
+            <div id="body10" class="slider">
+                <h3>FRUTAS Y VERDURAS</h3>
+                <ul>
+                    <li><img src="https://www.superama.com.mx/Content/images/products/img_large/0000000004067L.jpg" alt ="calabaza"></li>
+                    <li><img src="https://www.gastronomiavasca.net/uploads/image/file/5703/w700_pimiento_morron1.jpg" alt="pimiento"></li>
+                    <li><img src="https://www.laprensagrafica.com/__export/1524158048300/sites/prensagrafica/img/2018/04/19/guayaba_11.jpg_1902800913.jpg" alt="guayaba"></li>
+                    <li><img src="https://static1.abc.es/media/bienestar/2020/09/15/ficha-mandarina-k1oG--620x349@abc.jpg" alt="mandarina"></li>
+                    <li><img src="https://cdn.aarp.net/content/dam/aarp/health/conditions_treatments/2020/07/1140-red-onions-esp.web.jpg" alt="cebollas"></li>
+                    <li><img src="https://abarrotero.com/wp-content/uploads/2016/09/jitomates_abarrotero.png" alt="jitomate"></li>
+                    <li><img src="https://www.hogarmania.com/archivos/201607/salud-sandia-propiedades-668x400x80xX.jpg" alt="sandia"></li>
+                    <li><img src="https://www.clikisalud.net/wp-content/uploads/2015/03/manzana-D.jpg" alt="manzana"></li>
+                    <li><img src="https://laroussecocina.mx/wp-content/uploads/2018/04/aguacate-1.jpg" alt="aguacate"></li>
+                    <li><img src="https://www.recetin.com/wp-content/uploads/2010/01/brocoli.png" alt="brocoli"></li>
+                    <li><img src="https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2018/06/como-madurar-un-melon.jpg" alt="melon"></li>
+                </ul>
+
+
+            </div>
+        </a>
+        </div>
+        <div id="body0" class="slider">
+        <a class="nav-link" href="uenlatados.html">
+            <h3>ENLATADOS</h3>
+            <ul>
+                <li><img src="https://www.viva-mexico.com.mx/wp-content/uploads/2016/06/bimbo1.jpg" alt="BIMBO"></li>
+                <li><img src="https://noesunarutina.files.wordpress.com/2013/04/alpura.jpg" alt="ALPURA"></li>
+                <li><img src="https://vignette.wikia.nocookie.net/logopedia/images/0/0f/Sonrics2.jpg/revision/latest?cb=20171005223902" alt="jim"></li>
+                <li><img src="https://abasto.com/wp-content/uploads/sliderImages/fud-logo-319px-2wi6vc3i8hm9m6vbs0avwg.jpg" alt="FUD"></li>
+                <li><img src="https://www.roastbrief.com.mx/wp-content/uploads/2019/01/roastbrief-la-costena-comienza-este-2019-con-un-renovado-sitio-web-780x405.jpg" alt="COSTEÑA"></li>
+                <li><img src="https://th.bing.com/th/id/OIP.k0G7pZRRebNZjESxruhxoAHaGD?pid=Api&rs=1" alt="NESTLE"></li>
+                <li><img src="https://soyboicot.files.wordpress.com/2012/08/ricolino.png" alt="ricolino"></li>
+                <li><img src="https://impulsoregio.files.wordpress.com/2014/07/lala1.png" alt="lala"></li>
+                <li><img src="https://rikkosinc.com/images/Vero_logo.jpg" alt="vero"></li>
+                <li><img src="https://mark.trademarkia.com/logo-images/sigma-alimentos/since-1943-sr-san-rafael-delicatessen-85875561.jpg" alt="sr"></li>
+                <li><img src="https://c2.staticflickr.com/4/3199/3077090696_dd4b503fdb_z.jpg?zz=1" alt="cle"></li>
+            </ul>
+        </a>
+        </div>
+        <div id="body1" class="slider">
+        <a class= "nav-link" href="ubotana.html">
+            <h3>BOTANAS</h3>
+            <ul>
+                <li><img src="static/img/botanas/descarga (20).png" alt="barcel"></li>
+                <li><img src="static/img/botanas/descargaY.png" alt="sabritas"></li>
+                <li><img src="static/img/botanas/descargaX.jpg" alt="paketaxo"></li>
+                <li><img src="static/img/botanas/6a1bbb2556045c86d6e9064551f86ea2.jpg" alt="cacahuateKarate"></li>
+                <li><img src="static/img/botanas/asdasdasda.jpg" alt="masterChips"></li>
+                <li><img src="static/img/botanas/descarga (20).png" alt="barcel"></li>
+                <li><img src="static/img/botanas/descargaY.png" alt="sabritas"></li>
+                <li><img src="static/img/botanas/descargaX.jpg" alt="paketaxo"></li>
+                <li><img src="static/img/botanas/6a1bbb2556045c86d6e9064551f86ea2.jpg" alt="cacahuateKarate"></li>
+            </ul>
+        </a>
+
+
+        </div>
+        <div id="body2" class="slider">
+            <a class="nav-link" href="urefrescos.html">
+                <h3>REFRESCOS</h3>
+                <ul>
+                    <li><img src="static/img/refresco/r13.jpg" alt="r13"></li>
+                    <li><img src="static/img/refresco/r4.jpg" alt="r4"></li>
+                    <li><img src="static/img/refresco/r15.jpg" alt="r15"></li>
+                    <li><img src="static/img/refresco/j13.jpg" alt="j13"></li>
+                    <li><img src="static/img/refresco/j4.jpg" alt="j4"></li>
+                    <li><img src="static/img/refresco/j9.jpg" alt="j9"></li>
+                    <li><img src="static/img/refresco/a14.jpg" alt="a14"></li>
+                    <li><img src="static/img/refresco/a3.jpg" alt="a3"></li>
+                    <li><img src="static/img/refresco/a8.jpg" alt="a8"></li>
+                </ul>
+            </a>
+            </div>
+            <div id="body3" class="slider">
+                <a class="nav-link" href="ulicor.html">
+                    <h3>VINOS Y LICORES</h3>
+                    <ul>
+                        <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs3GwlbT17X0VuCV_0Y0u6GxqgDqF4Gp9c6Q&usqp=CAU" alt="whiskys"></li>
+                        <li><img src="https://1000marcas.net/wp-content/uploads/2020/01/Jack-Daniels.jpg" alt="jack"></li>
+                        <li><img src="https://www.nunciata.com.py/uploads/jim-beam-1587776604.png" alt="jim"></li>
+                        <li><img src="https://lavozdechile.com/wp-content/uploads/2019/02/Tequila-Don-Julio.jpg" alt="don julio"></li>
+                        <li><img src="https://mir-s3-cdn-cf.behance.net/projects/404/35278946833003.Y3JvcCw2OTcsNTQ2LDAsNzU.jpg" alt="jarana"></li>
+                        <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROm0QKH0lGODj6Osfuki2Bl7543NzJ-KVmSA&usqp=CAU" alt="tecate"></li>
+                        <li><img src="https://storage.googleapis.com/www-paredro-com/uploads/2019/08/8fe2fdd3-logo-de-heineken.jpg" alt="heineken"></li>
+                        <li><img src="https://www.bedrinks.com/wp-content/uploads/2015/11/dosequis.jpg" alt="xx"></li>
+                        <li><img src="https://enalimentos.lat/images/noticias/2020-07/donramon.jpg" alt="don ramon"></li>
+                        <li><img src="https://1000marcas.net/wp-content/uploads/2020/03/Johnnie-Walker-logo.png" alt="jk"></li>
+                        <li><img src="data:image/png;base64,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" alt="concha y toro"></li>
+                    </ul>
+                </a>
+                </div>
+    </main>
+    </section>
+    <section class="section-two">
+        <section class="section-two">
+
+                <a href="ucontacto.html" ><h2>contactanos</h2>
+                 <img src="static/img/contacto0.jpg" width="70%">
+                </a>
+                 <img src="static/img/redes.png" width="50%" >
+
+                 <div id="redes">
+                        <a href="https://twitter.com/tiendas3b/" target="blank"><img src="static/img/twitter.png"></a>
+                        <a href="https://www.facebook.com/Tiendas3B/" target="blank"><img src="static/img/facebook.png"></a>
+                        <a href="https://www.youtube.com/user/Tiendas3BBB" target="blank"><img src="static/img/youtube.png"></a>
+                        <a href="https://mx.linkedin.com/company/tiendas3b/" target="blank"><img src="static/img/linkedin.png"></a>
+                </div>  <br>
+                <div id="des">
+                    <a href="portafolioequipo.html" target="blank" ><h4>SOBRE<br>DESARROLLADORES</h4></a>
+                </div>
+            </section>
+
+    <script type="text/javascript">
+        //javascript for navigation bar effect on scroll
+        window.addEventListener("scroll", function() {
+            var header = document.querySelector("header");
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+
+        //javascript for responsive navigation sidebar menu
+        var menu = document.querySelector('.menu');
+        var menuBtn = document.querySelector('.menu-btn');
+        var closeBtn = document.querySelector('.close-btn');
+
+        menuBtn.addEventListener("click", () => {
+            menu.classList.add('active');
+        });
+
+        closeBtn.addEventListener("click", () => {
+            menu.classList.remove('active');
+        });
+    </script>
+    </section>
+
+</header>
 </body>
+
+
 </html>

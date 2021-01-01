@@ -1,0 +1,20 @@
+
+ul{
+  list-style: none;
+
+}
+
+
+#menu1>li{
+  float: justify;
+  text-align:center
+}
+#menu1>li>ul{
+
+  display: none;
+  position: fixed;
+  text-align: left;
+}
+#menu1>li:hover>ul {
+  display:list-item;
+}

@@ -11,6 +11,7 @@ class Usuario(app.db.Model):#Creamo la clase modelo para la macros de datos func
     usuario=app.db.Column(app.db.String(255))
     contrasenia=app.db.Column(app.db.String(255))
     hora_registro=app.db.Column(app.db.DateTime, default=datetime.datetime.now)
+
     def __init__(self,nombre,apellido,correo,usuario,contrasenia):
         self.nombre=nombre
         self.apellido=apellido
@@ -27,3 +28,6 @@ class Usuario(app.db.Model):#Creamo la clase modelo para la macros de datos func
                f'Contraseña:{self.contrasenia}')
     def __create_password(self,contrasenia):
         return generate_password_hash(contrasenia)
+#class Comentarios(app.db.Model):
+    #caja_comentarios = app.db.Column(app.db.String(255))
+    #hora_registro = app.db.Column(app.db.DateTime, default=datetime.datetime.now)

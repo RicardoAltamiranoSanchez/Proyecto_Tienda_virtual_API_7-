@@ -6,54 +6,65 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title >{% block title %}{% endblock %}-Tienda3B </title>
+    <title >{% block title %}{% endblock %}-Cliente-Tienda3B </title>
     <link rel="icon" href="static/img/logo.ico">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href=" {{url_for('static',filename='css/inicio_navegador_oficial.css')}}">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/usuario_navegador_oficial.css')}}">
     <link rel="stylesheet" href=" {{url_for('static',filename='css/inicio_duff.css')}}">
-
+    <link rel="icon" href="static/img/logo.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/inicio_duff.css')}}">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/sub.css')}}">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/pag.css')}}">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/usuario_navegador_oficial.css')}}">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/spash.css')}}">
     {%endblock %}
 
 </head>
 
-<body>
+<body background="https://img2.goodfon.com/wallpaper/nbig/b/23/stakan-viski-led-sigara-a.jpg">
 
 
     <header>
-        <a href="{{url_for('Inicio')}}" class="brand">tiendas 3b</a>
+        <a  href="{{url_for('Usuario_index')}}" class="brand">tiendas 3b-cliente</a>
         <div class="menu">
             <div class="btn">
                 <i class="fas fa-times close-btn"></i>
             </div>
 
-            <a class="nav-link"  href="{{url_for('Casa')}}">Casa<i class="fas fa-home"></i></a>
-            <a class="nav-link"  href="{{url_for('Contacto')}}">contacto<i class="fas fa-envelope"></i> </a>
-            <a class="nav-link" href="{{url_for('Registro')}}">Registrarse/Ingresar<i class="fas fa-brain  "></i></a>
-            <a class="nav-link" href="/#about">About<i class="fas fa-building"></i></a>
+                 <a class="nav-link"  href="{{url_for('Usuario_home')}}">Casa<i class="fas fa-home"></i></a>
+            <a class="nav-link"  href="{{url_for('Usuario_contacto')}}">contacto<i class="fas fa-envelope"></i> </a>
 
+            <ul id="menu1">
 
-
-
+                <li>
+                    <a  href="">Mi cuenta<i class="fas fa-user-circle"></i></a>
+                <ul>
+                    <li><a  href="pago.html"> Carrito</a></li>
+                    <li><a href="">Historial</a></li>
+                    <li><a  href="{{url_for('Salir')}}">Salir</a></li>
+                  </ul>
+                </li>
+            </ul>
         </div>
+
+        </nav>
         <div class="btn">
             <i class="fas fa-bars menu-btn"></i>
         </div>
-    </header>
-     {%block index%} {%endblock%}
+        <a class="nav-link" href="{{url_for('Salir')}}">Salir<i class="fas fa-building"></i></a>
 
+    </header>
 
     <section class="section-main">
-        {%block info%}
+        {%block usuario_info%}
         {%endblock%}
 
-        {%block registro%}
-        {%endblock%}
-    </div>
+        </div>
     <main background="https://s1.1zoom.me/b4343/36/Wine_Bottle_542636_1366x768.jpg">
 
         <div id="body" class="slider">
-        <a class="nav-link" href="{{url_for('Frutas')}}">
+        <a class="nav-link" href="{{url_for('Ventas_frutas')}}">
             <div id="body9" class="slider" >
 
 {% block fruta  %}
@@ -64,7 +75,7 @@
         </a>
         </div>
         <div id="body0" class="slider">
-        <a class="nav-link" href="{{url_for('Enlatados')}}">
+        <a class="nav-link" href="{{url_for('Ventas_enlatados')}}">
 
 {% block enlatados %}
 
@@ -72,7 +83,7 @@
         </a>
         </div>
         <div id="body1" class="slider">
-        <a class= "nav-link" href="{{url_for('Botanas')}}">
+        <a class="nav-link" href="{{url_for('Ventas_botanas')}}">
 
 {% block botanas %}
 {% endblock %}
@@ -81,7 +92,7 @@
 
         </div>
         <div id="body2" class="slider">
-            <a class="nav-link" href="{{url_for('Refrescos')}}">
+        <a class="nav-link" href="{{url_for('Ventas_refrescos')}}">
 
 {% block refrescos  %}
 
@@ -89,7 +100,7 @@
             </a>
             </div>
             <div id="body3" class="slider">
-                <a class="nav-link" href="{{url_for('Licores')}}">
+        <a class="nav-link" href="{{url_for('Ventas_licores')}}">
 
 {% block licores  %}
 
@@ -99,7 +110,7 @@
 
     </main>
     </section>
-    <section class="section-two">
+   <section class="section-two">
         <section class="section-two"id="about">
 
 <a href="contacto.html" ><h2>contactanos</h2>
@@ -119,9 +130,7 @@
             <derechos class="text-white text-center p-2 ">
         <p class="h5 ">UPEM 2021 &copy;</p>
         <p class="h5 ">Proyecto Ingenieria de Software&copy;</p>
-
     </derechos>
-</footer>
             </section>
 
 
@@ -146,6 +155,7 @@
         });
     </script>
     </section>
+
 </body>
 
 </html>
