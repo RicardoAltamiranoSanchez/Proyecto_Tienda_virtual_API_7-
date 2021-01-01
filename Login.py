@@ -51,10 +51,11 @@ def Iniciar_Sesion():
          if user and check_password_hash(user.contrasenia,request.form['login_password']):
             session['nombre'] = user.nombre
             session['apellido']=user.apellido
+            session['id']=user.id
             app.logger.info(f'entrando ala consola {request.path}')
             flash('Login Correcto', "exito")
             return redirect(url_for('Bienvenido',))  # volvemos al inicio
-            app.logger.info(session['username'])
+            app.logger.info(session['nombre'])
          else:
             flash('Verifique bien sus credenciales', "error") # hacemos mensaje flask para decirle que no tien cuenta
 

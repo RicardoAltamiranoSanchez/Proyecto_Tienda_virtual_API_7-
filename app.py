@@ -63,7 +63,7 @@ def Registro():
                     msg.body = 'Hola {}{} Este es tu enlace de confirmacion {}'.format(request.form['nombre'],
                                                                                        request.form['apellido'], link)
                     mail.send(msg)
-                    return '<h1> Rebice su bandeja de entrada de su correo para confirmacion</h1>'
+                    return '<h1> Revise su bandeja de entrada de su correo para confirmacion</h1>'
                 else:
                      flash(f"Nombre de usuario ocupado {request.form['usuario']}", "info")
 
@@ -94,7 +94,13 @@ def confirm_email(token):
 @app.route('/Salir',methods=['GET','POST'])
 def Salir():
     if request.method=='POST':
-       comentario=request.form["comentario"]
+
+       comentario=models.Evaluacion(usuario_id=session['id'],
+                                    comentario=request.form['comentario'])
+       app.logger.info(f'Informacion de salida{request.path}')
+       app.logger.info(f'Informacion de salida{comentario}')
+       db.session.add(comentario)
+       db.session.commit()
        session.pop('nombre')
        return redirect(url_for('Inicio'))
     return render_template('Salir.html')
@@ -201,8 +207,13 @@ def Venta():
 @app.route('/Venta_Enlatados')
 def Ventas_enlatados():
     return  render_template('macro_cliente_enlatados.html')
-@app.route('/Venta_Botonas')
+@app.route('/Venta_Botonas',methods=['GET','POST'])
 def Ventas_botanas():
+    if request.method=='POST':
+        papa=request.form['papas']
+        print(papa)
+        app.logger.info(f'entrando ala consola {request.path}')
+
     return  render_template('macro_cliente_botanas.html')
 @app.route('/Venta_Refrescos')
 def Ventas_refrescos():
