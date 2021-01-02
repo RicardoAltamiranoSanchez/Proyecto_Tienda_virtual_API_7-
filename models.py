@@ -48,6 +48,120 @@ class Evaluacion(app.db.Model):
                f'Apellido:{self.comentario},'
                )
 
+class Producto(app.db.Model):#Creamo la clase modelo para la macros de datos funcion model
+    id=app.db.Column(app.db.Integer, primary_key=True)#para crear las columnas en la macros de datos
+    tipo=app.db.Column(app.db.String(255))
+    fruta=app.db.relationship('Frutas')
+    enlatados=app.db.relationship('Enlatados')
+    botanas=app.db.relationship('Botanas')
+    refrescos=app.db.relationship('Refrescos')
+    licores=app.db.relationship('Licores')
+
+
+    def __init__(self,nombre):
+        self.nombre=nombre
+    def __str__(self):
+        return(
+               f'Id:{self.id},'
+               f'Nombre:{self.nombre},'
+               )
+class Frutas(app.db.Model):  # Creamo la clase modelo para la macros de datos funcion model
+        id = app.db.Column(app.db.Integer, primary_key=True)  # para crear las columnas en la macros de datos
+        producto_id = app.db.Column(app.db.Integer, app.db.ForeignKey('producto.id'))
+
+        nombre = app.db.Column(app.db.String(255))
+        cantidad = app.db.Column(app.db.Integer)
+        costo=app.db.Column(app.db.Float)
+
+        def __init__(self, nombre,cantidad,costo):
+            self.nombre = nombre
+            self.cantidad = cantidad
+            self.costo = costo
+
+        def __str__(self):
+            return (
+                f'Id:{self.id},'
+                f'Nombre:{self.nombre},'
+                f'Nombre:{self.cantidad},'
+                f'Nombre:{self.costo,}')
+class Enlatados(app.db.Model):  # Creamo la clase modelo para la macros de datos funcion model
+        id = app.db.Column(app.db.Integer, primary_key=True)  # para crear las columnas en la macros de datos
+        producto_id = app.db.Column(app.db.Integer, app.db.ForeignKey('producto.id'))
+        nombre = app.db.Column(app.db.String(255))
+        cantidad = app.db.Column(app.db.Integer)
+        costo=app.db.Column(app.db.Float)
+
+        def __init__(self, nombre,cantidad,costo):
+            self.nombre = nombre
+            self.cantidad = cantidad
+            self.costo = costo
+
+        def __str__(self):
+            return (
+                f'Id:{self.id},'
+                f'Nombre:{self.nombre},'
+                f'Nombre:{self.cantidad},'
+                f'Nombre:{self.costo,}')
+class Botanas(app.db.Model):  # Creamo la clase modelo para la macros de datos funcion model
+        id = app.db.Column(app.db.Integer, primary_key=True)  # para crear las columnas en la macros de datos
+        producto_id = app.db.Column(app.db.Integer, app.db.ForeignKey('producto.id'))
+        nombre = app.db.Column(app.db.String(255))
+        cantidad = app.db.Column(app.db.Integer)
+        costo=app.db.Column(app.db.Float)
+
+        def __init__(self, nombre,cantidad,costo):
+            self.nombre = nombre
+            self.cantidad = cantidad
+            self.costo = costo
+
+        def __str__(self):
+            return (
+                f'Id:{self.id},'
+                f'Nombre:{self.nombre},'
+                f'Nombre:{self.cantidad},'
+                f'Nombre:{self.costo,}')
+
+class Refrescos(app.db.Model):  # Creamo la clase modelo para la macros de datos funcion model
+        id = app.db.Column(app.db.Integer, primary_key=True)  # para crear las columnas en la macros de datos
+        producto_id = app.db.Column(app.db.Integer, app.db.ForeignKey('producto.id'))
+        nombre = app.db.Column(app.db.String(255))
+        cantidad = app.db.Column(app.db.Integer)
+        costo=app.db.Column(app.db.Float)
+
+        def __init__(self, nombre,cantidad,costo):
+            self.nombre = nombre
+            self.cantidad = cantidad
+            self.costo = costo
+
+        def __str__(self):
+            return (
+                f'Id:{self.id},'
+                f'Nombre:{self.nombre},'
+                f'Nombre:{self.cantidad},'
+                f'Nombre:{self.costo,}')
+
+
+class Licores(app.db.Model):  # Creamo la clase modelo para la macros de datos funcion model
+        id = app.db.Column(app.db.Integer, primary_key=True)  # para crear las columnas en la macros de datos
+        producto_id = app.db.Column(app.db.Integer, app.db.ForeignKey('producto.id'))
+        nombre = app.db.Column(app.db.String(255))
+        cantidad = app.db.Column(app.db.Integer)
+        costo=app.db.Column(app.db.Float)
+
+        def __init__(self, nombre,cantidad,costo):
+            self.nombre = nombre
+            self.cantidad = cantidad
+            self.costo = costo
+
+        def __str__(self):
+            return (
+                f'Id:{self.id},'
+                f'Nombre:{self.nombre},'
+                f'Nombre:{self.cantidad},'
+                f'Nombre:{self.costo,}')
+
+
+
 #class Comentarios(app.db.Model):
     #caja_comentarios = app.db.Column(app.db.String(255))
     #hora_registro = app.db.Column(app.db.DateTime, default=datetime.datetime.now)

@@ -8,9 +8,9 @@ import models
 from flask_mail import Mail, Message
 from itsdangerous import URLSafeTimedSerializer, SignatureExpired
 from Login import login
-
 from flask_migrate import Migrate
 from werkzeug.utils import redirect
+
 app=Flask(__name__)
 #jinja_env=jinja2.Environment(loader=jinja2.FileSystemLoader('template'))
 #template=jinja_env.get_template('content.html')
@@ -27,7 +27,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
 db.init_app(app)
 migrate=Migrate()
 migrate.init_app(app,db)
-
 #Configuracion de flak-wtf osa el form
 
 
@@ -232,6 +231,7 @@ def Pagina_no_encontrada(e):
 
 
 if __name__=='__main__':
+
     app.run(debug=True,port=8000,host=0000)
 
 
