@@ -52,7 +52,7 @@ def Registro():
     total_usuario = models.Usuario.query.count()
     if request.method=='POST':
             if models.Usuario.query.filter_by(correo=request.form['correo']).first() is None:
-                if models.Usuario.query.filter_by(contrasenia=request.form['usuario']).first() is None:
+                if models.Usuario.query.filter_by(contrasenia=request.form['password']).first() is None:
                     email = request.form['correo']
                     token = s.dumps(email, salt='email-confirm')
                     msg = Message('Confirmacioin de Correo Electronico', sender=' altamiranoricardo546@gmail.com ',
