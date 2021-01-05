@@ -3,14 +3,13 @@ import os
 import jinja2
 from flask import Flask, render_template, request, url_for, session, flash, jsonify, send_from_directory
 from database import db
-from forms import Usuario_form
+from forms import Usuario_form,Frutas_form
 import models
 from flask_mail import Mail, Message
 from itsdangerous import URLSafeTimedSerializer, SignatureExpired
 from Login import login
 from flask_migrate import Migrate
 from werkzeug.utils import redirect
-
 app=Flask(__name__)
 #jinja_env=jinja2.Environment(loader=jinja2.FileSystemLoader('template'))
 #template=jinja_env.get_template('content.html')
@@ -220,10 +219,52 @@ def Ventas_refrescos():
 @app.route('/Venta_Licores')
 def Ventas_licores():
     return  render_template('macro_cliente_licores.html')
-@app.route('/Venta_frutas')
+#Aqui va la ventas no pude separarlo daba errores
+@app.route('/Venta_frutas',methods=['GET','POST'])
 def Ventas_frutas():
-    return  render_template('macro_cliente_fruta.html')
+    #No es bueno hacer el codigo asi por el momemto lo hare asi con el for no salel deacuero
+    fruta1=models.Frutas.query.filter_by(id=1).first()
+    fruta2=models.Frutas.query.filter_by(id=2).first()
+    fruta3=models.Frutas.query.filter_by(id=3).first()
+    fruta4=models.Frutas.query.filter_by(id=4).first()
+    fruta5=models.Frutas.query.filter_by(id=5).first()
+    fruta6=models.Frutas.query.filter_by(id=6).first()
+    fruta7=models.Frutas.query.filter_by(id=7).first()
+    fruta8=models.Frutas.query.filter_by(id=8).first()
+    fruta9=models.Frutas.query.filter_by(id=9).first()
+    fruta10=models.Frutas.query.filter_by(id=10).first()
+    fruta11=models.Frutas.query.filter_by(id=11).first()
+    fruta12=models.Frutas.query.filter_by(id=12).first()
+    fruta13=models.Frutas.query.filter_by(id=13).first()
+    fruta14=models.Frutas.query.filter_by(id=14).first()
+    fruta15=models.Frutas.query.filter_by(id=15).first()
+    fruta16=models.Frutas.query.filter_by(id=16).first()
 
+    venta = models.Frutas.query.get_or_404(1)  # recuperamos la informacion con el id proporcionado
+    venta_form=Frutas_form(obj=venta)  # asociamos nuestra base de datos a  nuesta clase form o formulario
+    if request.method == 'POST':  # preguntamos si el tipo de metodo es de tipo post importamos del objeto flask.request
+        if venta_form.validate_on_submit():  # preguntamos si el formulario si es valido solo si se hace elenvio del formulario
+            venta_form.populate_obj(venta)  # llenamos el objetos que persona que definimos de clase models
+            app.logger.debug(f'Persona a insertar {venta}')
+
+            lista= models.Listado(cliente_id=session['id'],
+                                  nombre_cliente=session['nombre'],
+                                  frutas_id=venta.id,
+                                  nombre=venta.nombre,
+                                  cantidad=venta.cantidad,
+                                  costo=venta.costo)
+
+            db.session.add(lista)
+            db.session.commit()
+
+
+    return  render_template('macro_cliente_fruta.html',fruta1=fruta1,fruta2=fruta2,fruta3=fruta3,fruta4=fruta4,fruta5=fruta5,
+                            fruta6=fruta6,fruta7=fruta7,fruta8=fruta8,fruta9=fruta9,fruta10=fruta10,fruta11=fruta11,
+                            fruta12=fruta12,fruta13=fruta13,fruta14=fruta14,fruta15=fruta15,fruta16=fruta16,venta=venta_form)
+@app.route('/Listado')
+def Listado():
+
+     return render_template('listado.html')
 
 @app.errorhandler(404)
 def Pagina_no_encontrada(e):

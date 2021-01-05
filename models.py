@@ -12,6 +12,7 @@ class Usuario(app.db.Model):#Creamo la clase modelo para la macros de datos func
     usuario=app.db.Column(app.db.String(255))
     contrasenia=app.db.Column(app.db.String(255))
     evaluacion=app.db.relationship('Evaluacion')
+    listado=app.db.relationship('Listado')
     hora_registro=app.db.Column(app.db.DateTime, default=datetime.datetime.now)
 
     def __init__(self,nombre,apellido,correo,usuario,contrasenia):
@@ -50,6 +51,7 @@ class Evaluacion(app.db.Model):
 
 class Producto(app.db.Model):#Creamo la clase modelo para la macros de datos funcion model
     id=app.db.Column(app.db.Integer, primary_key=True)#para crear las columnas en la macros de datos
+    frutas=app.db.relationship('Frutas')
     tipo=app.db.Column(app.db.String(255))
     fruta=app.db.relationship('Frutas')
     enlatados=app.db.relationship('Enlatados')
@@ -58,17 +60,17 @@ class Producto(app.db.Model):#Creamo la clase modelo para la macros de datos fun
     licores=app.db.relationship('Licores')
 
 
-    def __init__(self,nombre):
-        self.nombre=nombre
+    def __init__(self,tipo):
+        self.tipo=tipo
     def __str__(self):
         return(
                f'Id:{self.id},'
-               f'Nombre:{self.nombre},'
+               f'Tipo:{self.tipo},'
                )
 class Frutas(app.db.Model):  # Creamo la clase modelo para la macros de datos funcion model
         id = app.db.Column(app.db.Integer, primary_key=True)  # para crear las columnas en la macros de datos
         producto_id = app.db.Column(app.db.Integer, app.db.ForeignKey('producto.id'))
-
+        listado = app.db.relationship('Listado')
         nombre = app.db.Column(app.db.String(255))
         costo=app.db.Column(app.db.Float)
 
@@ -80,6 +82,32 @@ class Frutas(app.db.Model):  # Creamo la clase modelo para la macros de datos fu
             return (
                 f'Id:{self.id},'
                 f'Nombre:{self.nombre},'
+                f'Nombre:{self.costo,}')
+class Listado(app.db.Model):  # Creamo la clase modelo para la macros de datos funcion model
+        id = app.db.Column(app.db.Integer, primary_key=True)  # para crear las columnas en la macros de datos
+        cliente_id=app.db.Column(app.db.Integer,app.db.ForeignKey('usuario.id'))
+        nombre_cliente=app.db.Column(app.db.String(255))
+        frutas_id = app.db.Column(app.db.Integer, app.db.ForeignKey('frutas.id'))
+        nombre=app.db.Column(app.db.String(255))
+        cantidad= app.db.Column(app.db.String(255))
+        costo=app.db.Column(app.db.Float)
+
+        def __init__(self,cliente_id,nombre_cliente,frutas_id,nombre,cantidad,costo):
+            self.cliente_id =cliente_id
+            self.nombre_cliente =nombre_cliente
+            self.frutas_id =frutas_id
+            self.nombre=nombre
+            self.cantidad=cantidad
+            self.costo=costo
+
+        def __str__(self):
+            return (
+                f'Id:{self.id},'
+                f'Nombre:{self.cliente_id},'
+                f'Nombre:{self.nombre_cliente},'
+                f'Nombre:{self.frutas_id},'
+                f'Nombre:{self.nombre,}'
+                f'Nombre:{self.cantidad,}'
                 f'Nombre:{self.costo,}')
 class Enlatados(app.db.Model):  # Creamo la clase modelo para la macros de datos funcion model
         id = app.db.Column(app.db.Integer, primary_key=True)  # para crear las columnas en la macros de datos
