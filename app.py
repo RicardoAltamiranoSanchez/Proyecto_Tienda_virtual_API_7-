@@ -240,19 +240,34 @@ def Ventas_frutas():
     fruta15=models.Frutas.query.filter_by(id=15).first()
     fruta16=models.Frutas.query.filter_by(id=16).first()
 
-    venta = models.Frutas.query.get_or_404(1)  # recuperamos la informacion con el id proporcionado
-    venta_form=Frutas_form(obj=venta)  # asociamos nuestra base de datos a  nuesta clase form o formulario
+    venta_form=Frutas_form(obj=fruta1)  # asociamos nuestra base de datos a  nuesta clase form o formulario
     if request.method == 'POST':  # preguntamos si el tipo de metodo es de tipo post importamos del objeto flask.request
         if venta_form.validate_on_submit():  # preguntamos si el formulario si es valido solo si se hace elenvio del formulario
-            venta_form.populate_obj(venta)  # llenamos el objetos que persona que definimos de clase models
-            app.logger.debug(f'Persona a insertar {venta}')
+            venta_form.populate_obj(fruta1)  # llenamos el objetos que persona que definimos de clase models
+            app.logger.debug(f'Persona a insertar {fruta1}')
 
             lista= models.Listado(cliente_id=session['id'],
                                   nombre_cliente=session['nombre'],
-                                  frutas_id=venta.id,
-                                  nombre=venta.nombre,
-                                  cantidad=venta.cantidad,
-                                  costo=venta.costo)
+                                  frutas_id=fruta1.id,
+                                  nombre=fruta1.nombre,
+                                  cantidad=fruta1.cantidad,
+                                  costo=fruta1.costo)
+
+            db.session.add(lista)
+            db.session.commit()
+    venta_form=Frutas_form(obj=fruta2)  # asociamos nuestra base de datos a  nuesta clase form o formulario
+    if request.method == 'POST':  # preguntamos si el tipo de metodo es de tipo post importamos del objeto flask.request
+        if venta_form.validate_on_submit():  # preguntamos si el formulario si es valido solo si se hace elenvio del formulario
+            venta_form.populate_obj(fruta2)  # llenamos el objetos que persona que definimos de clase models
+            app.logger.debug(f'Persona a insertar {fruta2}')
+
+
+            lista= models.Listado(cliente_id=session['id'],
+                                  nombre_cliente=session['nombre'],
+                                  frutas_id=fruta2.id,
+                                  nombre=fruta2.nombre,
+                                  cantidad=fruta2.cantidad,
+                                  costo=fruta2.costo)
 
             db.session.add(lista)
             db.session.commit()
@@ -265,7 +280,22 @@ def Ventas_frutas():
 def Listado():
 
      return render_template('listado.html')
-
+@app.route('/Repartidores',methods=['GET','POST'])
+def Repartidores():
+    nombre=session['nombre_repartidor']
+    apellido=session['apellido_repartidor']
+    return render_template('repartidores.html',nombre=nombre,apellido=apellido)
+@app.route('/Pedidos')
+def Pedidos():
+    return render_template('pedidos.html')
+@app.route('/pendientes')
+def Pendientes():
+    return render_template('pendientes.html')
+@app.route('/administracion')
+def Administracion():
+    nombre = session['nombre_administrador']
+    apellido = session['apellido_administrador']
+    return render_template('administracion.html',nombre=nombre,apellido=apellido)
 @app.errorhandler(404)
 def Pagina_no_encontrada(e):
     return render_template('404.html'),404

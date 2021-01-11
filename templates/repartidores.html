@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reparto</title>
+    <link rel="icon" href="static/img/logo.ico">
+
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/repartidores.css')}}">
+
+
+</head>
+<body>
+    <div id="sidemenu" class="menu-expanded">
+        <div id="header">
+            <div id="title"><span>SUNBURST</span></div>
+            <div id="menu-btn">
+                <div class="btn-hamburger"></div>
+                <div class="btn-hamburger"></div>
+                <div class="btn-hamburger"></div>
+            </div>
+        </div>
+        <div id="profile">
+            <div id="photo"><img src=" {{url_for('static',filename='img/repartidores/milos.jpg')}}" alt=""></div>
+            <div id="name"><span>{{nombre}}_{{apellido}}</span></div>
+        </div>
+        <div id="menu-items">
+            <div class="item">
+                <a href="{{url_for('Pedidos')}}">
+                    <div class="icon"><img src=" {{url_for('static',filename='img/repartidores/tabla.png')}}" alt=""></div>
+                    <div class="title"><span>Pedidos</span></div>
+
+                </a>
+            </div>
+            <div class="item separator">
+
+            </div>
+            <div class="item">
+                <a href="{{url_for('Pendientes')}}">
+                    <div class="icon"><img src=" {{url_for('static',filename='img/repartidores/reloj.png')}}" alt=""></div>
+                    <div class="title"><span>Pendientes</span></div>
+                </a>
+            </div>
+            <div class="item separator">
+
+            </div>
+
+<h1>Hola putita me tienes bien cachondo</h1>
+
+        </div>
+
+    </div>
+    <script>
+        const btn = document.querySelector('#menu-btn');
+        const menu = document.querySelector('#sidemenu');
+        btn.addEventListener('click', e {
+           menu.classList.toggle('#menu-expanded');
+           menu.classList.toggle('#menu-collapsed');
+           document.querySelector('body').classList.toggle('body-expanded');
+        });
+    </script>
+</body>
+</html>

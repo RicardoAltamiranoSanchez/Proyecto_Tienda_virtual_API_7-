@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendientes</title>
+
+    <link rel="icon" href="static/img/logo.ico">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/pendientes.css')}}">
+
+</head>
+<body>
+    <form action="">
+        <h2>PENDIENTES</h2>
+        <input  type="text" name="Nombre" placeholder="nombre del cliente" >
+        <input  type="text" name="correo"  placeholder="ingrese mes de la tarjeta" >
+        <input  type="text" name="Direccion"  placeholder="direccion" >
+        <input  type="text" name="codigo postal"  placeholder="cp" >
+        <textarea name="Descripcion" placeholder="Descripcion"></textarea>
+        <input type="button" value="ENTREGADO" id="boton">
+    </form>
+</body>
+</html>
