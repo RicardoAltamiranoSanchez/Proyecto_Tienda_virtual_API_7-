@@ -282,6 +282,11 @@ def Listado():
      return render_template('listado.html')
 @app.route('/Repartidores',methods=['GET','POST'])
 def Repartidores():
+    repatidor = models.Usuario_Repatidor.query.filter_by(id=1).first()
+    session['nombre_repartidor'] = repatidor.nombre
+    session['apellido_repartidor'] = repatidor.apellido
+    session['id_repartidor'] = repatidor.id
+    app.logger.info(f'entrando ala consola {request.path}')
     nombre=session['nombre_repartidor']
     apellido=session['apellido_repartidor']
     return render_template('repartidores.html',nombre=nombre,apellido=apellido)
@@ -296,6 +301,24 @@ def Administracion():
     nombre = session['nombre_administrador']
     apellido = session['apellido_administrador']
     return render_template('administracion.html',nombre=nombre,apellido=apellido)
+@app.route('/Estado_Envio')
+def Estado_envio():
+    return render_template('Estado_envio.html')
+@app.route('/Administracion_ingresos')
+def Admin_ingresos():
+    return render_template('admin_ingresos.html')
+@app.route('/registro_financiero')
+def Registro_financiero():
+    return render_template('registro_financiero_admin.html')
+@app.route('/Registro_envios')
+def Registro_envios():
+    return render_template('registro_envios_admin.html')
+@app.route('/Lista_productos')
+def Lista_productos():
+    return render_template('lista_productos_admin.html')
+@app.route('/Pago',methods=['GET','POST'])
+def Pago():
+    return  render_template('pago.html')
 @app.errorhandler(404)
 def Pagina_no_encontrada(e):
     return render_template('404.html'),404

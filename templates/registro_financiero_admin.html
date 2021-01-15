@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Administracion</title>
+
+ <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <!-- Custom styles for this template -->
+  <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/estado_envio.css')}}">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/simple_slider.css')}}">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/color_admin_ingresos.css')}}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+<link rel="stylesheet" href="/css/acordeon.css">
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+      <!-- Sidebar -->
+      <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading">Administración </div>
+        <div class="list-group list-group-flush">
+         <a  href="{{url_for('Admin_ingresos')}}" class="list-group-item list-group-item-action bg-light">Ingresos</a>
+            <a href="{{url_for('Lista_productos')}}" class="list-group-item list-group-item-action bg-light">Lista de productos</a>
+            <a  href="{{url_for('Registro_envios')}}" class="list-group-item list-group-item-action bg-light">Registro de envios</a>
+            <a  href="{{url_for('Registro_financiero')}}"class="list-group-item list-group-item-action bg-light">Registro financiero</a>
+        </div>
+      </div>
+      <!-- /#sidebar-wrapper -->
+
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <button class="btn btn-primary" id="menu-toggle">MENÚ DE OPCIONES</button>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link"  href="{{url_for('Administracion')}}">MENÚ PRINCIPAL<span class="sr-only">(current)</span></a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link"  href="{{url_for('login.Iniciar_Sesion')}}"id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                SALIR
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+            <div class="row">
+
+              <!-- Earnings (Monthly) Card Example -->
+              <div class="col-xl-11 col-md-6 mb-6">
+                <button class="accordion">Resumen financiero 2020/Julio</button>
+                <div class="panel">
+                  <table class="table">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">Registro</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Recivo de pago</th>
+                        <th scope="col">Monto</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>2020/julio</td>
+                        <td>12352</td>
+                        <td>$900</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>2020/julio</td>
+                        <td>45653</td>
+                        <td>$700</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>2020/julio</td>
+                        <td>87621</td>
+                        <td>$1500</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">4</th>
+                        <td>2020/julio</td>
+                        <td>56709</td>
+                        <td>$2000</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">5</th>
+                        <td>2020/julio</td>
+                        <td>64309</td>
+                        <td>$1800</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">6</th>
+                        <td>2020/julio</td>
+                        <td>12576</td>
+                        <td>$1500</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">7</th>
+                        <td>2020/julio</td>
+                        <td>60782</td>
+                        <td>$300</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">8</th>
+                        <td>2020/julio</td>
+                        <td>09761</td>
+                        <td>$600</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">9</th>
+                        <td>2020/julio</td>
+                        <td>86512</td>
+                        <td>$700</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">10</th>
+                        <td>2020/julio</td>
+                        <td>57345</td>
+                        <td>$1000</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <table class="table">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">TOTAL</th>
+                      </tr>
+                      <tr>
+                        <td scope="col">$11000</td>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+
+                <button class="accordion">Resumen financiero 2020/Agosto</button>
+                <div class="panel">
+                  <table class="table">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">Registro</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Recivo de pago</th>
+                        <th scope="col">Monto</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>2020/agosto</td>
+                        <td>12352</td>
+                        <td>$900</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>2020/agosto</td>
+                        <td>45653</td>
+                        <td>$700</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>2020/agosto</td>
+                        <td>87621</td>
+                        <td>$1500</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">4</th>
+                        <td>2020/agosto</td>
+                        <td>56709</td>
+                        <td>$2000</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">5</th>
+                        <td>2020/agosto</td>
+                        <td>64309</td>
+                        <td>$1800</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">6</th>
+                        <td>2020/agosto</td>
+                        <td>12576</td>
+                        <td>$1500</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">7</th>
+                        <td>2020/agosto</td>
+                        <td>60782</td>
+                        <td>$1300</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">8</th>
+                        <td>2020/agosto</td>
+                        <td>09761</td>
+                        <td>$1600</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">9</th>
+                        <td>2020/agosto</td>
+                        <td>86512</td>
+                        <td>$1700</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">10</th>
+                        <td>2020/agosto</td>
+                        <td>57345</td>
+                        <td>$2000</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <table class="table">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">TOTAL</th>
+                      </tr>
+                      <tr>
+                        <td scope="col">$15000</td>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+
+                <button class="accordion">Resumen financiero 2020/Septiembre</button>
+                <div class="panel">
+                  <table class="table">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">Registro</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Recivo de pago</th>
+                        <th scope="col">Monto</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>2020/julio</td>
+                        <td>18421</td>
+                        <td>$1900</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>2020/julio</td>
+                        <td>12346</td>
+                        <td>$1700</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>2020/julio</td>
+                        <td>98700</td>
+                        <td>$2500</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">4</th>
+                        <td>2020/julio</td>
+                        <td>12467</td>
+                        <td>$2000</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">5</th>
+                        <td>2020/julio</td>
+                        <td>09872</td>
+                        <td>$1800</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">6</th>
+                        <td>2020/julio</td>
+                        <td>34587</td>
+                        <td>$2500</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">7</th>
+                        <td>2020/julio</td>
+                        <td>98774</td>
+                        <td>$1300</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">8</th>
+                        <td>2020/julio</td>
+                        <td>80723</td>
+                        <td>$1600</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">9</th>
+                        <td>2020/julio</td>
+                        <td>98723</td>
+                        <td>$1700</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">10</th>
+                        <td>2020/julio</td>
+                        <td>65473</td>
+                        <td>$1000</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <table class="table">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">TOTAL</th>
+                      </tr>
+                      <tr>
+                        <td scope="col">$18000</td>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+
+                <script>
+                var acc = document.getElementsByClassName("accordion");
+                var i;
+
+                for (i = 0; i < acc.length; i++) {
+                  acc[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.display === "block") {
+                      panel.style.display = "none";
+                    } else {
+                      panel.style.display = "block";
+                    }
+                  });
+                }
+                </script>
+            <!-- /.row -->
+
+              </div>
+            </div>
+      </div>
+
+
+
+
+    </div>
+    <!-- /#wrapper -->
+</div>
+
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+</body>
+
+</html>
+<

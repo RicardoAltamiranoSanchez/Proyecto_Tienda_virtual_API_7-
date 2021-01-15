@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Administracion</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <!-- Custom styles for this template -->
+
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/color_envio.css')}}">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/simple_slider.css')}}">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+      <!-- Sidebar -->
+      <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading">Repartidor </div>
+          <div class="list-group list-group-flush">
+            <a href="#" class="list-group-item list-group-item-action bg-light">Actualización de envio</a>
+          </div>
+        </div>
+      <!-- /#sidebar-wrapper -->
+
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <button class="btn btn-primary" id="menu-toggle">MENÚ DE OPCIONES</button>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link"  href="{{url_for('Administracion')}}">MENÚ PRINCIPAL<span class="sr-only">(current)</span></a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="{{url_for('login.Iniciar_Sesion')}}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                SALIR
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+            <div class="row">
+              <div class="col-xl-0 col-md-4 mb-6"></div>
+              <form action="Search"></form>
+                <input type="text" placeholder="Pedido del usuario">
+                <input type="submit" value="Consultar">
+              </div>
+              <!-- /.col -->
+              <div class="col-xl-11 col-md-2 mb-3">
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Registro</th>
+                      <th scope="col">Producto Nombre</th>
+                      <th scope="col">Presentación</th>
+                      <th scope="col">Sección de producto</th>
+                      <th scope="col">Cantidad</th>
+                      <th scope="col">Precio Unitario</th>
+                      <th scope="col">Total Producto</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Sabritas</td>
+                      <td>250g</td>
+                      <td>Frituras</td>
+                      <td>2</td>
+                      <td>$12</td>
+                      <td>$24</td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Paketaxo</td>
+                      <td>750g</td>
+                      <td>Frituras</td>
+                      <td>2</td>
+                      <td>$34</td>
+                      <td>$68</td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Ron Bacardi</td>
+                      <td>1 Litro</td>
+                      <td>Licores</td>
+                      <td>1</td>
+                      <td>$180</td>
+                      <td>$180</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">TOTAL</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">$272.00</th>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-xl-4 col-md-2 mb-3">
+                <select class="form-control" aria-placeholder="Pendiente">
+                  <option>Pendiente</option>
+                  <option>Entregado</option>
+                </select>
+                <p></p>
+                <input type="submit" value="Guardar">
+              </div>
+
+            </div>
+            <!-- /.row -->
+    </div>
+    <!-- /#wrapper -->
+</div>
+
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+
+.card-chart{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    background: black;
+}
+.chart{
+    width: 600px;
+    height: 300px;
+    display: block;
+}
+
+.numbers{
+    color: rgb(0, 0, 0);
+    margin: 100;
+    padding: 0;
+    width: 760px;
+    height: 150%;
+    display: inline-block;
+}
+
+.numbers li{
+    list-style: none;
+    height: 142px;
+    position: relative;
+    bottom: 300px;
+}
+
+.numbers span{
+    font-size: 12px;
+    font-weight: 600;
+    position: absolute;
+    bottom: 500;
+    right: 10px;
+}
+
+.bars{
+    color: rgb(0, 0, 0);
+    font-size: 13px;
+    font-weight: 700;
+    background: #555;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    width: 710px;
+    height: 300px;
+    box-shadow: 0 0 10px 0 #555;
+    border-radius: 10px;
+}
+
+.bars li{
+    display: table-cell;
+    width: 100px;
+    height: 300px;
+    position: relative;
+}
+.bars span{
+    width: 100%;
+    position: absolute;
+    bottom: -30px;
+    text-align: center;
+}
+
+.bars .bar{
+    display: block;
+    background: blue;
+    width: 50px;
+    position: absolute;
+    bottom: 0;
+    margin-left: 25px;
+    text-align: center;
+    box-shadow: 0 0 10px 0 rgb(61, 61, 236);
+}
+
+.bars bar:hover{
+    background: blueviolet;
+    box-shadow: 0 0 10px 0 rgb(32, 32, 95);
+    cursor: pointer;
+}
+
+.bars .bar:before{
+    color:rgb(91, 170, 27);
+    content: attr(data-percentage) "%";
+    position: relative;
+    bottom: 20px;
+
+}

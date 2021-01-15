@@ -46,10 +46,10 @@ login=flask.Blueprint('login',__name__)
 @login.route('/Login', methods=['GET', 'POST'])
 def Iniciar_Sesion():
     total_usuario = models.Usuario.query.count()
+
     if request.method == 'POST':  # decimos si es metodo es post
-         user=models.Usuario.query.filter_by(correo=request.form['login_correo']).first()
-         repatidor=models.Usuario_Repatidor.query.filter_by(correo=request.form['login_correo']).first()
-         administrador=models.Administracion.query.filter_by(correo=request.form['login_correo']).first()
+         administrador = models.Administracion.query.filter_by(correo=request.form['login_correo']).first()
+         user = models.Usuario.query.filter_by(correo=request.form['login_correo']).first()
          if user and check_password_hash(user.contrasenia,request.form['login_password']):
             session['nombre'] = user.nombre
             session['apellido']=user.apellido
@@ -58,20 +58,18 @@ def Iniciar_Sesion():
             flash('Login Correcto', "exito")
             return redirect(url_for('Bienvenido'))  # volvemos al inicio
             app.logger.info(session['nombre'])
-         if request.form['login_password'] == administrador.contrasenia:
 
+         if request.form['login_password'] == administrador.contrasenia:
              session['nombre_administrador'] = administrador.nombre
              session['apellido_administrador'] = administrador.apellido
              session['id_administrador'] = administrador.id
+
              app.logger.info(f'entrando ala consola {request.path}')
              return redirect(url_for('Administracion'))
-         if request.form['login_password'] ==repatidor.contrasenia:
-             session['nombre_repartidor'] = repatidor.nombre
-             session['apellido_repartidor'] = repatidor.apellido
-             session['id_repartidor'] = repatidor.id
-             app.logger.info(f'entrando ala consola {request.path}')
-             return redirect(url_for('Repartidores'))
+
+
          else:
             flash('Verifique bien sus credenciales', "error") # hacemos mensaje flask para decirle que no tien cuenta
-
+    else:
+        flash('Error al iniciar Sesion')
     return render_template('Login.html',total_usuario=total_usuario)

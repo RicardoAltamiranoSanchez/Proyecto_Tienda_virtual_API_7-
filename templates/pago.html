@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forma de pago</title>
+    <link rel="icon" href="static/img/logo.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+   <link rel="stylesheet" href=" {{url_for('static',filename='css/inicio_duff.css')}}">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/sub.css')}}">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/pag.css')}}">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/usuario_navegador_oficial.css')}}">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/spash.css')}}">
+</head>
+
+<body>
+
+    <header>
+        <a href="uindex.html" class="brand">tiendas 3b</a>
+        <div class="menu">
+            <div class="btn">
+                <i class="fas fa-times close-btn"></i>
+            </div>
+
+             <a class="nav-link"  href="{{url_for('Usuario_home')}}">Casa<i class="fas fa-home"></i></a>
+            <a class="nav-link"  href="{{url_for('Usuario_contacto')}}">contacto<i class="fas fa-envelope"></i> </a>
+
+
+            <ul id="menu1">
+
+                <li>
+                    <a  href=""><i class="fas fa-user-circle"></i>  Mi cuenta</a>
+                <ul>
+                    <li><a href="{{url_for('Pago')}}"> Pago</a></li>
+                    <li><a href=""><i class="fas fa-user-circle"></i>Historial</a></li>
+                    <li><a  href="{{url_for('Salir')}}">Salir</a></li>
+                  </ul>
+                </li>
+            </ul>
+        </div>
+
+        </nav>
+        <div class="btn">
+            <i class="fas fa-bars menu-btn"></i>
+        </div>
+    </header>
+    </header>
+    <section class="section-main">
+        <section class="form-register">
+            <h4>Formulario de pago</h4>
+            <input class="controls" type="text" name="tarjetas" id="tarjetas" placeholder="ingrese numero de tarjeta" >
+            <input class="controls" type="text" name="meses" id="meses" placeholder="ingrese mes de la tarjeta" >
+            <input class="controls" type="text" name="años" id="años" placeholder="ingrese año de la tarjeta" >
+            <input class="controls" type="text" name="cvc" id="cvc" placeholder="ingrese cvc de la tarjeta" >
+            <input class="controls" type="text" name="nombre" id="nombre" placeholder="ingrese nombre en la tarjeta" >
+            <p>Regresar a la <a href="index.html">pagina de vinos</a></p>
+            <a href="gracias.html"><input class="botons" type="submit" value="Realizar pago"></a>
+
+        </section>
+    </section>
+    <section class="section-two">
+        <section class="section-two">
+
+                <a href="ucontacto.html" ><h2>contactanos</h2>
+                 <img src="static/img/contacto0.jpg" width="70%">
+                </a>
+                 <img src="static/img/redes.png" width="50%" >
+
+                 <div id="redes">
+                        <a href="https://twitter.com/tiendas3b/" target="blank"><img src="static/img/twitter.png"></a>
+                        <a href="https://www.facebook.com/Tiendas3B/" target="blank"><img src="static/img/facebook.png"></a>
+                        <a href="https://www.youtube.com/user/Tiendas3BBB" target="blank"><img src="static/img/youtube.png"></a>
+                        <a href="https://mx.linkedin.com/company/tiendas3b/" target="blank"><img src="static/img/linkedin.png"></a>
+                </div>  <br>
+                <div id="des">
+                    <a href="portafolioequipo.html" target="blank" ><h4>SOBRE<br>DESARROLLADORES</h4></a>
+                </div>
+            </section>
+
+    <script type="text/javascript">
+        //javascript for navigation bar effect on scroll
+        window.addEventListener("scroll", function() {
+            var header = document.querySelector("header");
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+
+        //javascript for responsive navigation sidebar menu
+        var menu = document.querySelector('.menu');
+        var menuBtn = document.querySelector('.menu-btn');
+        var closeBtn = document.querySelector('.close-btn');
+
+        menuBtn.addEventListener("click", () => {
+            menu.classList.add('active');
+        });
+
+        closeBtn.addEventListener("click", () => {
+            menu.classList.remove('active');
+        });
+    </script>
+    </section>
+</body>
+
+</html>
