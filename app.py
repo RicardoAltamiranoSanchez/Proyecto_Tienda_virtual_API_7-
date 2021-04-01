@@ -17,9 +17,9 @@ app=Flask(__name__)
 app.config.from_object(__name__)
 #Configuracion para la macros de datos
 USER_DB='postgres'
-PASS_DB='admin'
+PASS_DB='riki'
 URL_DB='localhost'
-NAME_DB='Tienda3B2'
+NAME_DB='tienda3b2'
 FULL_URL_DB=f'postgresql://{USER_DB}:{PASS_DB}@{URL_DB}/{NAME_DB}'#CADENA DE CONEXION COMPLETA
 app.config['SQLALCHEMY_DATABASE_URI']=FULL_URL_DB#cual es laconexion de la bd que va utilizar
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
