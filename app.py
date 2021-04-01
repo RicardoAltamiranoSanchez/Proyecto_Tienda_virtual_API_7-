@@ -131,7 +131,7 @@ def Contacto():
     return render_template('contacto.html')
 @app.route('/Casa')
 def Casa():
-    return render_template('Home.html')
+    return render_template('home.html')
 @app.route('/Demo')
 def Demo():
     return render_template('demo.html')
