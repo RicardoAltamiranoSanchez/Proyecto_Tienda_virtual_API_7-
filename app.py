@@ -122,7 +122,7 @@ def Contacto():
         flash("Mensaje enviado con exito", "mensaje")
 
 
-        return redirect(url_for("Inicio"))
+        return redirect(url_for("Contacto"))
     else:
         flash("No se puedo enviar el correo", "error")
         #return redirect(url_for("Inicio"))

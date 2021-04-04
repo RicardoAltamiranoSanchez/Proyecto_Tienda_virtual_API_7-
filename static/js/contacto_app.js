@@ -1,7 +1,7 @@
 //Varibles
 const botonReset=document.querySelector('#resetBtn');
 const botonEnviar=document.querySelector('#enviar');
-const email=document.querySelector('#email');
+const email=document.querySelector('#correo');
 const nombre=document.querySelector('#nombre');
 const mensaje=document.querySelector('#mensaje');
 const formulario=document.querySelector('#enviar-mail');
@@ -79,6 +79,7 @@ function mostrarError(mensaje){
 }
 function enviandoCorreo(e){
   e.preventDefault();
+  console.log("Enviando correo");
   const spiner =document.querySelector('#spinner');
   spiner.style.display='flex';
   setTimeout( () => {

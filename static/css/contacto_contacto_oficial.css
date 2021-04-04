@@ -43,7 +43,9 @@
 .contact-form .text-box {
     background: #000;
     color: #fff;
-    border: none;
+    border: bg-gray-100 ;
+    border-width:4px;
+
     width: calc(50% - 10px);
     height: 50px;
     padding: 12px;
@@ -61,7 +63,9 @@
 .contact-form textarea {
     background: #000;
     color: #fff;
-    border: none;
+    border: bg-gray-100 ;
+    border-width:4px;
+
     width: 100%;
     padding: 12px;
     font-size: 15px;
