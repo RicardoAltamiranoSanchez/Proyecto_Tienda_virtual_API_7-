@@ -1,8 +1,14 @@
 {% macro registro()%}
 
+
        <main>
+           {% from "macros.html" import mensajes %}
+            {{mensajes()}}
+
             <div class="contenedor__todo">
+
                 <div class="caja__trasera">
+
                     <div class="caja__trasera_login">
                         <h3>
                             ¿Ya tienes Cuenta?

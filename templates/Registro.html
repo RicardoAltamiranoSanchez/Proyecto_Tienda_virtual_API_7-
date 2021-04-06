@@ -2,14 +2,19 @@
 {% block title %}Login_Registro{% endblock %}
 {% block head %}
 
-        <link rel="icon" href="static/img/logo.ico">
-        <link rel="stylesheet" href=" {{url_for('static',filename='css/Login_registro_main.css')}}">
+<link rel="icon" href="static/img/logo.ico">
+<link rel="stylesheet" href=" {{url_for('static',filename='css/Login_registro_main.css')}}">
+<link rel="stylesheet" href=" {{url_for('static',filename='css/macros.css')}}">
 
     {{ super() }}
 {% endblock %}
-{from "macros.html" import mensajes}
+{% block mensajes %}
+{% from "macros.html" import mensajes %}
 {{mensajes()}}
+{% endblock %}
+
 {% block registro%}
+
 {% from "registro_macro.html" import registro %}
 {{registro()}}
 

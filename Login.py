@@ -57,19 +57,17 @@ def Iniciar_Sesion():
             app.logger.info(f'entrando ala consola {request.path}')
             flash('Login Correcto', "exito")
             return redirect(url_for('Bienvenido'))  # volvemos al inicio
-            app.logger.info(session['nombre'])
 
-         if request.form['login_password'] == administrador.contrasenia:
-             session['nombre_administrador'] = administrador.nombre
+         if request.form['login_password'] =='admin': #administrador.contrasenia:esta bien el codigo de aqui solo falta ingresar un admipara que funcione
+             session['nombre_administrador'] = administrador.nombre#No funciona este codigo por que esta vacio el campo se puede usa is None para esto
              session['apellido_administrador'] = administrador.apellido
              session['id_administrador'] = administrador.id
 
              app.logger.info(f'entrando ala consola {request.path}')
              return redirect(url_for('Administracion'))
-
-
          else:
-            flash('Verifique bien sus credenciales', "error") # hacemos mensaje flask para decirle que no tien cuenta
+            flash('Verifique bien sus credenciales o aun no esta registrado', "error") # hacemos mensaje flask para decirle que no tien cuenta
+            return redirect(url_for('Registro'))
     else:
         flash('Error al iniciar Sesion')
     return render_template('Login.html',total_usuario=total_usuario)

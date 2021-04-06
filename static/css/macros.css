@@ -1,15 +1,53 @@
 .exito{
 color:green;
+background: transparent;
+ opacity: 0.6;
+  text-align: center;
+   margin-top: 10px;
+    margin: auto;
+  font-weight: 1000;
+  font-size: 15px;
 }
 .bienvenido{
 color:yellow;
+background: transparent;
+ opacity: 0.6;
+  text-align: center;
+   margin-top: 10px;
+    margin: auto;
+  font-weight: 1000;
+  font-size: 15px;
 }
 .error{
 color:red;
+background: transparent;
+ opacity: 0.6;
+  text-align: center;
+   margin-top: 10px;
+    margin: auto;
+  font-weight: 1000;
+  font-size: 15px;
 }
 .mensaje{
 color:orange;
+background: transparent;
+ opacity: 0.6;
+  text-align: center;
+   margin-top: 10px;
+    margin: auto;
+  font-weight: 1000;
+  font-size: 15px;
 }
 .info{
 color:blue;
+
+background: transparent;
+ opacity: 0.6;
+  text-align: center;
+   margin-top: 10px;
+    margin: auto;
+  font-weight: 1000;
+  font-size: 15px;
+
+
 }

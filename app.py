@@ -52,22 +52,30 @@ def Registro():
     if request.method=='POST':
             if models.Usuario.query.filter_by(correo=request.form['correo']).first() is None:
                 if models.Usuario.query.filter_by(contrasenia=request.form['password']).first() is None:
+                    session['nombreG']=request.form['nombre']
+                    session['apellidoG']=request.form['apellido']
+                    session['correoG'] = request.form['correo']
+                    session['usuarioG']= request.form['usuario']
+                    session['passwordG']= request.form['password']
+
                     email = request.form['correo']
                     token = s.dumps(email, salt='email-confirm')
-                    msg = Message('Confirmacioin de Correo Electronico', sender=' altamiranoricardo546@gmail.com ',
+                    msg = Message('Confirmacioin de Correo Electronico', sender='2020sunburst.systems@gmail.com',
                                   recipients=[email])
 
                     link = url_for('confirm_email', token=token, _external=True)
                     msg.body = 'Hola {}{} Este es tu enlace de confirmacion {}'.format(request.form['nombre'],
                                                                                        request.form['apellido'], link)
                     mail.send(msg)
-                    return '<h1> Revise su bandeja de entrada de su correo para confirmacion</h1>'
+                    flash(f"Revise su bandeja de entrada para confirmacion de correo","info")
+                    return redirect(url_for('Registro'))
                 else:
                      flash(f"Nombre de usuario ocupado {request.form['usuario']}", "info")
 
             else:
                 flash(f"Ya tienes una cuenta con este correo {request.form['correo']}","info")
-    return render_template('Registro.html',total_usuario=total_usuario)
+
+    return render_template('Registro.html')
 
 
 @app.route('/confirm_email/<token>')
@@ -75,19 +83,22 @@ def confirm_email(token):
 
       try:
          email= s.loads(token, salt='email-confirm', max_age=3600)
+         u = models.Usuario(nombre=  session['nombreG'],
+                            apellido=session['apellidoG'],
+                            correo=session['correoG'] ,
+                            usuario=session['usuarioG'],
+                            contrasenia= session['passwordG'],)
+
+
+         app.logger.info(f'entrando ala consola {request.path}')
+         db.session.add(u)
+         db.session.commit()
+         flash("Correo confirmado", "exito")
+         app.logger.info(f'entrando ala consola {request.path}')
+         return redirect(url_for('Registro'))
       except SignatureExpired:
            return '<h1>Tu token ya expiro!</h1>'
-      u = models.Usuario(nombre=request.form['nombre'],
-                         apellido=request.form['apellido'],
-                         correo=request.form['correo'],
-                         usuario=request.form['usuario'],
-                         contrasenia=request.form['password'], )
-      app.logger.info(f'entrando ala consola {request.path}')
-      db.session.add(u)
-      db.session.commit()
-      flash("Registro Exitoso", "exito")
-      app.logger.info(f'entrando ala consola {request.path}')
-      return '<h1> token confirmado <h1>'
+
 
 @app.route('/Salir',methods=['GET','POST'])
 def Salir():

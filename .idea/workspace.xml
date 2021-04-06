@@ -3,13 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="ccc385b9-ba0b-4aff-8d06-248ab6aece43" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login.py" beforeDir="false" afterPath="$PROJECT_DIR$/Login.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/contacto_contacto_oficial.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/contacto_contacto_oficial.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/contacto_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/contacto_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/macros.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/macros.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Login_macro.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Login_macro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Registro.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Registro.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/macro_contacto.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/macro_contacto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registro_macro.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registro_macro.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
