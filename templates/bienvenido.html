@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Bienvenido</title>
     <link rel="stylesheet" href="static/css/bienveido.css">
+    <link rel="stylesheet" href="static/css/macros.css">
 
     <meta http-equiv="Refresh" content="5;{{url_for('Usuario_index')}}">
 
@@ -15,8 +16,13 @@
 <body>
 
 
+     {% from "macros.html" import mensajes %}
+{{mensajes()}}
+
+
     <!--stars background start-->
-    <div>
+
+
         <div class="stars-01"></div>
         <div class="stars-02"></div>
         <div class="stars-03"></div>

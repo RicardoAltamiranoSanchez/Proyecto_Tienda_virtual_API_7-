@@ -1,6 +1,6 @@
 document.getElementById("btn__iniciar-sesion").addEventListener("click", InciarSesion);
-
 document.getElementById("btn__registrarse").addEventListener("click", register);
+
 
 //Varibles
 var contenedor_login_register = document.querySelector(".contenedor__login-register");
@@ -9,6 +9,10 @@ var caja_trasera_register = document.querySelector(".caja__trasera_register");
 
 var formulario_login = document.querySelector(".formulario__login");
 var fomulario_register = document.querySelector(".formulario__register");
+
+
+
+
 
 function InciarSesion() {
     fomulario_register.style.display = "none";

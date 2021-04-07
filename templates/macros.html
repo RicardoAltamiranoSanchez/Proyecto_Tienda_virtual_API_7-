@@ -8,11 +8,11 @@
     </ul>
 {%endif%}
 {%endwith%}
-{%with messages = get_flashed_messages(category_filter=["bienvenido"])%}
+{%with messages = get_flashed_messages(category_filter=["ustar"])%}
     {%if messages%}
     <ul>
         {%for message in messages%}
-        <li class="bienvenido">{{message}} </li>
+        <li class="ustar">{{message}} </li>
         {%endfor%}
     </ul>
 {%endif%}

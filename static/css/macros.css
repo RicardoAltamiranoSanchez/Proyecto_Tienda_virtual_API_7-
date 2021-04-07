@@ -8,15 +8,15 @@ background: transparent;
   font-weight: 1000;
   font-size: 15px;
 }
-.bienvenido{
+.ustar{
 color:yellow;
 background: transparent;
  opacity: 0.6;
   text-align: center;
-   margin-top: 10px;
+   margin-top: 50px;
     margin: auto;
   font-weight: 1000;
-  font-size: 15px;
+  font-size: 45px;
 }
 .error{
 color:red;
@@ -29,7 +29,7 @@ background: transparent;
   font-size: 15px;
 }
 .mensaje{
-color:orange;
+color:purple;
 background: transparent;
  opacity: 0.6;
   text-align: center;

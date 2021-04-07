@@ -55,7 +55,7 @@ def Iniciar_Sesion():
             session['apellido']=user.apellido
             session['id']=user.id
             app.logger.info(f'entrando ala consola {request.path}')
-            flash('Login Correcto', "exito")
+            flash(f"Bienvenido {session['nombre']} {session['apellido']}","ustar")
             return redirect(url_for('Bienvenido'))  # volvemos al inicio
 
          if request.form['login_password'] =='admin': #administrador.contrasenia:esta bien el codigo de aqui solo falta ingresar un admipara que funcione

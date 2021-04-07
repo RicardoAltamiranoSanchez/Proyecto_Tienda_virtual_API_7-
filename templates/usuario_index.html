@@ -20,10 +20,11 @@
     <span id="splash-overlay" class="splash"></span>
     <span id="welcome" class="z-depth-4"></span>
 
-<header>
+
     <header>
-      <a  href="{{url_for('Usuario_index')}}" class="brand">tiendas 3b-{{nombre}}_{{apellido}}</a>
-        <div class="menu">
+
+        <a  href="{{url_for('Usuario_index')}}" class="brand">Tienda 3b {{nombre}} {{apellido}}</a>
+          <div class="menu">
             <div class="btn">
                 <i class="fas fa-times close-btn"></i>
             </div>
@@ -44,14 +45,12 @@
             </ul>
         </div>
 
-        </nav>
         <div class="btn">
             <i class="fas fa-bars menu-btn"></i>
         </div>
         <a class="nav-link" href="{{url_for('Salir')}}">Salir<i class="fas fa-building"></i></a>
-
     </header>
-</header>
+
 {{particulas()}}
     <script type="text/javascript">
         //javascript for navigation bar effect on scroll

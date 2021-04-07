@@ -11,18 +11,28 @@
             <div class="contact-form">
                 <h2>Contactame</h2>
 
-                    <form class="contact" action="/Cliente_Contacto" method="post" >
-                    <input type="text" name="nombre" class="text-box" placeholder="Tu Nombre" required>
-                    <input type="email" name="correo" class="text-box" placeholder="Tu Correo" required>
-                    <textarea name="mensaje" rows="5" placeholder="Escriba su mensaje" required></textarea>
-
-                   <input type="submit" name="submit" class="send-btn" value="Enviar">
+                    <form class="contact" action="/Cliente_Contacto" method="post" id="enviar-mail">
+                    <input type="text" name="nombre" class="text-box" placeholder="Tu Nombre" id="nombre" required>
+                    <input type="email" name="correo" class="text-box" placeholder="Tu Correo" id="correo" required>
+                    <textarea name="mensaje" rows="5" placeholder="Escriba su mensaje" id="mensaje" required></textarea>
+                      <div  id="spinner">
+                <div class="sk-chase">
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                </div>
+            </div>
+                   <input type="submit" name="submit" class="send-btn" value="Enviar" id="enviar">
+                   <input type="button" name="Reset" class="send-btn" value="Borrar" id="'resetBtn">
                 </form>
 
           </div>
         </div>
 
-    </section>
+
 {%endmacro%}
 
 

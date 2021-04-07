@@ -73,7 +73,7 @@ def Registro():
                      flash(f"Nombre de usuario ocupado {request.form['usuario']}", "info")
 
             else:
-                flash(f"Ya tienes una cuenta con este correo {request.form['correo']}","info")
+                flash(f"Ya tienes una cuenta con este correo {request.form['correo']}","mensaje")
 
     return render_template('Registro.html')
 
@@ -130,16 +130,12 @@ def Contacto():
             recipients=[app.config['MAIL_USERNAME']])
         app.logger.info(msg)
         mail.send(msg)
-        flash("Mensaje enviado con exito", "mensaje")
-
-
         return redirect(url_for("Contacto"))
     else:
-        flash("No se puedo enviar el correo", "error")
-        #return redirect(url_for("Inicio"))
-        #return ("contacto.html")
 
-    return render_template('contacto.html')
+        #return redirect(url_for("Inicio"))
+       return render_template("contacto.html")
+
 @app.route('/Casa')
 def Casa():
     return render_template('home.html')
@@ -187,7 +183,7 @@ def Usuario_index():
 @app.route('/Cliente_Casa')
 def Usuario_home():
 
-    return render_template('usuario_home.html')
+    return render_template('usuario_home.html',nombre=session['nombre'],apellido=session['apellido'])
 
 @app.route('/Cliente_Contacto',methods=['GET','POST'],)
 def Usuario_contacto():
@@ -201,11 +197,11 @@ def Usuario_contacto():
                       recipients=[app.config['MAIL_USERNAME']])
         app.logger.info(msg)
         mail.send(msg)
-        flash("Mensaje enviado con exito", "mensaje")
 
-        return redirect(url_for('Usuario_index'))
+
+        return redirect(url_for('Usuario_contacto'))
     else:
-        flash("No se puedo enviar el correo", "error")
+       pass
         # return redirect(url_for("Inicio"))
         # return ("contacto.html")
     return render_template('usuario_contacto.html')
