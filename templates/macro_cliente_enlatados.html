@@ -3,6 +3,9 @@
 {% block head %}
     {{ super() }}
     <link rel="stylesheet" href=" {{url_for('static',filename='css/venta_enlatados.css')}}">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/carritoCompras1.css')}}">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/carritoCompras3.css')}}">
+
 
 
 {% endblock %}
@@ -10,26 +13,34 @@
 {% block ventas_frutas%}
 
 
-        <div class="container">
+        <div id="lista-productos" class="container">
+          <div class="row">
             <div class="card">
                 <img src="https://th.bing.com/th/id/OIP.cueLYDAaBpO1qKRbm_-LcQHaHa?pid=Api&rs=1">
-                <h4>ATUN  $28.00</h4>
-                    <input type="number" placeholder="cantidad" min="0" max="5">
-                    <input type="submit" name="" value="Agregar a Carrito">
-
+                 <div class="info-card">
+                <h4>ATUN</h4>
+                <h4 class="precio">$28.00</h4>
+                <input type="number" placeholder="cantidad" min="0" max="5">
+                <input type="submit" name="" data-id="1" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
             </div>
-            <div class="card">
+              <div class="card">
                 <img src="https://cdn.shopify.com/s/files/1/0080/1076/0255/products/chiles_rajas_220_g_la_costena_5c0c6e41-3c44-478a-ab8b-7f36efda61a4_800x800.jpg?v=1564779812">
-                <h4>CHILES RAJAS $15.00</h4>
-                    <input type="number" placeholder="cantidad" min="0" max="5">
-                    <input type="submit" name="" value="Agregar a Carrito">
+                 <div class="info-card">
+                <h4>CHILES RAJAS</h4>
+                <h4 class="precio">$15.00</h4>
+                <input type="number" placeholder="cantidad" min="0" max="5">
+                <input type="submit" name="" data-id="2" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
             </div>
+
             <div class="card">
                 <img src="https://www.superama.com.mx/Content/images/products/img_large/0750105861787L.jpg">
                 <h4> LECHERA $13.00</h4>
                     <input type="number" placeholder="cantidad" min="0" max="5">
                     <input type="submit" name="" value="Agregar a Carrito">
             </div>
+          </div>
             <div class="card">
                 <img src="https://cdn.byprice.com/0f120d7e-002d-43e9-b731-57d91d37887d/300_300.png">
                 <h4>FRIJOLES $20.50</h4>

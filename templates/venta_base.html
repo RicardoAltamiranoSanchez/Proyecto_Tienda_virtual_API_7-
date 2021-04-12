@@ -20,6 +20,7 @@
 
 
     <header>
+
         <a  href="{{url_for('Usuario_index')}}" class="brand">Tienda 3b-cliente</a>
         <div class="menu">
             <div class="btn">
@@ -28,19 +29,45 @@
 
                  <a class="nav-link"  href="{{url_for('Usuario_home')}}">Casa<i class="fas fa-home"></i></a>
             <a class="nav-link"  href="{{url_for('Usuario_contacto')}}">contacto<i class="fas fa-envelope"></i> </a>
-            <ul id="menu1">
+               <div class="two columns u-pull-right">
+                   <ul>
+                        <li class="submenu">
+                                <img src="static/img/cart.png" id="img-carrito">
+                                <div id="carrito">
+
+                                        <table id="lista-carrito" class="u-full-width">
+                                            <thead>
+                                                <tr>
+                                                    <th>Imagen</th>
+                                                    <th>Nombre</th>
+                                                    <th>Precio</th>
+                                                    <th>Cantidad</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+
+                                        <a href="#" id="vaciar-carrito" class="button u-full-width ">Vaciar Carrito</a>
+                                </div>
+                        </li>
+                   </ul>
+             </div>
+
+            <div id="menu1">
 
                 <li>
                     <a  href="">Mi cuenta<i class="fas fa-user-circle"></i></a>
                 <ul>
-                    <li><a href="{{url_for('Pago')}}"> Pago</a></li>
+                    <li><a href="{{url_for('Pago')}}"> Pagar</a></li>
                     <li><a href="">Historial</a></li>
+                    <li><a href="">Salir</a></li>
                   </ul>
                 </li>
-            </ul>
-        </div>
+            </div>
 
-        </nav>
+
+
         <div class="btn">
             <i class="fas fa-bars menu-btn"></i>
         </div>
@@ -81,6 +108,7 @@
             menu.classList.remove('active');
         });
     </script>
+        <script src="static/js/carrito_compras.js"></script>
 
 </body>
 
