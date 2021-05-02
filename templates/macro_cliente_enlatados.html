@@ -13,64 +13,70 @@
 {% block ventas_frutas%}
 
 
-        <div id="lista-productos" class="container">
-          <div class="row">
+
+
+
+        <div id="lista-productos" class="container"  >
+
             <div class="card">
-                <img src="https://th.bing.com/th/id/OIP.cueLYDAaBpO1qKRbm_-LcQHaHa?pid=Api&rs=1">
-                 <div class="info-card">
-                <h4>ATUN</h4>
-                <h4 class="precio">$28.00</h4>
-                <input type="number" class="cantidad" placeholder="cantidad" min="0" max="5">
-                <input type="submit" name="" data-id="1" class="agregar-carrito" value="Agregar a Carrito">
-                 </div>
-            </div>
-              <div class="card">
-                <img src="https://cdn.shopify.com/s/files/1/0080/1076/0255/products/chiles_rajas_220_g_la_costena_5c0c6e41-3c44-478a-ab8b-7f36efda61a4_800x800.jpg?v=1564779812">
-                 <div class="info-card">
-                <h4>CHILES RAJAS</h4>
-                <h4 class="precio">$15.00</h4>
-                <input type="number" placeholder="cantidad" min="0" max="5">
-                <input type="submit" name="" data-id="2" class="agregar-carrito" value="Agregar a Carrito">
+                <img src={{enlatados1.imagen}}>
+                 <div class="info-card" >
+                <h4>{{enlatados1.nombre}}</h4>
+                <h4 class="precio">{{enlatados1.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="1" class="agregar-carrito" value="Agregar a Carrito">
                  </div>
             </div>
 
             <div class="card">
-                <img src="https://www.superama.com.mx/Content/images/products/img_large/0750105861787L.jpg">
-                <h4> LECHERA $13.00</h4>
-                    <input type="number" placeholder="cantidad" min="0" max="5">
-                    <input type="submit" name="" value="Agregar a Carrito">
+                <img src={{enlatados2.imagen}}>
+                 <div class="info-card" >
+                <h4>{{enlatados2.nombre}}</h4>
+                <h4 class="precio">{{enlatados2.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="4" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
+                </div>
+                <div class="card">
+                <img src={{enlatados3.imagen}}>
+                 <div class="info-card" >
+                <h4>{{enlatados3.nombre}}</h4>
+                <h4 class="precio">{{enlatados3.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="3" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
+                </div>
+
+              <div class="card">
+                <img src={{enlatados4.imagen}}>
+                 <div class="info-card" >
+                <h4>{{enlatados4.nombre}}</h4>
+                <h4 class="precio">{{enlatados4.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="4" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
             </div>
-          </div>
+
             <div class="card">
-                <img src="https://cdn.byprice.com/0f120d7e-002d-43e9-b731-57d91d37887d/300_300.png">
-                <h4>FRIJOLES $20.50</h4>
-                    <input type="number" placeholder="cantidad" min="0" max="5">
-                    <input type="submit" name="" value="Agregar a Carrito">
-            </div>
-            <div class="card">
-                <img src="https://http2.mlstatic.com/dolores-sardina-tomate-lata-425-gr-D_NQ_NP_823492-MLM31234887129_062019-F.jpg">
-                <h4>SARDINA $30</h4>
-                    <input type="number" placeholder="cantidad" min="0" max="5">
-                    <input type="submit" name="" value="Agregar a Carrito">
-            </div>
-            <div class="card">
-                <img src="https://th.bing.com/th/id/OIP.TSrDWP8eRNGzpklz2YPCbwAAAA?pid=Api&rs=1">
-                <h4>CHILES CHIPOTLES $22.50</h4>
-                    <input type="number" placeholder="cantidad" min="0" max="5">
-                    <input type="submit" name="" value="Agregar a Carrito">
-            </div>
-            <div class="card">
-                <img src="https://cdn.shopify.com/s/files/1/0706/6309/products/mayoreototal-lata-duraznos-en-mitades-en-almibar-de-3000-grs-la-costena-conservas-la-costena-sku_large.png?v=1518350093">
-                <h4>DURAZNOS $33</h4>
-                    <input type="number" placeholder="cantidad" min="0" max="5">
-                    <input type="submit" name="" value="Agregar a Carrito">
-            </div>
-            <div class="card">
-                <img src="https://lagranbodega.vteximg.com.br/arquivos/ids/265400-1000-1000/04CCOS040_1.jpg?v=636868962040230000">
-                <h4>ENSALADA DE VERDURAS $10.50</h4>
-                    <input type="number" placeholder="cantidad" min="0" max="5">
-                    <input type="submit" name="" value="Agregar a Carrito">
-            </div>
+                <img src={{enlatados5.imagen}}>
+                 <div class="info-card" >
+                <h4>{{enlatados5.nombre}}</h4>
+                <h4 class="precio">{{enlatados5.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="5" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
+                </div>
+                <div class="card">
+                <img src={{enlatados6.imagen}}>
+                 <div class="info-card" >
+                <h4>{{enlatados6.nombre}}</h4>
+                <h4 class="precio">{{enlatados6.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="6" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
+                </div>
+                <div class="card">
+                <img src={{enlatados6.imagen}}>
+                 <div class="info-card" >
+                <h4>{{enlatados7.nombre}}</h4>
+                <h4 class="precio">{{enlatados7.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="7" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
+                </div>
 
         </div>
 

@@ -13,7 +13,7 @@ class Usuario_form(FlaskForm):#clase para el form
 
 class Frutas_form(FlaskForm):
       cantidad=IntegerField('Cantidad',validators=[DataRequired("Se necesita una cantidad para validad su compra")])
-      Añadir=SubmitField("Eres puto")
+      Agregar=SubmitField("Eres puto")
 
 
 

@@ -1,0 +1,73 @@
+***************************************
+##COMANDOS PARA LA TABLA DE PRODUCTOS#
+****************************************Â
+insert into producto(tipo) values('ENLATADOS'),('BOTANAS'),('LICORES'),('REFRESCOS'),('FRUTAS');
+
+*****************************************
+##COMANDOS PARA LA TABLA DE ENLATADOS#
+*****************************************
+insert into enlatados (producto_id,nombre,costo,imagen)
+values
+ (1,'ATUN',24.50,'https://th.bing.com/th/id/OIP.cueLYDAaBpO1qKRbm_-LcQHaHa?pid=Api&rs=1'),
+(1,'CHILES RAJAS',15.00,'https://cdn.shopify.com/s/files/1/0080/1076/0255/products/chiles_rajas_220_g_la_costena_5c0
+c6e41-3c44-478a-ab8b-7f36efda61a4_800x800.jpg?v=1564779812'),
+(1,'LECHERA',13.00,'https://www.superama.com.mx/Content/images/products/img_large/0750105861787L.jpg'),
+(1,'FRIJOLES',20.50,'https://cdn.byprice.com/0f120d7e-002d-43e9-b731-57d91d37887d/300_300.png'),
+(1,'SARDINA',30.00,'https://cdn.byprice.com/0f120d7e-002d-43e9-b731-57d91d37887d/300_300.png'),
+(1,'CHILES CHIPOTLES',22.50,'https://th.bing.com/th/id/OIP.TSrDWP8eRNGzpklz2YPCbwAAAA?pid=Api&rs=1'),
+(1,'DURAZNOS',33.00,'https://cdn.shopify.com/s/files/1/0706/6309/products/mayoreototal-lata-duraznos-en-mitades-en-almibar-de-3000-gr
+s-la-costena-conservas-la-costena-sku_large.png?v=1518350093'),
+(1,'ENSALADA DE VERDURAS',10.50,'https://lagranbodega.vteximg.com.br/arquivos/ids/265400-1000-1000/04CCOS040_1.jpg?v=636868962040230000');
+
+**************************
+##COMANDOS PARA BOTANAS#
+**************************
+
+
+insert into botanas (producto_id,nombre,costo,imagen)
+values
+ (2,'MASTER CHIP 50g',18.00,'static/img/botanas/descarga(1).jpg'),
+(2,'SABRITAS LIMO 50 g',14.00,'static/img/botanas/descarga(2).jpg'),
+(2,'RUFLES 50g',13.00,'static/img/botanas/descarga(3).jpg'),
+(2,'SABRITAS PICANTES 50g',13.00,'static/img/botanas/descarga(4).jpg'),
+(2,'MEZCLADITO 280g',38.50,'static/img/botanas/descarga(5).jpg'),
+(2,'QUEXO 280g,',38.50,'static/img/botanas/descarga(6).jpg'),
+(2,'PA SU MECHA 280g',38.50,'static/img/botanas/descarga(7).jpg'),
+(2,'TOTIS LIMON 50g',11.00,'static/img/botanas/descarga(8).jpg'),
+(2,'TOTIS PICANTE 50g',10.00,'static/img/botanas/descarga(9).jpg'),
+(2,'CHEETOS',9.00,'static/img/botanas/descarga(13).jpg'),
+(2,'CHEETOS POFFS',9.00,'static/img/botanas/descarga(15).jpg'),
+(2,'CHEETOS FLAMING HOT',9.00,'static/img/botanas/descarga(14).jpg');
+
+*********************************
+##Vinos y licores#
+*********************
+
+insert into licores (producto_id,nombre,costo,imagen)
+values
+(3,'GLENFIDDICH',1050.00,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4N0Q_1XG_
+zrKbgotT0MubgbAG6pX4ujFhI2OIGDCusG2ctP3oQuwSK8tKo7mPyin6DUBWRZ8&usqp=CAc'),
+(3,'BUCHANAS BLENDED',637.00,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOU
+KrVD_g3GE0LhgYRaLkM-mCjrt7nnzn86GP0UqFqdGNf7SMPvUl52epj6oIav2QO4OL2mQdo&usqp=CAc'),
+(3,'THE MACALLAN',1300.00,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS
+KFCH_z9wX6QG-QxYyK8NwUhXFXjmMoTnIZ-7cNui77Sn1Z1ZPImFxy86IFwEndN9O5QvK8ks&usqp=CAc'),
+(3,'JOHNIE WALKER RED',381.00,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9Gc
+SowaTZieBIf94pYIyPDbwobJITekJc-GJNHdLZVmQEo-Br_IBhdtdtqLU6_W4i5WMMA50Dn4Vi&usqp=CAc'),
+(3,'JB',240,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd
+9GcRRs5CA2PC1aoeBsl5fX5PiOxCrK3A3wGFRYmUSUqALHzRXO8ZGN_swa2jTQufpyJcI9HQCFXQn&usqp=CAc'),
+(3,'JACK DANIELS',465.50,'https://encrypted-tbn0.gstatic.com/images?q=tb
+n:ANd9GcT5pel-o9t9vddvJcHncDwMIkzPOhuQ9moTVRT5JE3ssBmnrfDoyIfZlyzZ3ecDx6-El9PxEdBt&usqp=CAc'),
+(3,'DEWARS BLEND',432.50,'https://encrypted-tbn0.gstatic.com/images?q=tbn:A
+Nd9GcTUK0ViaRglUGtRANzToA3EkgjkOPnteiPC51HOcXFZjfeUWvLdWI4l8TZxVU_mO1m6QdLmglk&usqp=CAc'),
+(3,'PACK PASSPORT',159.00,'https://encrypted-tbn0.gstatic.com/s
+hopping?q=tbn:ANd9GcRrIv3q5rOvzXzEKB9jh3sz8-Fi6-ksriBW-CJe9Nx3zVP_V
+mUoDHrgfUnJheN1sXuIU_u9XF9y11Q0F4YDRgsRpD1IBWrZjQ-9on98LmXL8AEOEtz6AxPWEg&usqp=CAE'),
+(3,'BLACK Y WHITE C/VASE',200,'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:A
+Nd9GcT7e56qRyABYeGRNQqdVcTq7UvFGM6KziMhSL2oyJLLDgL9mKicX_I4tO7ocp8AKzhK7-Sr7yIHUV8ATcHTGNBGTjCeM9BCWq6VlNPd_U6omIrdMmPEQ-6HWw&usqp=CAE'),
+(3,'CROWN ROYAL',511.00,'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:AN
+d9GcTUMorKZ7biaPxHJZ65qk7KL9pxIFWQKnmtjOv_q3G-6J9t4L__EqxKUtTNiVyv_gECeN3GUNpkj75P8Lk6TgQE6Yop_4G0vCYiTRbYZY7PFdf5FqW9Mqr8lA&usqp=CAE'),
+(3,'THE MACALLAN BLACK',1300.00,'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTOX1KnLc1U-zUNS
+eFHtiGKS2o_DvSyVYFEMt3-hHm4XbV8feqN5eZJ5gqUd40RupfRMpkHtV8SyCr03q0efeHGR6JEIFldSKFGxo-tV77yQohr_DxtHWeo&usqp=CAE'),
+(3,'BUCHANANS RED SEAL',3500.00,'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSKIJtrmla-SpX_fd2a4HY9AF6rRFL3fN6hPUlEAr_CmI8vg86xOTkjxP_CuMbp_aNjcOTz9BFKPOE9N9eSVXk6LSSayX3EvZ9E2qejmDir3MLoUHXkLPwkmQA&usqp=CAE'),
+(3,'OLD PARR',635,'https://bodegasalianza.vteximg.com.br/arquivos/ids/158193-1000-1000/3347-1.jpg?v=636167415839230000'),
+(3,'PACK JIM BEAN',275.00,'https://bodegasalianza.vteximg.com.br/arquivos/ids/177179-1000-1000/33170-1.jpg?v=637287424144200000');

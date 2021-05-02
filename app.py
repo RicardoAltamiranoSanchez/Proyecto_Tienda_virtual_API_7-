@@ -19,7 +19,7 @@ app.config.from_object(__name__)
 USER_DB='postgres'
 PASS_DB='riki'
 URL_DB='localhost'
-NAME_DB='tienda3b2'
+NAME_DB='tie'
 FULL_URL_DB=f'postgresql://{USER_DB}:{PASS_DB}@{URL_DB}/{NAME_DB}'#CADENA DE CONEXION COMPLETA
 app.config['SQLALCHEMY_DATABASE_URI']=FULL_URL_DB#cual es laconexion de la bd que va utilizar
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
@@ -209,23 +209,57 @@ def Usuario_contacto():
 @app.route('/Venta_base')
 def Venta():
     return render_template('venta_base.html')
-@app.route('/Venta_Enlatados')
+@app.route('/Venta_Enlatados',methods=['GET','POST'])
 def Ventas_enlatados():
-    return  render_template('macro_cliente_enlatados.html')
+    enlatado1=models.Enlatados.query.filter_by(id=9).first()
+    enlatado2=models.Enlatados.query.filter_by(id=10).first()
+    enlatado3=models.Enlatados.query.filter_by(id=11).first()
+    enlatado4=models.Enlatados.query.filter_by(id=12).first()
+    enlatado5=models.Enlatados.query.filter_by(id=13).first()
+    enlatado6=models.Enlatados.query.filter_by(id=14).first()
+    enlatado7=models.Enlatados.query.filter_by(id=15).first()
+
+    return  render_template('macro_cliente_enlatados.html',enlatados1=enlatado1,enlatados2=enlatado2,enlatados3=enlatado3,enlatados4=enlatado4,enlatados5=enlatado5,
+                            enlatados6=enlatado6,enlatados7=enlatado7)
 @app.route('/Venta_Botonas',methods=['GET','POST'])
 def Ventas_botanas():
-    if request.method=='POST':
-        papa=request.form['papas']
-        print(papa)
-        app.logger.info(f'entrando ala consola {request.path}')
+    botanas1 = models.Botanas.query.filter_by(id=1).first()
+    botanas2 = models.Botanas.query.filter_by(id=2).first()
+    botanas3 = models.Botanas.query.filter_by(id=3).first()
+    botanas4 = models.Botanas.query.filter_by(id=4).first()
+    botanas5 = models.Botanas.query.filter_by(id=5).first()
+    botanas6 = models.Botanas.query.filter_by(id=6).first()
+    botanas7 = models.Botanas.query.filter_by(id=7).first()
+    botanas8 = models.Botanas.query.filter_by(id=8).first()
+    botanas9 = models.Botanas.query.filter_by(id=9).first()
+    botanas10 = models.Botanas.query.filter_by(id=10).first()
+    botanas11= models.Botanas.query.filter_by(id=11).first()
+    botanas12 = models.Botanas.query.filter_by(id=12).first()
 
-    return  render_template('macro_cliente_botanas.html')
+    return  render_template('macro_cliente_botanas.html',botanas1=botanas1,botanas2=botanas2,botanas3=botanas3,botanas4=botanas4,botanas5=botanas5,botanas6=botanas6,botanas7=botanas7,botanas8=botanas8,botanas9=botanas9,botanas10=botanas10,botanas11=botanas11,botanas12=botanas12)
 @app.route('/Venta_Refrescos')
 def Ventas_refrescos():
     return  render_template('macro_cliente_refrescos.html')
 @app.route('/Venta_Licores')
 def Ventas_licores():
-    return  render_template('macro_cliente_licores.html')
+    licores1 = models.Licores.query.filter_by(id=1).first()
+    licores2 = models.Licores.query.filter_by(id=2).first()
+    licores3 = models.Licores.query.filter_by(id=3).first()
+    licores4 = models.Licores.query.filter_by(id=4).first()
+    licores5 = models.Licores.query.filter_by(id=5).first()
+    licores6 = models.Licores.query.filter_by(id=6).first()
+    licores7 = models.Licores.query.filter_by(id=7).first()
+    licores8 = models.Licores.query.filter_by(id=8).first()
+    licores9 = models.Licores.query.filter_by(id=9).first()
+    licores10 = models.Licores.query.filter_by(id=10).first()
+    licores11 = models.Licores.query.filter_by(id=11).first()
+    licores12 = models.Licores.query.filter_by(id=12).first()
+    licores13 = models.Licores.query.filter_by(id=13).first()
+    licores14 = models.Licores.query.filter_by(id=14).first()
+
+    return  render_template('macro_cliente_licores.html',licores1=licores1,licores2=licores2,licores3=licores3,licores4=licores4,licores5=licores5,
+                            licores6=licores6,licores7=licores7,licores8=licores8,licores9=licores9,licores10=licores10,licores11=licores11,licores12=licores12,licores13=licores13,
+                            licores14=licores14)
 #Aqui va la ventas no pude separarlo daba errores
 @app.route('/Venta_frutas',methods=['GET','POST'])
 def Ventas_frutas():

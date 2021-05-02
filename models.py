@@ -120,19 +120,21 @@ class Producto(app.db.Model):#Creamo la clase modelo para la macros de datos fun
 class Frutas(app.db.Model):  # Creamo la clase modelo para la macros de datos funcion model
         id = app.db.Column(app.db.Integer, primary_key=True)  # para crear las columnas en la macros de datos
         producto_id = app.db.Column(app.db.Integer, app.db.ForeignKey('producto.id'))
-        listado = app.db.relationship('Listado')
         nombre = app.db.Column(app.db.String(255))
         costo=app.db.Column(app.db.Float)
+        imagen=app.db.Column(app.db.String(255))
 
-        def __init__(self, nombre,costo):
+        def __init__(self, nombre,costo,imagen):
             self.nombre = nombre
             self.costo = costo
+            self.imagen=imagen
 
         def __str__(self):
             return (
                 f'Id:{self.id},'
                 f'Nombre:{self.nombre},'
-                f'Nombre:{self.costo,}')
+                f'Costo:{self.costo,}',
+                f'Imagen:{self.imagen}')
 class Listado(app.db.Model):  # Creamo la clase modelo para la macros de datos funcion model
         id = app.db.Column(app.db.Integer, primary_key=True)  # para crear las columnas en la macros de datos
         cliente_id=app.db.Column(app.db.Integer,app.db.ForeignKey('usuario.id'))
@@ -164,47 +166,55 @@ class Enlatados(app.db.Model):  # Creamo la clase modelo para la macros de datos
         producto_id = app.db.Column(app.db.Integer, app.db.ForeignKey('producto.id'))
         nombre = app.db.Column(app.db.String(255))
         costo=app.db.Column(app.db.Float)
+        imagen=app.db.Column(app.db.String(255))
 
-        def __init__(self, nombre,costo):
+
+        def __init__(self, nombre,costo,imagen):
             self.nombre = nombre
             self.costo = costo
+            self.imagen=imagen
+
 
         def __str__(self):
             return (
                 f'Id:{self.id},'
                 f'Nombre:{self.nombre},'
-                f'Nombre:{self.costo,}')
+                f'Costo:{self.costo,},'
+                f'Imagen:{self.imagen}')
 class Botanas(app.db.Model):  # Creamo la clase modelo para la macros de datos funcion model
         id = app.db.Column(app.db.Integer, primary_key=True)  # para crear las columnas en la macros de datos
         producto_id = app.db.Column(app.db.Integer, app.db.ForeignKey('producto.id'))
         nombre = app.db.Column(app.db.String(255))
         costo=app.db.Column(app.db.Float)
-
-        def __init__(self, nombre,costo):
+        imagen=app.db.Column(app.db.String(255))
+        def __init__(self, nombre,costo,imagen):
             self.nombre = nombre
             self.costo = costo
+            self.imagen=imagen
 
         def __str__(self):
             return (
                 f'Id:{self.id},'
                 f'Nombre:{self.nombre},'
-                f'Nombre:{self.costo,}')
+                f'Costo:{self.costo,},'
+                f'Imagen:{self.imagen}')
 
 class Refrescos(app.db.Model):  # Creamo la clase modelo para la macros de datos funcion model
         id = app.db.Column(app.db.Integer, primary_key=True)  # para crear las columnas en la macros de datos
         producto_id = app.db.Column(app.db.Integer, app.db.ForeignKey('producto.id'))
         nombre = app.db.Column(app.db.String(255))
         costo=app.db.Column(app.db.Float)
-
-        def __init__(self, nombre,costo):
+        imagen=app.db.Column(app.db.String(255))
+        def __init__(self, nombre,costo,imagen):
             self.nombre = nombre
             self.costo = costo
-
+            self.imagen=imagen
         def __str__(self):
             return (
                 f'Id:{self.id},'
                 f'Nombre:{self.nombre},'
-                f'Nombre:{self.costo,}')
+                f'Costo:{self.costo},'
+                f'imagen:{self.imagen}')
 
 
 class Licores(app.db.Model):  # Creamo la clase modelo para la macros de datos funcion model
@@ -212,16 +222,17 @@ class Licores(app.db.Model):  # Creamo la clase modelo para la macros de datos f
         producto_id = app.db.Column(app.db.Integer, app.db.ForeignKey('producto.id'))
         nombre = app.db.Column(app.db.String(255))
         costo=app.db.Column(app.db.Float)
+        imagen=app.db.Column(app.db.String(255))
 
-        def __init__(self, nombre,costo):
+        def __init__(self, nombre,costo,imagen):
             self.nombre = nombre
             self.costo = costo
-
+            self.imagen=imagen
         def __str__(self):
             return (
                 f'Id:{self.id},'
                 f'Nombre:{self.nombre},'
-                f'Nombre:{self.costo,}')
+                f'Costo:{self.costo,}')
 
 
 

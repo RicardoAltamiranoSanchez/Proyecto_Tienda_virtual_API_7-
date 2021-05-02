@@ -3,98 +3,106 @@
 {% block head %}
     {{ super() }}
     <link rel="stylesheet" href=" {{url_for('static',filename='css/ventas_botanas.css')}}">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/carritoCompras1.css')}}">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/carritoCompras3.css')}}">
+
 
 {% endblock %}
 
 {% block ventas_frutas%}
 
- <div class="container">
-            <div class="card">
-                <img src="static/img/botanas/descarga (1).jpg">
-                <h4>Master Chips 50g<br>$18</h4>
-                <input type="number" placeholder="cantidad" min="0" max="5">
-                <input type="submit" name="papas" value="Agregar a Carrito">
 
+        <div id="lista-productos" class="container"  >
+
+            <div class="card">
+                <img src={{botanas1.imagen}}>
+                 <div class="info-card" >
+                <h4>{{botanas1.nombre}}</h4>
+                <h4 class="precio">{{botanas1.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="8" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
+            </div><div class="card">
+                <img src={{botanas2.imagen}}>
+                 <div class="info-card" >
+                <h4>{{botanas2.nombre}}</h4>
+                <h4 class="precio">{{botanas2.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="9" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
+            </div><div class="card">
+                <img src={{botanas3.imagen}}>
+                 <div class="info-card" >
+                <h4>{{botanas3.nombre}}</h4>
+                <h4 class="precio">{{botanas3.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="10" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
+            </div><div class="card">
+                <img src={{botanas4.imagen}}>
+                 <div class="info-card" >
+                <h4>{{botanas4.nombre}}</h4>
+                <h4 class="precio">{{botanas4.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="11" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
+            </div><div class="card">
+                <img src={{botanas5.imagen}}>
+                 <div class="info-card" >
+                <h4>{{botanas5.nombre}}</h4>
+                <h4 class="precio">{{botanas5.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="12" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
+            </div><div class="card">
+                <img src={{botanas6.imagen}}>
+                 <div class="info-card" >
+                <h4>{{botanas6.nombre}}</h4>
+                <h4 class="precio">{{botanas6.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="13" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
+            </div><div class="card">
+                <img src={{botanas7.imagen}}>
+                 <div class="info-card" >
+                <h4>{{botanas7.nombre}}</h4>
+                <h4 class="precio">{{botanas7.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="14" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
+            </div><div class="card">
+                <img src={{botanas8.imagen}}>
+                 <div class="info-card" >
+                <h4>{{botanas8.nombre}}</h4>
+                <h4 class="precio">{{botanas8.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="15" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
+            </div><div class="card">
+                <img src={{botanas9.imagen}}>
+                 <div class="info-card" >
+                <h4>{{botanas9.nombre}}</h4>
+                <h4 class="precio">{{botanas9.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="16" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
+            </div><div class="card">
+                <img src={{botanas10.imagen}}>
+                 <div class="info-card" >
+                <h4>{{botanas10.nombre}}</h4>
+                <h4 class="precio">{{botanas10.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="17" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
+            </div><div class="card">
+                <img src={{botanas11.imagen}}>
+                 <div class="info-card" >
+                <h4>{{botanas11.nombre}}</h4>
+                <h4 class="precio">{{botanas11.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="18" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
+            </div>
+            <div class="card">
+                <img src={{botanas12.imagen}}>
+                 <div class="info-card" >
+                <h4>{{botanas12.nombre}}</h4>
+                <h4 class="precio">{{botanas12.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="19" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
             </div>
 
-            <div class="card">
-                <img src="static/img/botanas/descarga (2).jpg">
-                <h4>Sabritas Limón 50g<br>$14.00</h4>
-                    <input type="number" placeholder="cantidad" min="0" max="5">
-                    <input type="submit" name="" value="Agregar a Carrito">
 
-            </div>
 
-            <div class="card">
-                <img src="static/img/botanas/descarga (3).jpg">
-                <h4>Ruffles 50g<br>$13.00</h4>
-                    <input type="number" placeholder="cantidad" min="0" max="5">
-                    <input type="submit" name="" value="Agregar a Carrito">
-
-             </div>
-
-            <div class="card">
-                <img src="static/img/botanas/descarga (4).jpg">
-                <h4>Papas Sabritas Picantes 50g<br>$13</h4>
-                    <input type="number" placeholder="cantidad" min="0" max="5">
-                    <input type="submit" name="" value="Agregar a Carrito">
-
-            </div>
-
-            <div class="card">
-                <img src="static/img/botanas/descarga (5).jpg">
-                <h4>Mezcladito 280g<br>$38.50</h4>
-                    <input type="number" placeholder="cantidad" min="0" max="5">
-                    <input type="submit" name="" value="Agregar a Carrito">
-            </div>
-
-            <div class="card">
-                <img src="static/img/botanas/descarga (6).jpg">
-                <h4>Quexo 280g<br>$38.50</h4>
-                    <input type="number" placeholder="cantidad" min="0" max="5">
-                    <input type="submit" name="" value="Agregar a Carrito">
-            </div>
-
-            <div class="card">
-                <img src="static/img/botanas/descarga (7).jpg">
-                <h4>Pa´su mecha 280g<br>$38.50</h4>
-                    <input type="number" placeholder="cantidad" min="0" max="5">
-                    <input type="submit" name="" value="Agregar a Carrito">            </div>
-
-            <div class="card">
-                <img src="static/img/botanas/descarga (8).jpg">
-                <h4>Totis Limón 50g<br>$11.00</h4>
-                    <input type="number" placeholder="cantidad" min="0" max="5">
-                    <input type="submit" name="" value="Agregar a Carrito">
-            </div>
-
-            <div class="card">
-                <img src="static/img/botanas/descarga (9).jpg">
-                <h4>Totis Picante 50g<br>$11.00</h4>
-                    <input type="number" placeholder="cantidad" min="0" max="5">
-                    <input type="submit" name="" value="Agregar a Carrito">
-            </div>
-
-            <div class="card">
-                <img src="static/img/botanas/descarga (13).jpg">
-                <h4>Cheetos<br>$9.00</h4>
-                    <input type="number" placeholder="cantidad" min="0" max="5">
-                    <input type="submit" name="" value="Agregar a Carrito">
-            </div>
-
-            <div class="card">
-                <img src="static/img/botanas/descarga (15).jpg">
-                <h4>Cheetos poffs<br>$9.00</h4>
-                    <input type="number" placeholder="cantidad" min="0" max="5">
-                    <input type="submit" name="" value="Agregar a Carrito">
-            </div>
-
-            <div class="card">
-                <img src="static/img/botanas/descarga (14).jpg">
-                <h4>Cheetos flaming hot<br>$9.00</h4>
-                    <input type="number" placeholder="cantidad" min="0" max="5">
-                    <input type="submit" name="" value="Agregar a Carrito">
-            </div>
 
         </div>
 
