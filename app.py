@@ -20,7 +20,7 @@ USER_DB='postgres'
 PASS_DB='riki'
 URL_DB='localhost'
 NAME_DB='tie'
-FULL_URL_DB=f'postgresql://{USER_DB}:{PASS_DB}@{URL_DB}/{NAME_DB}'#CADENA DE CONEXION COMPLETA
+FULL_URL_DB=f'postgresql://{USER_DB}:{PASS_DB}@{URL_DB}/{NAME_DB}' #CADENA DE CONEXION COMPLETA
 app.config['SQLALCHEMY_DATABASE_URI']=FULL_URL_DB#cual es laconexion de la bd que va utilizar
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
 db.init_app(app)
@@ -239,7 +239,23 @@ def Ventas_botanas():
     return  render_template('macro_cliente_botanas.html',botanas1=botanas1,botanas2=botanas2,botanas3=botanas3,botanas4=botanas4,botanas5=botanas5,botanas6=botanas6,botanas7=botanas7,botanas8=botanas8,botanas9=botanas9,botanas10=botanas10,botanas11=botanas11,botanas12=botanas12)
 @app.route('/Venta_Refrescos')
 def Ventas_refrescos():
-    return  render_template('macro_cliente_refrescos.html')
+    refrescos1 = models.Refrescos.query.filter_by(id=1).first()
+    refrescos2 = models.Refrescos.query.filter_by(id=2).first()
+    refrescos3 = models.Refrescos.query.filter_by(id=3).first()
+    refrescos4 = models.Refrescos.query.filter_by(id=4).first()
+    refrescos5 = models.Refrescos.query.filter_by(id=5).first()
+    refrescos6 = models.Refrescos.query.filter_by(id=6).first()
+    refrescos7 = models.Refrescos.query.filter_by(id=7).first()
+    refrescos8 = models.Refrescos.query.filter_by(id=8).first()
+    refrescos9 = models.Refrescos.query.filter_by(id=9).first()
+    refrescos10 = models.Refrescos.query.filter_by(id=10).first()
+    refrescos11= models.Refrescos.query.filter_by(id=11).first()
+    refrescos12= models.Refrescos.query.filter_by(id=12).first()
+
+    return  render_template('macro_cliente_refrescos.html',refrescos1=refrescos1,refrescos2=refrescos2,
+                            refrescos3=refrescos3,refrescos4=refrescos4,refrescos5=refrescos5,refrescos6=refrescos6,
+                            refrescos7=refrescos7,refrescos8=refrescos8,refrescos9=refrescos9,refrescos10=refrescos10
+                            ,refrescos11 = refrescos11, refrescos12 = refrescos12)
 @app.route('/Venta_Licores')
 def Ventas_licores():
     licores1 = models.Licores.query.filter_by(id=1).first()
@@ -281,42 +297,12 @@ def Ventas_frutas():
     fruta15=models.Frutas.query.filter_by(id=15).first()
     fruta16=models.Frutas.query.filter_by(id=16).first()
 
-    venta_form=Frutas_form(obj=fruta1)  # asociamos nuestra base de datos a  nuesta clase form o formulario
-    if request.method == 'POST':  # preguntamos si el tipo de metodo es de tipo post importamos del objeto flask.request
-        if venta_form.validate_on_submit():  # preguntamos si el formulario si es valido solo si se hace elenvio del formulario
-            venta_form.populate_obj(fruta1)  # llenamos el objetos que persona que definimos de clase models
-            app.logger.debug(f'Persona a insertar {fruta1}')
 
-            lista= models.Listado(cliente_id=session['id'],
-                                  nombre_cliente=session['nombre'],
-                                  frutas_id=fruta1.id,
-                                  nombre=fruta1.nombre,
-                                  cantidad=fruta1.cantidad,
-                                  costo=fruta1.costo)
-
-            db.session.add(lista)
-            db.session.commit()
-    venta_form=Frutas_form(obj=fruta2)  # asociamos nuestra base de datos a  nuesta clase form o formulario
-    if request.method == 'POST':  # preguntamos si el tipo de metodo es de tipo post importamos del objeto flask.request
-        if venta_form.validate_on_submit():  # preguntamos si el formulario si es valido solo si se hace elenvio del formulario
-            venta_form.populate_obj(fruta2)  # llenamos el objetos que persona que definimos de clase models
-            app.logger.debug(f'Persona a insertar {fruta2}')
-
-
-            lista= models.Listado(cliente_id=session['id'],
-                                  nombre_cliente=session['nombre'],
-                                  frutas_id=fruta2.id,
-                                  nombre=fruta2.nombre,
-                                  cantidad=fruta2.cantidad,
-                                  costo=fruta2.costo)
-
-            db.session.add(lista)
-            db.session.commit()
 
 
     return  render_template('macro_cliente_fruta.html',fruta1=fruta1,fruta2=fruta2,fruta3=fruta3,fruta4=fruta4,fruta5=fruta5,
                             fruta6=fruta6,fruta7=fruta7,fruta8=fruta8,fruta9=fruta9,fruta10=fruta10,fruta11=fruta11,
-                            fruta12=fruta12,fruta13=fruta13,fruta14=fruta14,fruta15=fruta15,fruta16=fruta16,venta=venta_form)
+                            fruta12=fruta12,fruta13=fruta13,fruta14=fruta14,fruta15=fruta15,fruta16=fruta16)
 @app.route('/Listado')
 def Listado():
 

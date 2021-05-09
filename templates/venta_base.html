@@ -8,11 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title >{% block title %}{% endblock %}-Venta3B </title>
     <link rel="icon" href="static/img/logo.ico">
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href=" {{url_for('static',filename='css/usuario_navegador_oficial.css')}}">
     <link rel="stylesheet" href=" {{url_for('static',filename='css/inicio_duff.css')}}">
     <link rel="stylesheet" href=" {{url_for('static',filename='css/sub.css')}}">
+
     {%endblock %}
 
 </head>
@@ -29,14 +31,15 @@
 
                  <a class="nav-link"  href="{{url_for('Usuario_home')}}">Casa<i class="fas fa-home"></i></a>
             <a class="nav-link"  href="{{url_for('Usuario_contacto')}}">contacto<i class="fas fa-envelope"></i> </a>
-               <div class="two columns u-pull-right">
+
+            <div class="two columns u-pull-right" >
                    <ul>
-                        <li class="submenu">
+                        <li class="submenu" >
                                 <img src="static/img/cart.png" id="img-carrito">
-                                <div id="carrito">
+                                <div id="carrito"  >
 
                                         <table id="lista-carrito" class="u-full-width">
-                                            <thead>
+                                            <thead >
                                                 <tr>
                                                     <th>Imagen</th>
                                                     <th>Nombre</th>
@@ -45,13 +48,14 @@
                                                     <th></th>
                                                 </tr>
                                             </thead>
-                                            <tbody></tbody>
+                                            <tbody ></tbody>
                                         </table>
 
                                         <a href="#" id="vaciar-carrito" class="button u-full-width ">Vaciar Carrito</a>
                                 </div>
                         </li>
                    </ul>
+
              </div>
 
             <div id="menu1">
@@ -109,6 +113,8 @@
         });
     </script>
         <script src="static/js/carrito_compras.js"></script>
+        <script src="http://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </body>
 

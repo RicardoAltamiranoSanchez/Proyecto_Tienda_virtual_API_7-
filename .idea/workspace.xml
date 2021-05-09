@@ -4,17 +4,12 @@
     <list default="true" id="ccc385b9-ba0b-4aff-8d06-248ab6aece43" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/alembic.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/env.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/script.py.mako" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/957df2383b3b_.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/carritoCompras1.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/carritoCompras1.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/usuario_navegador_oficial.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/usuario_navegador_oficial.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/carrito_compras.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/carrito_compras.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/macro_cliente_botanas.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/macro_cliente_botanas.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/macro_cliente_enlatados.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/macro_cliente_enlatados.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/macro_cliente_fruta.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/macro_cliente_fruta.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/macro_cliente_licores.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/macro_cliente_licores.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/macro_cliente_refrescos.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/macro_cliente_refrescos.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/venta_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/venta_base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

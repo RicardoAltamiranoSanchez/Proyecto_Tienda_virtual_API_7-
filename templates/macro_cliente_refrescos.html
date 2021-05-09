@@ -3,195 +3,133 @@
 {% block head %}
     {{ super() }}
     <link rel="stylesheet" href=" {{url_for('static',filename='css/venta_refrescos.css')}}">
-
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/carritoCompras1.css')}}">
+    <link rel="stylesheet" href=" {{url_for('static',filename='css/carritoCompras3.css')}}">
 {% endblock %}
 
 {% block ventas_frutas%}
-  <div class="container">
 
-                    <div class="card">
-                        <img src="static/img/refresco/r1.jpg">
-                        <h4>7up 600 ml $10.00</h4>
-                            <input type="number" placeholder="cantidad" min="0" max="5">
-                            <input type="submit" name="" value="Agregar a Carrito">
-                    </div>
-                    <div class="card">
-                        <img src="static/img/refresco/r2.jpg">
-                        <h4>7up 1.5L $21.00</h4>
-                            <input type="number" placeholder="cantidad" min="0" max="5">
-                            <input type="submit" name="" value="Agregar a Carrito">
-                    </div>
-                    <div class="card">
-                        <img src="static/img/refresco/r3.jpg">
-                        <h4>7up 3L $30.00</h4>
-                            <input type="number" placeholder="cantidad" min="0" max="5">
-                            <input type="submit" name="" value="Agregar a Carrito">
-                    </div>
-                    <div class="card">
-                        <img src="static/img/refresco/r4.jpg">
-                        <h4>Mundet 600ml $13.00</h4>
-                            <input type="number" placeholder="cantidad" min="0" max="5">
-                            <input type="submit" name="" value="Agregar a Carrito">
-                    </div>
-                    <div class="card">
-                        <img src="static/img/refresco/r5.jpg">
-                        <h4>Mundet 1.5L $22.00</h4>
-                            <input type="number" placeholder="cantidad" min="0" max="5">
-                            <input type="submit" name="" value="Agregar a Carrito">
-                    </div>
-                    <div class="card">
-                        <img src="static/img/refresco/r6.jpg">
-                        <h4>Mundet 3L $31.00</h4>
-                            <input type="number" placeholder="cantidad" min="0" max="5">
-                            <input type="submit" name="" value="Agregar a Carrito">
-                    </div>
-                    <div class="card">
-                        <img src="static/img/refresco/r7.jpg">
-                        <h4>Mirinda 600ml $11.00</h4>
-                            <input type="number" placeholder="cantidad" min="0" max="5">
-                            <input type="submit" name="" value="Agregar a Carrito">
-                    </div>
-                    <div class="card">
-                        <img src="static/img/refresco/r8.jpg">
-                        <h4>Mirinda 1.5L $20.00</h4>
-                            <input type="number" placeholder="cantidad" min="0" max="5">
-                            <input type="submit" name="" value="Agregar a Carrito">
-                    </div>
-                    <div class="card">
-                        <img src="static/img/refresco/r9.jpg">
-                        <h4>Mirinda 3L $29.00</h4>
-                            <input type="number" placeholder="cantidad" min="0" max="5">
-                            <input type="submit" name="" value="Agregar a Carrito">
-                    </div>
-                    <div class="card">
-                        <img src="static/img/refresco/r10.jpg">
-                        <h4>Pepsi 600ml $11.00</h4>
-                            <input type="number" placeholder="cantidad" min="0" max="5">
-                            <input type="submit" name="" value="Agregar a Carrito">
-                    </div>
-                    <div class="card">
-                        <img src="static/img/refresco/r11.jpg">
-                        <h4>Pepsi 1.5L $20.00</h4>
-                            <input type="number" placeholder="cantidad" min="0" max="5">
-                            <input type="submit" name="" value="Agregar a Carrito">
-                    </div>
-                    <div class="card">
-                        <img src="static/img/refresco/r12.jpg">
-                        <h4>Pepsi 3L $33.00</h4>
-                            <input type="number" placeholder="cantidad" min="0" max="5">
-                            <input type="submit" name="" value="Agregar a Carrito">
-                    </div>
-                    <div class="card">
-                        <img src="static/img/refresco/r13.jpg">
-                        <h4>Coca 600 ml $13.00</h4>
-                            <input type="number" placeholder="cantidad" min="0" max="5">
-                            <input type="submit" name="" value="Agregar a Carrito">
-                    </div>
-                    <div class="card">
-                        <img src="static/img/refresco/r14.jpg">
-                        <h4>Coca 1.5L $18.00</h4>
-                            <input type="number" placeholder="cantidad" min="0" max="5">
-                            <input type="submit" name="" value="Agregar a Carrito">
-                    </div>
-                    <div class="card">
-                        <img src="static/img/refresco/r15.jpg">
-                        <h4>Coca 3L $33.00</h4>
-                            <input type="number" placeholder="cantidad" min="0" max="5">
-                            <input type="submit" name="" value="Agregar a Carrito">
-                    </div>
 
-        <div class="card">
-            <img src="static/img/refresco/j1.jpg">
-            <h4>BoingMango 250ml $5.00</h4>
-                <input type="number" placeholder="cantidad" min="0" max="5">
-                <input type="submit" name="" value="Agregar a Carrito">
-        </div>
-        <div class="card">
-            <img src="static/img/refresco/j2.jpg">
-            <h4>BoingMango 500ml $10.00</h4>
-                <input type="number" placeholder="cantidad" min="0" max="5">
-                <input type="submit" name="" value="Agregar a Carrito">
-        </div>
-        <div class="card">
-            <img src="static/img/refresco/j3.jpg">
-            <h4>BoingMango 1L $19.00</h4>
-                <input type="number" placeholder="cantidad" min="0" max="5">
-                <input type="submit" name="" value="Agregar a Carrito">
-        </div>
-        <div class="card">
-            <img src="static/img/refresco/j4.jpg">
-            <h4>BoingManzana 250ml $5.00</h4>
-                <input type="number" placeholder="cantidad" min="0" max="5">
-                <input type="submit" name="" value="Agregar a Carrito">
-        </div>
-        <div class="card">
-            <img src="static/img/refresco/j5.jpg">
-            <h4>BoingManzana 500ml $10.00</h4>
-                <input type="number" placeholder="cantidad" min="0" max="5">
-                <input type="submit" name="" value="Agregar a Carrito">
-        </div>
-        <div class="card">
-            <img src="static/img/refresco/j6.jpg">
-            <h4>BoingManzana 1L $19.00</h4>
-                <input type="number" placeholder="cantidad" min="0" max="5">
-                <input type="submit" name="" value="Agregar a Carrito">
-        </div>
-        <div class="card">
-            <img src="static/img/refresco/j7.jpg">
-            <h4>BoingUva 250ml $5.00</h4>
-                <input type="number" placeholder="cantidad" min="0" max="5">
-                <input type="submit" name="" value="Agregar a Carrito">
-        </div>
-        <div class="card">
-            <img src="static/img/refresco/j8.jpg">
-            <h4>BoingUva 500ml $10.00</h4>
-                <input type="number" placeholder="cantidad" min="0" max="5">
-                <input type="submit" name="" value="Agregar a Carrito">
-        </div>
-        <div class="card">
-            <img src="static/img/refresco/j9.jpg">
-            <h4>BoingUva 1L $19.00</h4>
-                <input type="number" placeholder="cantidad" min="0" max="5">
-                <input type="submit" name="" value="Agregar a Carrito">
-        </div>
-        <div class="card">
-            <img src="static/img/refresco/j10.jpg">
-            <h4>BoingDurazno 250ml $5.00</h4>
-                <input type="number" placeholder="cantidad" min="0" max="5">
-                <input type="submit" name="" value="Agregar a Carrito">
-        </div>
-        <div class="card">
-            <img src="static/img/refresco/j11.jpg">
-            <h4>BoingDurazno 500ml $10.00</h4>
-                <input type="number" placeholder="cantidad" min="0" max="5">
-                <input type="submit" name="" value="Agregar a Carrito">
-        </div>
-        <div class="card">
-            <img src="static/img/refresco/j12.jpg">
-            <h4>BoingDurazno 1L $19.00</h4>
-                <input type="number" placeholder="cantidad" min="0" max="5">
-                <input type="submit" name="" value="Agregar a Carrito">
-        </div>
-        <div class="card">
-            <img src="static/img/refresco/j13.jpg">
-            <h4>BoingGuayaba 250ml $5.00</h4>
-                <input type="number" placeholder="cantidad" min="0" max="5">
-                <input type="submit" name="" value="Agregar a Carrito">
-        </div>
-        <div class="card">
-            <img src="static/img/refresco/j14.jpg">
-            <h4>BoingGuayaba 500ml $10.00</h4>
-                <input type="number" placeholder="cantidad" min="0" max="5">
-                <input type="submit" name="" value="Agregar a Carrito">
-        </div>
-        <div class="card">
-            <img src="static/img/refresco/j15.jpg">
-            <h4>BoingGUayaba 1L $19.00</h4>
-                <input type="number" placeholder="cantidad" min="0" max="5">
-                <input type="submit" name="" value="Agregar a Carrito">
-        </div>
 
-    </div>
 
+        <div id="lista-productos" class="container"  >
+
+            <div class="card">
+                <img src={{refrescos1.imagen}}>
+                 <div class="info-card" >
+                <h4>{{refrescos1.nombre}}</h4>
+                <h4 class="precio">{{refrescos1.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="36" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
+            </div>
+
+
+
+            <div class="card">
+                <img src={{refrescos2.imagen}}>
+                 <div class="info-card" >
+                <h4>{{refrescos2.nombre}}</h4>
+                <h4 class="precio">{{refrescos2.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="37" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
+            </div>
+
+
+
+            <div class="card">
+                <img src={{refrescos3.imagen}}>
+                 <div class="info-card" >
+                <h4>{{refrescos3.nombre}}</h4>
+                <h4 class="precio">{{refrescos3.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="38" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
+            </div>
+
+
+
+            <div class="card">
+                <img src={{refrescos4.imagen}}>
+                 <div class="info-card" >
+                <h4>{{refrescos4.nombre}}</h4>
+                <h4 class="precio">{{refrescos4.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="39" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
+            </div>
+
+
+
+            <div class="card">
+                <img src={{refrescos5.imagen}}>
+                 <div class="info-card" >
+                <h4>{{refrescos5.nombre}}</h4>
+                <h4 class="precio">{{refrescos5.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="40" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
+            </div>
+
+
+
+            <div class="card">
+                <img src={{refrescos6.imagen}}>
+                 <div class="info-card" >
+                <h4>{{refrescos6.nombre}}</h4>
+                <h4 class="precio">{{refrescos6.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="41" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
+            </div>
+
+
+
+            <div class="card">
+                <img src={{refrescos7.imagen}}>
+                 <div class="info-card" >
+                <h4>{{refrescos7.nombre}}</h4>
+                <h4 class="precio">{{refrescos7.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="42" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
+            </div>
+
+
+
+            <div class="card">
+                <img src={{refrescos8.imagen}}>
+                 <div class="info-card" >
+                <h4>{{refrescos8.nombre}}</h4>
+                <h4 class="precio">{{refrescos8.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="43" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
+            </div>
+
+
+
+            <div class="card">
+                <img src={{refrescos10.imagen}}>
+                 <div class="info-card" >
+                <h4>{{refrescos10.nombre}}</h4>
+                <h4 class="precio">{{refrescos10.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="44" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
+            </div>
+
+
+            <div class="card">
+                <img src={{refrescos11.imagen}}>
+                 <div class="info-card" >
+                <h4>{{refrescos11.nombre}}</h4>
+                <h4 class="precio">{{refrescos11.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="45" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
+            </div>
+
+
+            <div class="card">
+                <img src={{refrescos12.imagen}}>
+                 <div class="info-card" >
+                <h4>{{refrescos12.nombre}}</h4>
+                <h4 class="precio">{{refrescos12.costo}}</h4>
+                <input type="submit" name="agregar-carrito" data-id="46" class="agregar-carrito" value="Agregar a Carrito">
+                 </div>
+            </div>
+        </div>
 
 {% endblock %}

@@ -72,6 +72,7 @@ function leerDatosProducto(producto) {
 
      // console.log(articulosCarrito)
      carritoHTML();
+
 }
 
 // Elimina el producto del carrito en el DOM
@@ -111,7 +112,7 @@ function carritoHTML() {
           contenedorCarrito.appendChild(row);
      });
 
-     // NUEVO:
+
      sincronizarStorage();
 
 }
@@ -128,4 +129,5 @@ function vaciarCarrito() {
      while(contenedorCarrito.firstChild) {
           contenedorCarrito.removeChild(contenedorCarrito.firstChild);
       }
+      localStorage.removeItem(contenedorCarrito);
 }

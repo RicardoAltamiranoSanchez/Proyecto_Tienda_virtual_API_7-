@@ -385,9 +385,15 @@ hr {
 .footer-container ul {
   margin: 0 auto;
 }
-
+.scroll{
+overflow-y:auto;
+background-color:red;
+}
 .footer-links li {
   line-height: 2.8;
+}
+button {
+  overflow: visible;
 }
 
 .footer {
@@ -474,3 +480,4 @@ hr {
     text-align: center;
   }
 }
+
