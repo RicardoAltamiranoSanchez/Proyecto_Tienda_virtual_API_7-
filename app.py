@@ -11,6 +11,7 @@ from Login import login
 from flask_migrate import Migrate
 from werkzeug.utils import redirect
 app=Flask(__name__)
+app.cli.add_command(create_tables)
 #jinja_env=jinja2.Environment(loader=jinja2.FileSystemLoader('template'))
 #template=jinja_env.get_template('content.html')
 #template.render('index.html')
@@ -22,6 +23,7 @@ URL_DB='localhost'
 NAME_DB='tie'
 FULL_URL_DB=f'postgresql://{USER_DB}:{PASS_DB}@{URL_DB}/{NAME_DB}' #CADENA DE CONEXION COMPLETA
 app.config['SQLALCHEMY_DATABASE_URI']=FULL_URL_DB#cual es laconexion de la bd que va utilizar
+app.config['SQLALCHEMY_DATABASE_URI']=os.environ.get('DATABASE_URL')#cual es laconexion de la bd que va utilizar
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
 db.init_app(app)
 migrate=Migrate()
@@ -353,6 +355,6 @@ def Pagina_no_encontrada(e):
 
 if __name__=='__main__':
 
-    app.run(debug=True,port=8000,host=0000)
+    app.run()
 
 
