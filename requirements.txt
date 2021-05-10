@@ -95,7 +95,7 @@ parso==0.8.1
 passlib==1.7.2
 patator==0.9
 pexpect==4.8.0
-pgadmin4 @ file:///opt/pgadmin4-4.29-py3-none-any.whl
+
 pickleshare==0.7.5
 Pillow==8.1.2
 pluggy==0.13.0
