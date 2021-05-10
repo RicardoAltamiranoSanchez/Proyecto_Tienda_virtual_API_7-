@@ -52,7 +52,7 @@ def Inicio():
 @app.route('/Registro', methods=['GET', 'POST'])
 def Registro():
     
-    if request.method=='POST':
+    if request.method=='GET':
             if models.Usuario.query.filter_by(correo=request.form['correo']).first() is None:
                 if models.Usuario.query.filter_by(contrasenia=request.form['password']).first() is None:
                     session['nombreG']=request.form['nombre']
@@ -60,7 +60,7 @@ def Registro():
                     session['correoG'] = request.form['correo']
                     session['usuarioG']= request.form['usuario']
                     session['passwordG']= request.form['password']
-                 
+
                     email = request.form['correo']
                     token = s.dumps(email, salt='email-confirm')
                     msg = Message('Confirmacioin de Correo Electronico', sender='2020sunburst.systems@gmail.com',
