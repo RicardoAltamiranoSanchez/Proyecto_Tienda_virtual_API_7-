@@ -66,7 +66,7 @@ jedi==0.18.0
 Jinja2==2.11.2
 kaitaistruct==0.9
 
-KismetCaptureFreaklabsZigbee==2018.7.0
+
 KismetCaptureRtl433==2019.9.1
 KismetCaptureRtladsb==2019.10.1
 KismetCaptureRtlamr==2019.10.1
