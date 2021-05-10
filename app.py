@@ -52,7 +52,7 @@ def Inicio():
 @app.route('/Registro', methods=['GET', 'POST'])
 def Registro():
     
-    if request.method=='GET':
+    if request.method=='POST':
             if models.Usuario.query.filter_by(correo=request.form['correo']).first() is None:
                 if models.Usuario.query.filter_by(contrasenia=request.form['password']).first() is None:
                     session['nombreG']=request.form['nombre']
