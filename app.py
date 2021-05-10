@@ -60,15 +60,7 @@ def Registro():
                     session['correoG'] = request.form['correo']
                     session['usuarioG']= request.form['usuario']
                     session['passwordG']= request.form['password']
-                    a= models.Administracion(nombre('Ricardo'),
-                                       apellido('Altamirano'),
-                                       correo('ricardohh9385@gmail.com'),
-                                       usuario('riki'),
-                                       contrasenia('riki'), )
-
-                    app.logger.info(f'entrando ala consola {request.path}')
-                    db.session.add(a)
-                    db.session.commit()
+                 
                     email = request.form['correo']
                     token = s.dumps(email, salt='email-confirm')
                     msg = Message('Confirmacioin de Correo Electronico', sender='2020sunburst.systems@gmail.com',
