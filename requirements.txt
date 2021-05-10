@@ -27,7 +27,7 @@ db==0.1.1
 dbus-python==1.2.16
 
 decorator==4.4.2
-distro-info==1.0
+
 dnslib==0.9.14
 dnspython==2.0.0
 fierce==1.4.0
