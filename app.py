@@ -12,7 +12,7 @@ from flask_migrate import Migrate
 from werkzeug.utils import redirect
 
 app=Flask(__name__)
-app.cli.add_command(create_tables)
+
 #jinja_env=jinja2.Environment(loader=jinja2.FileSystemLoader('template'))
 #template=jinja_env.get_template('content.html')
 #template.render('index.html')
