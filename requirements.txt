@@ -134,7 +134,7 @@ pysmi==0.3.2
 pysnmp==4.4.12
 PySocks==1.7.1
 pytest==4.6.11
-python-apt==2.1.7
+
 python-dateutil==2.8.1
 python-debian==0.1.39
 python-editor==1.0.4
