@@ -169,7 +169,7 @@ tornado==6.1
 traitlets==5.0.5
 Twisted==20.3.0
 typing-extensions==3.7.4.3
-unattended-upgrades==0.1
+
 urwid==2.1.2
 wcwidth==0.1.9
 webencodings==0.5.1
@@ -184,4 +184,3 @@ xdg==5
 yara-python==4.0.4
 zipp==1.0.0
 zope.interface==5.2.0
-
