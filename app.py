@@ -10,6 +10,7 @@ from itsdangerous import URLSafeTimedSerializer, SignatureExpired
 from Login import login
 from flask_migrate import Migrate
 from werkzeug.utils import redirect
+
 app=Flask(__name__)
 app.cli.add_command(create_tables)
 #jinja_env=jinja2.Environment(loader=jinja2.FileSystemLoader('template'))
@@ -351,8 +352,6 @@ def Pago():
 @app.errorhandler(404)
 def Pagina_no_encontrada(e):
     return render_template('404.html'),404
-
-
 if __name__=='__main__':
 
     app.run()
