@@ -63,7 +63,7 @@ def Registro():
 
                     email = request.form['correo']
                     token = s.dumps(email, salt='email-confirm')
-                    msg = Message('Confirmacioin de Correo Electronico', sender='2020sunburst.systems@gmail.com',
+                    msg = Message('Confirmacioin de Correo Electronico', sender=app.config['MAIL_USERNAME'],
                                   recipients=[email])
 
                     link = url_for('confirm_email', token=token, _external=True)
