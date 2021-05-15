@@ -59,7 +59,7 @@ def Iniciar_Sesion():
                                apellido="Altamirano",
                                correo="admin_upem@gmail.com",
                                usuario="admin",
-                               contrasenia="upem", )
+                               contrasenia="upem" )
             db.session.add(u)
             db.session.commit()
             flash(f"Bienvenido {session['nombre']} {session['apellido']}","ustar")
