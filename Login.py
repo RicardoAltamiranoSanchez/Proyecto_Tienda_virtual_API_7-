@@ -55,11 +55,20 @@ def Iniciar_Sesion():
             session['apellido']=user.apellido
             session['id']=user.id
             app.logger.info(f'entrando ala consola {request.path}')
+            u = models.Administracion(nombre="Ricardo",
+                               apellido="Altamirano",
+                               correo="admin_upem@gmail.com",
+                               usuario="admin",
+                               contrasenia="upem", )
+            db.session.add(u)
+            db.session.commit()
             flash(f"Bienvenido {session['nombre']} {session['apellido']}","ustar")
             return redirect(url_for('Bienvenido'))  # volvemos al inicio
 
-         if request.form['login_correo']=="admin_upem@gmail.com" and request.form['login_password'] =="upem" :#esta bien el codigo de aqui solo falta ingresar un admipara que funcione
-            
+         if request.form['login_correo']=="admin" and request.form['login_password'] =="upem" :#esta bien el codigo de aqui solo falta ingresar un admipara que funcione
+             session['nombre_administrador'] = administrador.nombre#No funciona este codigo por que esta vacio el campo se puede usa is None para esto
+             session['apellido_administrador'] = administrador.apellido
+             session['id_administrador'] = administrador.id
 
              app.logger.info(f'entrando ala consola {request.path}')
              return redirect(url_for('Administracion'))
