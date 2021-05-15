@@ -35,8 +35,8 @@ s = URLSafeTimedSerializer('Thisisasecret!')
 
 app.config['SECRET_KEY']='llave_maestra'
 app.config['MAIL_SERVER']= 'smtp.gmail.com'
-app.config['MAIL_USERNAME'] = os.environ.get('EMAIL_USER', '2020sunburst.systems@gmail.com')
-app.config['MAIL_PASSWORD'] = os.environ.get('EMAIL_PASS', 'AIzaSyCHFmzeEjmE53xzf9sjQXD6aK-EpjyqEFg')
+app.config['MAIL_USERNAME'] = os.environ.get('EMAIL_USER', 'sunburstsystem123@gmail.com')
+app.config['MAIL_PASSWORD'] = os.environ.get('EMAIL_PASS', 'zfmxafcvqgcflair')
 app.config['MAIL_PORT']=587
 app.config['MAIL_USE_SSL']=False
 app.config['MAIL_USE_TLS']=True
