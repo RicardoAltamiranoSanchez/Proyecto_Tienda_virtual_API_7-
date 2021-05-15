@@ -55,7 +55,7 @@ def Iniciar_Sesion():
             session['apellido']=user.apellido
             session['id']=user.id
             app.logger.info(f'entrando ala consola {request.path}')
-          
+
             flash(f"Bienvenido {session['nombre']} {session['apellido']}","ustar")
             return redirect(url_for('Bienvenido'))  # volvemos al inicio
 
