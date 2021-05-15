@@ -310,13 +310,7 @@ def Listado():
      return render_template('listado.html')
 @app.route('/Repartidores',methods=['GET','POST'])
 def Repartidores():
-    repatidor = models.Usuario_Repatidor.query.filter_by(id=1).first()
-    session['nombre_repartidor'] = repatidor.nombre
-    session['apellido_repartidor'] = repatidor.apellido
-    session['id_repartidor'] = repatidor.id
-    app.logger.info(f'entrando ala consola {request.path}')
-    nombre=session['nombre_repartidor']
-    apellido=session['apellido_repartidor']
+
     return render_template('repartidores.html',nombre=nombre,apellido=apellido)
 @app.route('/Pedidos')
 def Pedidos():
