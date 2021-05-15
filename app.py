@@ -22,6 +22,7 @@ URL_DB='localhost'
 NAME_DB='tie'
 FULL_URL_DB=f'postgresql://{USER_DB}:{PASS_DB}@{URL_DB}/{NAME_DB}' #CADENA DE CONEXION COMPLETA
 app.config['SQLALCHEMY_DATABASE_URI']=FULL_URL_DB#cual es laconexion de la bd que va utilizar
+app.config['SQLALCHEMY_DATABASE_URI']=os.environ.get('DATABASE_URL')#cual es
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
 db.init_app(app)
 migrate=Migrate()
