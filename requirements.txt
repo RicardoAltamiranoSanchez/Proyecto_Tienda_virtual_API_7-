@@ -1,20 +1,4 @@
-aioresponses==0.7.1
-ajpy==0.0.4
-alembic==1.4.3
-antiorm==1.2.1
-asn1crypto==1.4.0
-atomicwrites==1.4.0
-attrs==20.3.0
-Automat==20.2.0
-backcall==0.2.0
-bcrypt==3.1.7
-beautifulsoup4==4.9.3
-bidict==0.21.2
 
-blinker==1.4
-Brotli==1.0.9
-catfish==1.4.13
-certifi==2020.6.20
 alembic==1.4.3
 antiorm==1.2.1
 bidict==0.21.2
