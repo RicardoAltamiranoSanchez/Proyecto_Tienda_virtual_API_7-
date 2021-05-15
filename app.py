@@ -10,9 +10,7 @@ from itsdangerous import URLSafeTimedSerializer, SignatureExpired
 from Login import login
 from flask_migrate import Migrate
 from werkzeug.utils import redirect
-from commands import create_tables
 app=Flask(__name__)
-app.cli.add_command(create_tables)
 #jinja_env=jinja2.Environment(loader=jinja2.FileSystemLoader('template'))
 #template=jinja_env.get_template('content.html')
 #template.render('index.html')
@@ -24,7 +22,6 @@ URL_DB='localhost'
 NAME_DB='tie'
 FULL_URL_DB=f'postgresql://{USER_DB}:{PASS_DB}@{URL_DB}/{NAME_DB}' #CADENA DE CONEXION COMPLETA
 app.config['SQLALCHEMY_DATABASE_URI']=FULL_URL_DB#cual es laconexion de la bd que va utilizar
-app.config['SQLALCHEMY_DATABASE_URI']=os.environ.get('DATABASE_URL')#cual es laconexion de la bd que va utilizar
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
 db.init_app(app)
 migrate=Migrate()
@@ -51,7 +48,7 @@ def Inicio():
 
 @app.route('/Registro', methods=['GET', 'POST'])
 def Registro():
-    
+    total_usuario = models.Usuario.query.count()
     if request.method=='POST':
             if models.Usuario.query.filter_by(correo=request.form['correo']).first() is None:
                 if models.Usuario.query.filter_by(contrasenia=request.form['password']).first() is None:
@@ -63,7 +60,7 @@ def Registro():
 
                     email = request.form['correo']
                     token = s.dumps(email, salt='email-confirm')
-                    msg = Message('Confirmacioin de Correo Electronico', sender=app.config['MAIL_USERNAME'],
+                    msg = Message('Confirmacioin de Correo Electronico', sender='2020sunburst.systems@gmail.com',
                                   recipients=[email])
 
                     link = url_for('confirm_email', token=token, _external=True)
@@ -91,6 +88,7 @@ def confirm_email(token):
                             correo=session['correoG'] ,
                             usuario=session['usuarioG'],
                             contrasenia= session['passwordG'],)
+
 
          app.logger.info(f'entrando ala consola {request.path}')
          db.session.add(u)
@@ -351,8 +349,10 @@ def Pago():
 @app.errorhandler(404)
 def Pagina_no_encontrada(e):
     return render_template('404.html'),404
+
+
 if __name__=='__main__':
 
-    app.run()
+    app.run(debug=True,port=8000,host=0000)
 
 
